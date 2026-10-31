@@ -563,7 +563,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     </section>
     <section class="panel canvas-panel">
       <div id="canvas" class="canvas"><svg id="drawing" viewBox="0 0 800 800" role="img" aria-label="Чертёж фасада"></svg></div>
-      <div id="real3DOverlay" class="inline-3d hidden"><div class="real3d-head"><div><strong id="real3DTitle">3D-модель обработки</strong><div id="real3DInfo">Поверхность построена по выбранным фрезам и глубинам.</div></div><div class="real3d-actions"><button id="real3DZoomOut" type="button" aria-label="Отдалить" title="Отдалить">−</button><button id="real3DZoomIn" type="button" aria-label="Приблизить" title="Приблизить">＋</button><button id="real3DPan" type="button" aria-pressed="false" title="Двигать деталь (или правая кнопка / Shift / два пальца)">✥</button><button id="real3DQuality" type="button" title="Качество 3D: быстро (грубее, не виснет) / высокое (мелкая сетка). Нажмите, чтобы переключить">Быстро</button><button id="real3DTop" type="button" title="Вид сверху">Сверху</button><button id="real3DDetail" type="button" title="Мелкая сетка вокруг центра экрана">Детально</button><button id="real3DReset" type="button" title="Сбросить вид">Сброс</button></div></div><canvas id="real3DCanvas" aria-label="Вращаемая трёхмерная модель фрезерованного фасада"></canvas><div class="real3d-foot"><button id="real3DHelp" type="button" class="real3d-help" aria-expanded="false" title="Подсказка по управлению">?</button><span class="real3d-hint">Тяните — вращение · ✥ / правая кнопка / два пальца — двигать</span><span class="real3d-hint">Колесо или щипок — масштаб к курсору</span><span id="real3DStatus">Подготовка геометрии…</span></div></div>
+      <div id="real3DOverlay" class="inline-3d hidden"><div class="real3d-head"><div><strong id="real3DTitle">3D-модель обработки</strong><div id="real3DInfo">Поверхность построена по выбранным фрезам и глубинам.</div></div><div class="real3d-actions"><button id="real3DZoomOut" type="button" aria-label="Отдалить" title="Отдалить">−</button><button id="real3DZoomIn" type="button" aria-label="Приблизить" title="Приблизить">＋</button><button id="real3DPan" type="button" aria-pressed="false" title="Двигать деталь (или правая кнопка / Shift / два пальца)">✥</button><button id="real3DQuality" type="button" title="Качество 3D: быстро (грубее, не виснет) / высокое (мелкая сетка). Нажмите, чтобы переключить">Быстро</button><button id="real3DTop" type="button" title="Вид сверху">Сверху</button><button id="real3DDetail" type="button" title="Мелкая сетка вокруг центра экрана">Детально</button><button id="real3DHandleBtn" type="button" class="hidden" title="Сечение ручки: подрез под губой сверху не виден">Ручка</button><button id="real3DReset" type="button" title="Сбросить вид">Сброс</button></div></div><canvas id="real3DCanvas" aria-label="Вращаемая трёхмерная модель фрезерованного фасада"></canvas><div class="real3d-foot"><button id="real3DHelp" type="button" class="real3d-help" aria-expanded="false" title="Подсказка по управлению">?</button><span class="real3d-hint">Тяните — вращение · ✥ / правая кнопка / два пальца — двигать</span><span class="real3d-hint">Колесо или щипок — масштаб к курсору</span><span id="real3DStatus">Подготовка геометрии…</span></div></div>
       <div class="canvas-bottom"><div class="sel-info" id="selInfo" aria-live="polite"></div><span class="bottom-tools"><div class="edit-actions" aria-label="Действия редактирования"><button id="undo" type="button" title="Отменить (Ctrl+Z)" aria-label="Назад">↶</button><button id="redo" type="button" title="Повторить (Ctrl+Y)" aria-label="Вперёд">↷</button><button id="toggleDock" type="button" title="Свернуть / развернуть панель инструментов" aria-label="Панель инструментов" aria-pressed="false">▼</button></div><button id="openStyles" type="button" title="Шаблоны фасадов, профилей и гребёнок">Стили</button><span id="validity" class="good" title="Проверка геометрии">● Проверка пройдена</span><span class="tool-options"><label id="toolValueLabel" for="toolValue">Значение, мм</label><input id="toolValue" type="number" min="0" step="0.5" value="10" title="Радиус скругления / размер фаски / расстояние смещения"><span class="sub" id="toolHint">Выбор и выборка</span></span></span><span id="canvasHint">Выберите инструмент, чтобы добавить вектор</span><span class="zoom"><button class="icon-button" id="zoomOut" aria-label="Уменьшить">−</button><span id="zoomValue">100%</span><button class="icon-button" id="zoomIn" aria-label="Увеличить">＋</button><button class="icon-button" id="zoomReset" aria-label="Сбросить масштаб">⛶</button></span></div>
     </section>
     <section class="panel dock" aria-label="Данные чертежа и инструменты">
@@ -907,10 +907,10 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
 </div>
 <h3 style="margin:10px 0 4px;font-size:13px">3. Траектория</h3>
 <p class="sub" style="margin:0 0 6px">Меняете выборку или форму — линия пересчитывается. Заход и выход остаются внутри выборки.</p>
-<div class="field"><label for="hShape">Форма</label><select id="hShape"><option value="pi">П-образная: заход, ход вдоль, выход</option><option value="straight">Прямая: только ход вдоль</option><option value="trap">Трапеция: заход наискосок</option></select></div>
+<div class="field"><label for="hShape">Форма</label><select id="hShape"><option value="trap">Скоба: заход наискосок к углу ручки</option><option value="loop">Петля: вправо → вниз → влево → вверх → вправо</option><option value="pi">Скоба: ножки прямо</option><option value="straight">Прямая: только ход вдоль</option></select></div>
 <div class="fields">
 <div class="field"><label for="hCenter">Ось фрезы от края, мм</label><input id="hCenter" type="text" inputmode="decimal" autocomplete="off" value="22.5"></div>
-<div class="field"><label for="hLead">Заход и выход: расстояние от края, мм</label><input id="hLead" type="text" inputmode="decimal" autocomplete="off" value="8"></div>
+<div class="field"><label for="hLead">Точка захода и выхода: расстояние от края, мм (центр фрезы)</label><input id="hLead" type="text" inputmode="decimal" autocomplete="off" value="10.5"></div><div class="field"><label for="hInset">Заход к центру: сдвиг ножки внутрь, мм (0 — прямо)</label><input id="hInset" type="text" inputmode="decimal" autocomplete="off" value="6"></div>
 </div>
 <div class="fields">
 <div class="field"><label for="hFit">Как мерить длину</label><select id="hFit"><option value="outer">по краям реза</option><option value="path">по центрам захода</option></select></div>
@@ -928,7 +928,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
 <div class="field"><label for="hOvDia">Фреза накладки Ø, мм</label><input id="hOvDia" type="text" inputmode="decimal" autocomplete="off" value="12"></div>
 </div>
 </div>
-<h3 style="margin:10px 0 4px;font-size:13px">Сечение ручки (симуляция фрезы)</h3><svg id="hSection" viewBox="0 0 100 60" style="width:100%;height:auto;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px"></svg><div id="hSectionNote" style="font-size:11px;color:#58574f;margin:4px 0 0"></div><div class="sd-tools" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button type="button" id="hAdd" class="primary">Применить ручку</button><button type="button" id="hRemove">Убрать ручку</button><button type="button" id="hCancel">Закрыть</button></div>
+<h3 style="margin:10px 0 4px;font-size:13px">Сечение ручки (симуляция фрезы)</h3><svg id="hSection" viewBox="0 0 100 60" style="width:100%;height:auto;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px"></svg><div id="hSectionNote" style="font-size:11px;color:#58574f;margin:4px 0 0"></div><h3 style="margin:10px 0 4px;font-size:13px">Симуляция прохода фрезы (вид сверху)</h3><svg id="hPlan" viewBox="0 0 100 60" style="width:100%;height:auto;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px"></svg><input id="hSim" type="range" min="0" max="1000" value="0" style="width:100%;margin-top:6px" aria-label="Положение фрезы на траектории"><div id="hSimNote" style="font-size:11px;color:#58574f;margin:2px 0 0"></div><div class="sd-tools" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button type="button" id="hAdd" class="primary">Применить ручку</button><button type="button" id="hRemove">Убрать ручку</button><button type="button" id="hCancel">Закрыть</button></div>
 <div class="notice" id="handleInfo" style="margin-top:8px"></div><style>#handleInfo:empty{display:none}</style>
 </div></section></div>
 <div id="frameOverlay" class="modal-overlay hidden"><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="frameTitle"><button class="modal-close" id="closeFrame" type="button" aria-label="Закрыть">×</button><h2 id="frameTitle" style="margin:0 0 8px;padding-right:40px">Фасад из профиля</h2>
@@ -1519,8 +1519,6 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
       const tool=formTool(shape);
       if(!tool)return 0;
       const diameter=Number(width)>0?Number(width):tool.width;
-      // Фреза с подрезом (ручка): сверху виден только тот участок, где силуэт фрезы выходит на поверхность; остальное скрыто под губой
-      if(tool.undercut&&formUpper(tool,Math.abs(normalized))*diameter/2<depth-1e-6)return 0;
       return Math.max(0,depth-formLift(tool,Math.abs(normalized))*diameter/2);
     }
     // Форма встроенной фрезы зафиксирована диаметром (шар Ø9 всегда шар радиуса 4.5); «Глубина реза» — это отдельно, на сколько фреза
@@ -1540,6 +1538,14 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     else if(shape==='roundover')lift=Math.sqrt(Math.max(0,1-(1-n)*(1-n)));
     else lift=n*n;
     return Math.max(0,depth-lift*H);
+  }
+  // Фреза с подрезом: в разрезе рисуем настоящий силуэт фрезы (остриё на глубине d), а не огибающую дна
+  function undercutToolPath(cut,cx,y,scale){
+    const tool=formTool(cut.shape);if(!tool||!tool.undercut)return null;
+    const R=cut.width/2,d=Math.min(cut.depth,state.thickness),pr=tool.profile;
+    const pt=(x,h)=>`${(cx+x*R*scale).toFixed(2)} ${(y+(d-h*R)*scale).toFixed(2)}`;
+    const left=pr.map(q=>pt(-q[0],q[1])),right=pr.slice().reverse().map(q=>pt(q[0],q[1]));
+    return `M ${left.join(' L ')} L ${right.join(' L ')} Z`;
   }
   function cutterIllustration(shape,width=2,depth=1,formHeight=0) {
     const scale=Math.min(84/width,30/depth),centerX=60,top=25,bottom=70;
@@ -2888,7 +2894,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
       });
       const cgroups=[...gm.values()].sort((p,q)=>p.first.center-q.first.center).map((g,i)=>{const cut=g.first;return{...g,n:i+1,d:Math.min(cut.depth,state.thickness),from:Math.max(0,cut.center-cut.width/2),to:Math.min(sectionLength,cut.center+cut.width/2)};});
       if(isFacade||isComb||isStrip){lastCutGroups=cgroups;if(selectedCutKey&&!cgroups.some(g=>g.key===selectedCutKey))selectedCutKey=null;}
-      const toolC=(cut,cx)=>{const hw=Math.max(1,cut.width*scale/2),d=Math.min(cut.depth,state.thickness),pts=[];
+      const toolC=(cut,cx)=>{const uc=undercutToolPath(cut,cx,y,scale);if(uc)return uc;const hw=Math.max(1,cut.width*scale/2),d=Math.min(cut.depth,state.thickness),pts=[];
         for(let k=0;k<=16;k++){const nn=-1+2*k/16,rd=cutterReliefDepth(cut.shape,Math.max(-.9999,Math.min(.9999,nn)),d,cut.width,cut.formHeight);pts.push(`${(cx+nn*hw).toFixed(2)} ${(y+rd*scale).toFixed(2)}`);}
         return `M ${cx-hw} ${y-14} V ${y} L ${pts.join(' L ')} L ${cx+hw} ${y} V ${y-14}`;};
       const cmarks=cgroups.map(g=>{
@@ -2940,7 +2946,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
       });
       lastCutGroups=groups;
       if(selectedCutKey&&!groups.some(g=>g.key===selectedCutKey))selectedCutKey=null;
-      const tool=(cut,cx)=>{const hw=Math.max(1,cut.width*scale/2),d=Math.min(cut.depth,state.thickness),pts=[];
+      const tool=(cut,cx)=>{const uc=undercutToolPath(cut,cx,y,scale);if(uc)return uc;const hw=Math.max(1,cut.width*scale/2),d=Math.min(cut.depth,state.thickness),pts=[];
         for(let k=0;k<=24;k++){const nn=-1+2*k/24,rd=cutterReliefDepth(cut.shape,Math.max(-.9999,Math.min(.9999,nn)),d,cut.width,cut.formHeight);pts.push(`${(cx+nn*hw).toFixed(2)} ${(y+rd*scale).toFixed(2)}`);}
         return `M ${cx-hw} ${y-16} V ${y} L ${pts.join(' L ')} L ${cx+hw} ${y} V ${y-16}`;};
       const chipXs=mapMode?spreadChips(groups.map(g=>left+g.first.center*scale),30,770,30):[];
@@ -7180,7 +7186,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
   }
   // ===== Встроенная ручка: выборка у кромки + радиус по стенке =====
   function closeHandle2(){$('handleOverlay').classList.add('hidden');}
-  const HANDLE_DEFAULTS={edge:'top',variant:'plain',len:100,pos:0,grip:30,depth:18,dia:12,step:40,cutter:'round',cDia:38.1,cDepth:18,shape:'pi',center:22.5,lead:8,fit:'outer',ovW:35,ovDepth:3,ovExtra:2,ovDia:12,rad:6};
+  const HANDLE_DEFAULTS={edge:'top',variant:'plain',len:100,pos:0,grip:30,depth:18,dia:12,step:40,cutter:'round',cDia:38.1,cDepth:18,shape:'trap',center:22.5,lead:10.5,inset:6,fit:'outer',ovW:35,ovDepth:3,ovExtra:2,ovDia:12,rad:6};
   // Профиль фрезы 30.0277.01 по чертежу сечения ручки: плоское дно, скругление R≈4,2, стенка Ø38,1, закруглённое плечо R≈6,5
   // (оно формирует подрез под губой), дальше шейка. x — доля радиуса, y — высота над кончиком в радиусах.
   function handleCutterProfile() {
@@ -7208,17 +7214,17 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
   }
   function handleAuto(grip) {
     const G=grip>=5?grip:30;
-    return{center:Math.round((G+11.5-19.05)*10)/10,lead:Math.round(Math.min(8,Math.max(3,G*0.35))*10)/10};
+    const R=(Number(String($('hEdgeDia')?$('hEdgeDia').value:'38.1').replace(',','.'))||38.1)/2;return{center:Math.round((G+11.5-19.05)*10)/10,lead:Math.max(1,Math.round((G-R-0.5)*10)/10)};
   }
   function handlePreview() {
-    const h=handleReadForm(),shape={pi:'П-образная',straight:'прямая',trap:'трапеция'}[h.shape]||'П-образная';
+    const h=handleReadForm(),shape={pi:'П-образная',straight:'прямая',trap:'трапеция',loop:'петля'}[h.shape]||'П-образная';
     const bits=h.shape==='straight'
       ?`ход вдоль на оси ${h.center} мм от края, без ножек`
       :`заход на ${h.lead} мм от края (внутри выборки ${h.grip} мм) → ось ${h.center} мм → ход вдоль → выход на ${h.lead} мм`;
     $('handlePreview').textContent=`Выборка ${h.grip} мм от края, глубина ${h.depth} мм. Траектория ${shape}: ${bits}. Фреза Ø ${h.cDia} мм, проход ${h.cDepth} мм.`;
     try{handleDrawSection();}catch(error){}
   }
-  const HANDLE_FIELDS={edge:'hEdge',variant:'hVariant',len:'hLen',pos:'hPos',grip:'hGrip',depth:'hDepth',dia:'hDia',step:'hStep',cutter:'hEdgeCutter',cDia:'hEdgeDia',cDepth:'hEdgeDepth',shape:'hShape',center:'hCenter',lead:'hLead',fit:'hFit',rad:'hRad',ovW:'hOvW',ovDepth:'hOvDepth',ovExtra:'hOvExtra',ovDia:'hOvDia'};
+  const HANDLE_FIELDS={edge:'hEdge',variant:'hVariant',len:'hLen',pos:'hPos',grip:'hGrip',depth:'hDepth',dia:'hDia',step:'hStep',cutter:'hEdgeCutter',cDia:'hEdgeDia',cDepth:'hEdgeDepth',shape:'hShape',center:'hCenter',lead:'hLead',inset:'hInset',fit:'hFit',rad:'hRad',ovW:'hOvW',ovDepth:'hOvDepth',ovExtra:'hOvExtra',ovDia:'hOvDia'};
   function handleWriteForm(h){Object.entries(HANDLE_FIELDS).forEach(([k,id])=>{const e=$(id);e.value=String(h[k]);if(e.tagName==='SELECT'&&e.value!==String(h[k]))e.selectedIndex=0;});handleSyncForm();}
   function handleReadForm(){
     const h={};
@@ -7232,9 +7238,9 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     if(customCutters.length!==n)persistCustomCutters();
   }
   // Сечение поперёк ручки: результат обработки, как на чертеже (кромка справа, штриховка — материал)
-  function handleDrawSection(){
-    const svg=$('hSection');if(!svg)return;
-    const h=handleReadForm(),thick=Number(state.thickness)||19;
+  function handleDrawSection(svg=$('hSection'),noteEl=$('hSectionNote'),hIn=null){
+    if(!svg)return;
+    const h=hIn||handleReadForm(),thick=Number(state.thickness)||19;
     const shape=cutterShape(h.cutter),tool=formTool(shape);
     const R=h.cDia/2,pr=tool?tool.profile:null;
     const Vend=Math.max(58,h.center+R+8),f=n=>Number(n.toFixed(2));
@@ -7263,7 +7269,54 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
       +(under>0.05?dim(X(vmax),X(h.grip),zTop+4,fmt(under)):'')
       +`<text x="1.5" y="${f(thick/2+1)}" font-size="2.8" fill="#222">${fmt(thick)}</text>`
       +(floor>0?`<text x="${f(Vend-1)}" y="${f(thick+3.6)}" font-size="2.6" text-anchor="end" fill="#222">дно ${fmt(floor)}</text>`:'');
-    $('hSectionNote').textContent=hook?`Результат обработки (кромка справа): выборка ${fmt(h.grip)} мм, подрез под губой ${fmt(under)} мм, дно ${fmt(floor)} мм. Фреза ${tool.name}, ось ${fmt(h.center)} мм от кромки, кончик на глубине ${fmt(h.cDepth)} мм. Профиль по чертежу, радиусы приблизительные.`:'Для сечения выберите профильную фрезу (например, 30.0277.01). Круглая и прямая показываются в 3D, но не здесь.';
+    try{handleDrawPlan();}catch(error){}
+    noteEl.textContent=hook?`Результат обработки (кромка справа): выборка ${fmt(h.grip)} мм, подрез под губой ${fmt(under)} мм, дно ${fmt(floor)} мм. Фреза ${tool.name}, ось ${fmt(h.center)} мм от кромки, кончик на глубине ${fmt(h.cDepth)} мм. Профиль по чертежу, радиусы приблизительные.`:'Для сечения выберите профильную фрезу (например, 30.0277.01). Круглая и прямая показываются в 3D, но не здесь.';
+  }
+  // Общий расчёт положения ручки в (u вдоль кромки, v от кромки): для симуляции прохода
+  function handleCalc(h){
+    const W=Number(state.width),H=Number(state.height),vertical=h.edge==='left'||h.edge==='right',along=vertical?H:W;
+    const R=h.cDia/2;let len=h.len;const full=!(len>0)||len>=along-1e-9;if(full)len=along;
+    const center=h.pos>0?h.pos:along/2,a=center-len/2,b=center+len/2;
+    const legInset=h.fit==='outer'?R:0,ua=a+legInset,ub=b-legInset;
+    if(!(ub-ua>=-1e-9))return null;
+    const vC=h.center,lead=Math.min(Math.max(h.lead,0.5),h.grip-0.5),inset=Math.max(0,Math.min(h.inset||0,(ub-ua)/2-0.5));
+    let pts;
+    if(h.shape==='straight')pts=[[ua,vC],[ub,vC]];
+    else if(h.shape==='loop'){const mid=(ua+ub)/2;pts=[[mid,lead],[ub,lead],[ub,vC],[ua,vC],[ua,lead]];if(inset>0.1)pts.push([ua+inset,lead]);}
+    else if(h.shape==='pi')pts=[[ua,lead],[ua,vC],[ub,vC],[ub,lead]];
+    else pts=[[ua+inset,lead],[ua,vC],[ub,vC],[ub-inset,lead]];
+    return{R,a,b,ua,ub,vC,lead,pts,along};
+  }
+  function handleDrawPlan(){
+    const svg=$('hPlan');if(!svg)return;
+    const h=handleReadForm(),g=handleCalc(h),note=$('hSimNote');
+    if(!g){svg.innerHTML='';note.textContent='Длина ручки меньше фрезы.';return;}
+    const f=n=>Number(n.toFixed(2)),R=g.R,m=6;
+    const u0=g.a-R*0.4-m,u1=g.b+R*0.4+m,v0=-8,v1=Math.max(h.grip,g.vC+R)+6;
+    svg.setAttribute('viewBox',`${f(u0)} ${f(v0)} ${f(u1-u0)} ${f(v1-v0)}`);
+    const segs=[];let total=0;for(let i=1;i<g.pts.length;i++){const l=Math.hypot(g.pts[i][0]-g.pts[i-1][0],g.pts[i][1]-g.pts[i-1][1]);segs.push(l);total+=l;}
+    const t=(Number($('hSim').value)/1000)*total;let pos=g.pts[0],acc=0;
+    for(let i=0;i<segs.length;i++){if(t<=acc+segs[i]||i===segs.length-1){const k=segs[i]>0?Math.min(1,Math.max(0,(t-acc)/segs[i])):0;pos=[g.pts[i][0]+(g.pts[i+1][0]-g.pts[i][0])*k,g.pts[i][1]+(g.pts[i+1][1]-g.pts[i][1])*k];break;}acc+=segs[i];}
+    const sw=Math.max(.25,(u1-u0)/260),rad=Math.max(0,Math.min(h.rad,(g.b-g.a)/2-1e-6,h.grip-1e-6));
+    const pa=g.a,pb=g.b,G=h.grip;
+    const pocket=rad>.01?`M ${f(pa)} ${v0} L ${f(pb)} ${v0} L ${f(pb)} ${f(G-rad)} Q ${f(pb)} ${f(G)} ${f(pb-rad)} ${f(G)} L ${f(pa+rad)} ${f(G)} Q ${f(pa)} ${f(G)} ${f(pa)} ${f(G-rad)} Z`:`M ${f(pa)} ${v0} L ${f(pb)} ${v0} L ${f(pb)} ${f(G)} L ${f(pa)} ${f(G)} Z`;
+    const poly=g.pts.map(q=>f(q[0])+','+f(q[1])).join(' ');
+    const neck=Math.max(0,G-g.vC);
+    const ent=[g.pts[0],g.pts[g.pts.length-1]],touch=g.pts.length>2&&ent.some(q=>q[1]+R>G+0.05);
+    const cur=pos;
+    svg.innerHTML=`<defs><clipPath id="hPlanClip"><rect x="${f(u0)}" y="0" width="${f(u1-u0)}" height="${f(v1)}"/></clipPath></defs>`
+      +`<rect x="${f(u0)}" y="0" width="${f(u1-u0)}" height="${f(v1)}" fill="#d9c7a0"/>`
+      +`<polyline points="${poly}" fill="none" stroke="rgba(46,125,110,.28)" stroke-width="${f(2*R)}" stroke-linejoin="round" stroke-linecap="round" clip-path="url(#hPlanClip)"/>`
+      +`<rect x="${f(u0)}" y="${v0}" width="${f(u1-u0)}" height="${-v0}" fill="#fbf8f1"/>`
+      +`<path d="${pocket}" fill="#fbf8f1" stroke="#444" stroke-width="${f(sw)}"/>`
+      +`<line x1="${f(u0)}" y1="0" x2="${f(u1)}" y2="0" stroke="#444" stroke-width="${f(sw*1.4)}"/>`
+      +`<polyline points="${poly}" fill="none" stroke="#c0392b" stroke-width="${f(sw*1.6)}" stroke-linejoin="round"/>`
+      +g.pts.map(q=>`<circle cx="${f(q[0])}" cy="${f(q[1])}" r="${f(sw*2.2)}" fill="#c0392b"/>`).join('')
+      +`<circle cx="${f(cur[0])}" cy="${f(cur[1])}" r="${f(R)}" fill="rgba(46,125,110,.15)" stroke="#2e7d6e" stroke-width="${f(sw*1.4)}"/>`
+      +(neck>0.2?`<circle cx="${f(cur[0])}" cy="${f(cur[1])}" r="${f(neck)}" fill="none" stroke="#2e7d6e" stroke-width="${f(sw)}"/>`:'')
+      +`<circle cx="${f(cur[0])}" cy="${f(cur[1])}" r="${f(sw*1.6)}" fill="#2e7d6e"/>`;
+    const reach=cur[1]+R;
+    note.textContent=`Фреза: ${Math.round(cur[0]*10)/10} мм вдоль, ось ${Math.round(cur[1]*10)/10} мм от кромки, достаёт до ${Math.round(reach*10)/10} мм (стенка выборки ${G} мм). Красная линия — ось фрезы, зелёная полоса — подрез под губой.`+(touch?' ⚠ Точка захода слишком глубоко: фреза на входе заденет стенку выборки. Уменьшите «точку захода» (не больше '+Math.round((G-R-0.2)*10)/10+' мм).':'');
   }
   function handleSyncForm(){$('hOverlayBox').classList.toggle('hidden',$('hVariant').value!=='overlay');handlePreview();handleDrawSection();}
   // Убрать прежнюю ручку (контуры, выборки), чтобы на детали была только одна
@@ -7340,9 +7393,11 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     lead=Math.min(lead,h.grip-0.5);
     if(h.shape!=='straight'&&!(Math.abs(vC-lead)>0.2)){undoOnce();return fail('Ось фрезы и точка захода почти совпали. Разведите их: ось ближе к внутреннему краю выборки, заход ближе к кромке.');}
     const pts=[];
+    const inset=Math.max(0,Math.min(h.inset||0,(ub-ua)/2-0.5));
     if(h.shape==='straight')pts.push([ua,vC],[ub,vC]);
-    else if(h.shape==='trap'){const dv=vC-lead;pts.push([ua-dv,lead],[ua,vC],[ub,vC],[ub+dv,lead]);}
-    else pts.push([ua,lead],[ua,vC],[ub,vC],[ub,lead]);
+    else if(h.shape==='loop'){const mid=(ua+ub)/2;pts.push([mid,lead],[ub,lead],[ub,vC],[ua,vC],[ua,lead]);if(inset>0.1)pts.push([ua+inset,lead]);}
+    else if(h.shape==='pi')pts.push([ua,lead],[ua,vC],[ub,vC],[ub,lead]);
+    else pts.push([ua+inset,lead],[ua,vC],[ub,vC],[ub-inset,lead]);
     const xy=pts.map(q=>toXY(q[0],q[1])),xs=xy.map(q=>q[0]),ys=xy.map(q=>q[1]);
     const bx0=Math.min(...xs),bx1=Math.max(...xs),by0=Math.min(...ys),by1=Math.max(...ys),bw=bx1-bx0,bh=by1-by0,f=n=>Number(n.toFixed(9));
     const nrm=(v,lo,sz)=>sz>1e-9?f((v-lo)/sz):0;
@@ -7357,7 +7412,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     if(issues.length){undoOnce();return fail('Не получилось: '+issues[0]);}
     selectedPocketRegion=null;state.selectedContour=id;
     renderTemplateButtons();drawView();
-    const msg=`Ручка: ${({top:'верхняя',bottom:'нижняя',left:'левая',right:'правая'})[edge]} кромка, ${Math.round(len*10)/10} мм (${Math.round(a*10)/10}…${Math.round(b*10)/10}), ${h.variant==='overlay'?'с накладкой сзади':'без накладки'}; выборка ${h.grip} × ${h.depth} мм; вектор ручки: ${({pi:'П-образный',trap:'трапеция',straight:'прямой'})[h.shape]}, фреза Ø${h.cDia}.`;
+    const msg=`Ручка: ${({top:'верхняя',bottom:'нижняя',left:'левая',right:'правая'})[edge]} кромка, ${Math.round(len*10)/10} мм (${Math.round(a*10)/10}…${Math.round(b*10)/10}), ${h.variant==='overlay'?'с накладкой сзади':'без накладки'}; выборка ${h.grip} × ${h.depth} мм; вектор ручки: ${({pi:'П-образный',trap:'трапеция',straight:'прямой',loop:'петля'})[h.shape]}, фреза Ø${h.cDia}.`;
     $('handleInfo').textContent=msg;$('footerStatus').textContent=msg;closeHandle2();
   }
   function kindSignature() {
@@ -8051,15 +8106,17 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     }));
   });
   $('hAdd').addEventListener('click',addHandle);
+  $('real3DHandleBtn').addEventListener('click',()=>$('handleTool').click());
   $('handleTool').addEventListener('click',()=>{if(state.objectType!=='facade'||state.kind){$('footerStatus').textContent='Встроенная ручка доступна для обычного фасада';return;}const tool=ensureHandleCutter();const base={...HANDLE_DEFAULTS,...(state.handle||{})};if(!state.handle){base.cutter=`custom:${tool.id}`;base.cDia=tool.width;base.depth=base.cDepth=Math.max(1,Math.min(22,(Number(state.thickness)||19)-4));const auto=handleAuto(base.grip);base.center=auto.center;base.lead=auto.lead;}handleWriteForm(base);$('hCenter').dataset.hand=state.handle?'1':'';$('hLead').dataset.hand=state.handle?'1':'';$('hEdge').dataset.prev=$('hEdge').value;if(!state.handle){const ed=$('hEdge').value,al=(ed==='left'||ed==='right')?Number(state.height):Number(state.width);$('hPos').value=String(Math.round(al/2*100)/100);}handlePreview();$('handleInfo').textContent=state.handle?'На детали уже есть ручка: «Применить» заменит её.':'';$('handleOverlay').classList.remove('hidden');});
   $('hVariant').addEventListener('change',handleSyncForm);
   $('hEdge').addEventListener('change',()=>{const m=e=>(e==='left'||e==='right')?Number(state.height):Number(state.width);const cur=Number($('hPos').value.replace(',','.')),old=$('hEdge').dataset.prev||'top';if(!($('hPos').value!=='')||Math.abs(cur-m(old)/2)<1e-6)$('hPos').value=String(Math.round(m($('hEdge').value)/2*100)/100);$('hEdge').dataset.prev=$('hEdge').value;handlePreview();});
   $('hGrip').addEventListener('input',()=>{const grip=Number(String($('hGrip').value).replace(',','.'));if(!(grip>=5)){handlePreview();return;}const auto=handleAuto(grip);if($('hCenter').dataset.hand!=='1')$('hCenter').value=String(auto.center);if($('hLead').dataset.hand!=='1')$('hLead').value=String(auto.lead);handlePreview();});
   $('hCenter').addEventListener('input',()=>{$('hCenter').dataset.hand='1';handlePreview();});
   $('hLead').addEventListener('input',()=>{$('hLead').dataset.hand='1';handlePreview();});
-  ['hLen','hPos','hDepth','hDia','hRad','hEdgeDia','hEdgeDepth','hShape','hFit','hVariant'].forEach(id=>$(id).addEventListener('input',handlePreview));
+  ['hLen','hPos','hDepth','hDia','hRad','hEdgeDia','hEdgeDepth','hShape','hFit','hVariant','hInset'].forEach(id=>$(id).addEventListener('input',handlePreview));
   $('hShape').addEventListener('change',handlePreview);$('hVariant').addEventListener('change',handlePreview);$('hFit').addEventListener('change',handlePreview);
   $('hEdgeCutter').addEventListener('change',()=>{const tool=customCutters.find(item=>`custom:${item.id}`===$('hEdgeCutter').value);if(tool){$('hEdgeDia').value=tool.width;if(tool.profileHeight)$('hEdgeDepth').value=Math.min(Number($('hEdgeDepth').value)||12,tool.profileHeight);}handlePreview();});
+  $('hSim').addEventListener('input',()=>{try{handleDrawPlan();}catch(error){}});
   $('hRecalc').addEventListener('click',()=>{const auto=handleAuto(Number(String($('hGrip').value).replace(',','.')));$('hCenter').value=String(auto.center);$('hLead').value=String(auto.lead);$('hCenter').dataset.hand='';$('hLead').dataset.hand='';handlePreview();});
   $('hRemove').addEventListener('click',removeHandle);
   const closeHandle=()=>$('handleOverlay').classList.add('hidden');
@@ -9633,8 +9690,8 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     const minWidth=passes.length?Math.min(...passes.map(p=>p.width)):Math.min(w,h)/30;
     const gridStep=real3DHQ?Math.max(.7,Math.min(1.25,minWidth/5)):Math.max(2,Math.min(3,minWidth/2)),gridCap=real3DHQ?560:240,gridMin=real3DHQ?180:120,X0=win?win.x0:0,Y0=win?win.y0:0,XW=win?win.x1-win.x0:w,YH=win?win.y1-win.y0:h,nx=win?win.n:Math.max(gridMin,Math.min(gridCap,Math.ceil(w/gridStep))),ny=win?win.n:Math.max(gridMin,Math.min(gridCap,Math.ceil(h/gridStep)));
     const pocketSvg=document.createElementNS('http://www.w3.org/2000/svg','svg');pocketSvg.style.cssText='position:absolute;left:-10000px;top:-10000px';document.body.appendChild(pocketSvg);const pocketRegions=(state.pockets||[]).map(pocket=>{const region=getPocketRegion(pocket.parentId,pocket.islandId,pocket.regionType||'ring');if(!region||pocket.back||cutterShape(pocket.cutter)!=='flat')return null;const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',region.outerPath+' '+region.innerPath);path.setAttribute('fill-rule','evenodd');pocketSvg.appendChild(path);return{path,depth:Math.min(Number(pocket.depth)||0,thick)};}).filter(Boolean);
-    const heights=new Float32Array((nx+1)*(ny+1));
-    for(let j=0;j<=ny;j++){const y=Y0+YH*j/ny;for(let i=0;i<=nx;i++){const x=X0+XW*i/nx;let z=0;for(const pass of passes){if(pass.miter){const a=(pass.cx-x)*pass.sx,bb=(pass.cy-y)*pass.sy;if(a>=0&&bb>=0&&a<pass.W&&bb<pass.W){const rz=cutterReliefDepth(pass.shape,Math.max(a,bb)/(pass.width/2),pass.depth,pass.width,pass.formHeight);if(rz>=(pass.minCut||0))z=Math.max(z,rz);}continue;}if(pass.ramp){const dx=pass.bx-pass.ax,dy=pass.by-pass.ay,den=dx*dx+dy*dy,t=den?Math.max(0,Math.min(1,((x-pass.ax)*dx+(y-pass.ay)*dy)/den)):0,dist=Math.hypot(x-pass.ax-dx*t,y-pass.ay-dy*t),normalized=dist/(pass.width/2);if(normalized<1){const rz=cutterReliefDepth(pass.shape,normalized,pass.depth,pass.width,pass.formHeight)-(pass.depth-pass.zAt(t));if(rz>=(pass.minCut||0))z=Math.max(z,rz);}continue;}const dist=real3DPathDistance(x,y,pass.index),normalized=dist/(pass.width/2);if(normalized<1)z=Math.max(z,cutterReliefDepth(pass.shape,normalized,pass.depth,pass.width,pass.formHeight));}for(const pocket of pocketRegions){try{if(pocket.path.isPointInFill(new DOMPoint(x,y)))z=Math.max(z,pocket.depth);}catch(e){}}heights[j*(nx+1)+i]=Math.min(thick,z);}}pocketSvg.remove();
+    const heights=new Float32Array((nx+1)*(ny+1)),slabC=new Float32Array((nx+1)*(ny+1)),slabF=new Float32Array((nx+1)*(ny+1));
+    for(let j=0;j<=ny;j++){const y=Y0+YH*j/ny;for(let i=0;i<=nx;i++){const x=X0+XW*i/nx;let z=0;for(const pass of passes){if(pass.miter){const a=(pass.cx-x)*pass.sx,bb=(pass.cy-y)*pass.sy;if(a>=0&&bb>=0&&a<pass.W&&bb<pass.W){const rz=cutterReliefDepth(pass.shape,Math.max(a,bb)/(pass.width/2),pass.depth,pass.width,pass.formHeight);if(rz>=(pass.minCut||0))z=Math.max(z,rz);}continue;}if(pass.ramp){const dx=pass.bx-pass.ax,dy=pass.by-pass.ay,den=dx*dx+dy*dy,t=den?Math.max(0,Math.min(1,((x-pass.ax)*dx+(y-pass.ay)*dy)/den)):0,dist=Math.hypot(x-pass.ax-dx*t,y-pass.ay-dy*t),normalized=dist/(pass.width/2);if(normalized<1){const rz=cutterReliefDepth(pass.shape,normalized,pass.depth,pass.width,pass.formHeight)-(pass.depth-pass.zAt(t));if(rz>=(pass.minCut||0))z=Math.max(z,rz);}continue;}const dist=real3DPathDistance(x,y,pass.index),normalized=dist/(pass.width/2);if(normalized<1){const rz=cutterReliefDepth(pass.shape,normalized,pass.depth,pass.width,pass.formHeight);z=Math.max(z,rz);if(pass.uc===undefined){const ut=formTool(pass.shape);pass.uc=ut&&ut.undercut?ut:null;}if(pass.uc){const ce=pass.depth-formUpper(pass.uc,normalized)*pass.width/2;if(ce>.05&&rz>ce+.05){const sidx=j*(nx+1)+i;if(!(slabC[sidx]>0)||ce<slabC[sidx])slabC[sidx]=ce;if(rz>slabF[sidx])slabF[sidx]=rz;}}}}let pkz=0;for(const pocket of pocketRegions){try{if(pocket.path.isPointInFill(new DOMPoint(x,y))){z=Math.max(z,pocket.depth);pkz=Math.max(pkz,pocket.depth);}}catch(e){}}{const sidx=j*(nx+1)+i;if(slabC[sidx]>0&&pkz>=slabF[sidx]-.05)slabC[sidx]=0;}heights[j*(nx+1)+i]=Math.min(thick,z);}}pocketSvg.remove();
     const maxDim=Math.max(w,h),zScale=1.35/maxDim,positions=[],normals=[],indices=[];
     const H=(i,j)=>heights[j*(nx+1)+i];
     for(let j=0;j<=ny;j++)for(let i=0;i<=nx;i++){
@@ -9645,6 +9702,30 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     // сквозные участки (выборка/окно на всю толщину) — пустота: ячейки, где все четыре угла прорезаны насквозь, не строим
     const thru=idx=>heights[idx]>=thick-.05,holeCell=new Uint8Array(nx*ny);
     for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const a=j*(nx+1)+i,b=a+1,c=a+nx+1,d=c+1;if(thru(a)&&thru(b)&&thru(c)&&thru(d)){holeCell[j*nx+i]=1;continue;}indices.push(a,c,b,b,c,d);}
+    // Подрез под губой (ручка): сверху лежит «плита» губы толщиной до потолка полости; снизу — потолок, по краям — стенки
+    {
+      let any=false;for(let q=0;q<slabC.length;q++)if(slabC[q]>0){any=true;break;}
+      if(any){
+        const W1=nx+1,isS=(ci,cj)=>{if(ci<0||cj<0||ci>=nx||cj>=ny)return false;const a=cj*W1+ci;return slabC[a]>0||slabC[a+1]>0||slabC[a+W1]>0||slabC[a+W1+1]>0;};
+        const px=i=>(X0+XW*i/nx-w/2)/maxDim,py=j=>(h/2-(Y0+YH*j/ny))/maxDim;
+        const add=(i,j,zmm,a,b,c)=>{const k=positions.length/3;positions.push(px(i),py(j),-zmm*zScale);normals.push(a,b,c);return k;};
+        const cellC=(ci,cj)=>{const v=[slabC[cj*W1+ci],slabC[cj*W1+ci+1],slabC[(cj+1)*W1+ci],slabC[(cj+1)*W1+ci+1]],ok=v.filter(t=>t>0),m=ok.reduce((x,y)=>x+y,0)/ok.length;return v.map(t=>t>0?t:m);};
+        for(let cj=0;cj<ny;cj++)for(let ci=0;ci<nx;ci++){
+          if(!isS(ci,cj))continue;
+          const C=cellC(ci,cj),vi=[[ci,cj],[ci+1,cj],[ci,cj+1],[ci+1,cj+1]];
+          const t=vi.map(q=>add(q[0],q[1],0,0,0,1)),bt=vi.map((q,k)=>add(q[0],q[1],C[k],0,0,-1));
+          indices.push(t[0],t[2],t[1],t[1],t[2],t[3]);
+          indices.push(bt[0],bt[1],bt[2],bt[1],bt[3],bt[2]);
+          const wall=(a,b,nxn,nyn)=>{const k=positions.length/3;
+            positions.push(px(vi[a][0]),py(vi[a][1]),0,px(vi[b][0]),py(vi[b][1]),0,px(vi[a][0]),py(vi[a][1]),-C[a]*zScale,px(vi[b][0]),py(vi[b][1]),-C[b]*zScale);
+            for(let m=0;m<4;m++)normals.push(nxn,nyn,0);indices.push(k,k+1,k+2,k+1,k+3,k+2);};
+          if(!isS(ci-1,cj))wall(0,2,-1,0);
+          if(!isS(ci+1,cj))wall(1,3,1,0);
+          if(!isS(ci,cj-1))wall(0,1,0,1);
+          if(!isS(ci,cj+1))wall(2,3,0,-1);
+        }
+      }
+    }
     if(win)return{positions:new Float32Array(positions),normals:new Float32Array(normals),indices:new Uint32Array(indices),w,h,thick,nx,ny,passes:passes.length,patch:true};
     const topCount=positions.length/3,baseZ=-thick*zScale;
     // Perimeter walls close the solid stock mesh and expose its real thickness while orbiting.
@@ -9761,7 +9842,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     const drawM=m=>{function attr(name,data,size){const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,data,gl.STATIC_DRAW);gl.enableVertexAttribArray(name);gl.vertexAttribPointer(name,size,gl.FLOAT,false,0,0);return b;}if(!m.buffers){m.buffers=[attr(attrs.p,m.positions,3),attr(attrs.n,m.normals,3)];m.index=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,m.index);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,m.indices,gl.STATIC_DRAW);}else{gl.bindBuffer(gl.ARRAY_BUFFER,m.buffers[0]);gl.vertexAttribPointer(attrs.p,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,m.buffers[1]);gl.vertexAttribPointer(attrs.n,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,m.index);}gl.drawElements(gl.TRIANGLES,m.indices.length,gl.UNSIGNED_INT,0);};
     drawM(real3DModel);if(real3DPatch){gl.clear(gl.DEPTH_BUFFER_BIT);drawM(real3DPatch);}
   }
-  function openReal3D(){const overlay=$('real3DOverlay');overlay.classList.remove('hidden');$('real3DStatus').textContent='Расчёт поверхности и профилей фрез…';try{real3DModel=real3DBuild();if(!real3DGL)real3DInitGL();real3DYaw=-.58;real3DPitch=.56;real3DZoom=1.08;real3DPanX=0;real3DPanY=0;real3DPatch=null;real3DDraw();$('real3DInfo').textContent=`${real3DModel.w} × ${real3DModel.h} × ${real3DModel.thick} мм · ${real3DModel.prism?'сквозной вырез по контуру':`${real3DModel.passes} траекторий · сетка ${real3DModel.nx} × ${real3DModel.ny}`}${real3DModel.islands&&real3DModel.islands.length?` · ⚠ неснятых перемычек: ${real3DModel.islands.length} (около ${real3DModel.islands[0].x.toFixed(0)}, ${real3DModel.islands[0].y.toFixed(0)} мм)`:''}`;$('real3DStatus').textContent=real3DModel.prism?'Цулага вырезана насквозь по контуру: углы торцов и радиусы как на чертеже. Тяните — вращение.':(document.body.classList.contains('mono3d')?'Свет и тень: глубина видна по затемнению, цвет не используется.':'Цветовая карта глубины: голубой — мелко, жёлтый — средне, красный — глубоко.');if(real3DModel.islands&&real3DModel.islands.length)$('real3DStatus').textContent+=' Неснятая перемычка — не ошибка просмотра: два прохода круглой фрезой не добирают угол между собой и на станке она тоже останется. Уберёт «Выборка» между этими векторами или больший перекрывающий припуск.';}catch(e){$('real3DStatus').textContent='Ошибка построения: '+e.message;console.error(e);}}
+  function openReal3D(){const overlay=$('real3DOverlay');overlay.classList.remove('hidden');try{$('real3DHandleBtn').classList.toggle('hidden',!(state.handle&&state.contours.some(c=>c.handle)));}catch(error){}$('real3DStatus').textContent='Расчёт поверхности и профилей фрез…';try{real3DModel=real3DBuild();if(!real3DGL)real3DInitGL();real3DYaw=-.58;real3DPitch=.56;real3DZoom=1.08;real3DPanX=0;real3DPanY=0;real3DPatch=null;real3DDraw();$('real3DInfo').textContent=`${real3DModel.w} × ${real3DModel.h} × ${real3DModel.thick} мм · ${real3DModel.prism?'сквозной вырез по контуру':`${real3DModel.passes} траекторий · сетка ${real3DModel.nx} × ${real3DModel.ny}`}${real3DModel.islands&&real3DModel.islands.length?` · ⚠ неснятых перемычек: ${real3DModel.islands.length} (около ${real3DModel.islands[0].x.toFixed(0)}, ${real3DModel.islands[0].y.toFixed(0)} мм)`:''}`;$('real3DStatus').textContent=real3DModel.prism?'Цулага вырезана насквозь по контуру: углы торцов и радиусы как на чертеже. Тяните — вращение.':(document.body.classList.contains('mono3d')?'Свет и тень: глубина видна по затемнению, цвет не используется.':'Цветовая карта глубины: голубой — мелко, жёлтый — средне, красный — глубоко.');if(real3DModel.islands&&real3DModel.islands.length)$('real3DStatus').textContent+=' Неснятая перемычка — не ошибка просмотра: два прохода круглой фрезой не добирают угол между собой и на станке она тоже останется. Уберёт «Выборка» между этими векторами или больший перекрывающий припуск.';}catch(e){$('real3DStatus').textContent='Ошибка построения: '+e.message;console.error(e);}}
   $('real3DHelp').addEventListener('click',()=>{const f=document.querySelector('.real3d-foot'),open=!f.classList.contains('help-open');f.classList.toggle('help-open',open);$('real3DHelp').setAttribute('aria-expanded',String(open));});
   $('real3DReset').addEventListener('click',()=>{real3DYaw=-.58;real3DPitch=.56;real3DZoom=1.08;real3DPanX=0;real3DPanY=0;real3DPatch=null;real3DDraw();});
   // Управление 3D: тянуть — вращение; правая кнопка / Shift / кнопка «✥» / два пальца — двигать деталь; колесо и щипок — масштаб к курсору.
