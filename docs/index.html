@@ -876,7 +876,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
 <div id="helpOverlay" class="modal-overlay hidden"><section class="modal-card guide-dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="gd-head"><h2 id="helpTitle">Инструкция <span class="sub">ФасадЛаб 1.3</span></h2><button class="modal-close" id="closeHelp" type="button" aria-label="Закрыть">×</button></div><div class="gd-tabs" id="hpTabs" role="tablist"></div><select class="gd-tabsel" id="hpSel" aria-label="Раздел"></select><div class="gd-body" id="hpBody"></div></section></div>
 <div id="guideOverlay" class="modal-overlay hidden"><section class="modal-card guide-dialog" role="dialog" aria-modal="true" aria-labelledby="guideTitle"><div class="gd-head"><h2 id="guideTitle">Справочник фрез <span class="sub">виды · выбор · измерение · износ</span></h2><button class="modal-close" id="closeGuide" type="button" aria-label="Закрыть">×</button></div><div class="gd-tabs" id="gdTabs" role="tablist"></div><select class="gd-tabsel" id="gdSel" aria-label="Раздел"></select><div class="gd-body" id="gdBody"></div></section></div>
 <div id="panelDlg" class="modal-overlay hidden"><section class="modal-card" style="max-height:92%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y" role="dialog" aria-modal="true" aria-labelledby="panelDlgTitle"><button class="modal-close" id="panelDlgClose" type="button" aria-label="Закрыть">×</button><h2 id="panelDlgTitle" style="margin:0 0 8px;padding-right:40px"></h2><div id="panelDlgBody"></div></section></div>
-<div id="handleOverlay" class="modal-overlay hidden"><section class="modal-card" style="max-height:92%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y" role="dialog" aria-modal="true" aria-labelledby="handleTitle"><button class="modal-close" id="closeHandle" type="button" aria-label="Закрыть">×</button><h2 id="handleTitle" style="margin:0 0 8px;padding-right:40px">Встроенная ручка <span class="sub" style="font-size:11px;font-weight:400">сборка 172</span></h2>
+<div id="handleOverlay" class="modal-overlay hidden"><section class="modal-card" style="max-height:92%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y" role="dialog" aria-modal="true" aria-labelledby="handleTitle"><button class="modal-close" id="closeHandle" type="button" aria-label="Закрыть">×</button><h2 id="handleTitle" style="margin:0 0 8px;padding-right:40px">Встроенная ручка <span class="sub" style="font-size:11px;font-weight:400">сборка 178</span></h2>
 <div class="vector-settings">
 <div class="notice vector-note">Кромка, длина и выборка — остальное считается само. Ниже видно сечение и проход фрезы.</div><div class="field"><label for="hType">Тип ручки</label><select id="hType"><option value="">— свои настройки —</option><option value="hook">Выемка с подрезом (крючок) — П-образная</option><option value="j">J-профиль: узкая щель + подрез, на всю кромку</option><option value="l">L-образная выемка на всю ширину (без подреза)</option><option value="finger">Выемка под пальцы прямоугольная (без подреза)</option><option value="oval">Овальная выемка под пальцы (без подреза)</option></select></div><div class="notice" id="hTypeNote" style="display:none"></div><h3 style="margin:12px 0 4px;font-size:13px">1. Где ручка</h3><div class="fields"><div class="field"><label for="hEdge">Кромка</label><select id="hEdge"><option value="top">Верхняя</option><option value="bottom">Нижняя</option><option value="left">Левая</option><option value="right">Правая</option></select></div><div class="field"><label for="hLen">Длина, мм (0 — вся кромка)</label><input id="hLen" type="text" inputmode="decimal" autocomplete="off" value="100"></div></div><div class="field"><label for="hPos">Середина от угла, мм (0 — по центру)</label><input id="hPos" type="text" inputmode="decimal" autocomplete="off" value="0"></div><div class="field"><label for="hEnds">Подрез (режим)</label><select id="hEnds"><option value="shape">По форме выборки: слева, снизу и справа равномерно (П-образно)</option><option value="flush">Только до краёв выборки (без захода под торцы)</option><option value="line">По прямой на всю кромку: заход с торца, выход с торца</option><option value="custom">Свой отступ (поле в «Тонкой настройке»)</option></select></div><h3 style="margin:12px 0 4px;font-size:13px">2. Выборка</h3><div class="fields"><div class="field"><label for="hGrip">Ширина от края, мм</label><input id="hGrip" type="text" inputmode="decimal" autocomplete="off" value="30"></div><div class="field"><label for="hDepth">Глубина кармана, мм</label><input id="hDepth" type="text" inputmode="decimal" autocomplete="off" value="18"></div></div><h3 style="margin:12px 0 4px;font-size:13px">3. Заход фрезы (форма вектора)</h3><div class="field"><label for="hShape">Форма</label><select id="hShape"><option value="trap">Скоба: заход наискосок к углу ручки</option><option value="loop">Петля: вправо → вниз → влево → вверх → вправо</option><option value="pi">Скоба: ножки прямо</option></select></div><div class="field"><label for="hInset">Подход и откат, мм (дальше от стенок — безопаснее; макс. — до середины ручки)</label><input id="hInset" type="text" inputmode="decimal" autocomplete="off" value="30"></div><details style="margin:12px 0 6px"><summary style="cursor:pointer;font-weight:600;font-size:13px;padding:6px 0">Фреза ручки и тонкая настройка</summary><div class="field"><label for="hHook">Подрез фрезой ручки</label><select id="hHook"><option value="yes">Да (профильная фреза)</option><option value="no">Нет — только выборка</option></select></div><div class="fields"><div class="field"><label for="hVariant">Накладка</label><select id="hVariant"><option value="plain">Без накладки</option><option value="overlay">Накладка сзади</option></select></div><div class="field"><label for="hFit">Как мерить длину</label><select id="hFit"><option value="outer">по краям реза</option><option value="path">по центрам захода</option></select></div></div><div class="field"><label for="hGap">Свой отступ подреза от концов выборки, мм</label><input id="hGap" type="text" inputmode="decimal" autocomplete="off" value="10"></div><div class="fields"><div class="field"><label for="hDia">Прямая фреза выборки Ø, мм</label><input id="hDia" type="text" inputmode="decimal" autocomplete="off" value="12"></div><div class="field"><label for="hRad">Скругление углов кармана, мм (0 — прямо)</label><input id="hRad" type="text" inputmode="decimal" autocomplete="off" value="6"></div></div><div class="field hidden"><label for="hStep">Шаг</label><input id="hStep" type="text" value="40"></div><div class="field"><label for="hEdgeCutter">Фреза</label><select id="hEdgeCutter"><option value="round">Радиусная фреза</option></select></div><div class="fields"><div class="field"><label for="hEdgeDia">Ø фрезы, мм</label><input id="hEdgeDia" type="text" inputmode="decimal" autocomplete="off" value="38.1"></div><div class="field"><label for="hEdgeDepth">Глубина прохода этой фрезой, мм (не больше 22)</label><input id="hEdgeDepth" type="text" inputmode="decimal" autocomplete="off" value="18"></div></div><h3 style="margin:12px 0 4px;font-size:13px">Форма фрезы ручки (по размерам)</h3><div class="fields"><div class="field"><label for="cpD">Ø шарика, мм</label><input id="cpD" type="text" inputmode="decimal" autocomplete="off" value="38.1"></div><div class="field"><label for="cpH">Высота режущей части, мм</label><input id="cpH" type="text" inputmode="decimal" autocomplete="off" value="22"></div></div><div class="fields"><div class="field"><label for="cpRb">Радиус дна, мм</label><input id="cpRb" type="text" inputmode="decimal" autocomplete="off" value="6"></div><div class="field"><label for="cpFull">Высота полного Ø от кончика, мм</label><input id="cpFull" type="text" inputmode="decimal" autocomplete="off" value="7"></div></div><div class="fields"><div class="field"><label for="cpNeck">Ø талии (шейки), мм</label><input id="cpNeck" type="text" inputmode="decimal" autocomplete="off" value="15"></div><div class="field"><label for="cpNeckH">Высота, где плечо переходит в талию, мм</label><input id="cpNeckH" type="text" inputmode="decimal" autocomplete="off" value="15.3"></div></div><div class="field"><label for="hReach">Глубина подреза под губой, мм</label><input id="hReach" type="text" inputmode="decimal" autocomplete="off" value="11.5"></div><div class="notice" id="cpMsg" style="display:none"></div><div class="cutter-card-actions"><button type="button" id="cpDraw">✎ Нарисовать форму</button></div><div class="fields"><div class="field"><label for="hCenter">Ось фрезы от края, мм</label><input id="hCenter" type="text" inputmode="decimal" autocomplete="off" value="22.5"></div><div class="field"><label for="hLead">Точка захода и выхода: расстояние от края, мм (центр фрезы)</label><input id="hLead" type="text" inputmode="decimal" autocomplete="off" value="10.5"></div></div><div class="field" style="align-self:end"><button type="button" id="hRecalc">Сбросить ось и заход на авто</button></div></details><div class="notice" id="handlePreview"></div>
 <div id="hOverlayBox" class="hidden">
@@ -893,22 +893,28 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
 <h3 style="margin:10px 0 4px;font-size:13px">Сечение ручки (симуляция фрезы)</h3><svg id="hSection" viewBox="0 0 100 60" style="width:100%;height:auto;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px"></svg><div id="hSectionNote" style="font-size:11px;color:#58574f;margin:4px 0 0"></div><h3 style="margin:10px 0 4px;font-size:13px">Симуляция прохода фрезы (вид сверху)</h3><svg id="hPlan" viewBox="0 0 100 60" style="width:100%;height:auto;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px"></svg><input id="hSim" type="range" min="0" max="1000" value="0" style="width:100%;margin-top:6px" aria-label="Положение фрезы на траектории"><div id="hSimNote" style="font-size:11px;color:#58574f;margin:2px 0 0"></div><div class="sd-tools" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button type="button" id="hAdd" class="primary">Применить ручку</button><button type="button" id="hRemove">Убрать ручку</button><button type="button" id="hCancel">Закрыть</button></div>
 <div class="notice" id="handleInfo" style="margin-top:8px"></div><style>#handleInfo:empty{display:none}</style>
 </div></section></div>
-<div id="dcOverlay" class="modal-overlay hidden" style="z-index:100000"><section class="modal-card" style="max-height:94%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y" role="dialog" aria-modal="true" aria-labelledby="dcTitle"><button class="modal-close" id="dcClose" type="button" aria-label="Закрыть">×</button><h2 id="dcTitle" style="margin:0 0 8px;padding-right:40px">Редактор фрезы</h2>
-<div class="fields"><div class="field"><label for="dcName">Название</label><input id="dcName" maxlength="40" value="Моя фреза"></div><div class="field"><label for="dcTpl">Шаблон</label><select id="dcTpl"><option value="">— выбрать —</option><option value="handle">Ручка 30.0277.01</option><option value="bulb">Шарик на шейке</option><option value="cyl">Цилиндр с радиусом дна</option><option value="v90">V-фреза 90°</option><option value="v60">V-фреза 60°</option><option value="flatc">Прямая (плоское дно)</option><option value="ball">Шаровая</option><option value="round">Скругление кромки</option></select></div></div>
-<div class="fields"><div class="field"><label for="dcD">Ø фрезы, мм</label><input id="dcD" type="text" inputmode="decimal" autocomplete="off" value="38.1"></div><div class="field"><label for="dcH">Высота режущей части, мм</label><input id="dcH" type="text" inputmode="decimal" autocomplete="off" value="22"></div></div>
-<div class="cutter-card-actions" style="margin:0 0 6px"><button type="button" id="dcPhotoBtn">📷 Взять форму с фото</button><input type="file" id="dcPhotoFile" accept="image/*" class="hidden"><label style="font-size:12px;display:inline-flex;align-items:center;gap:4px;margin:0;width:auto"><input type="checkbox" id="dcBgOn" checked style="width:14px;height:14px;min-height:0;padding:0;margin:0;flex:none"> фото под сеткой</label></div>
-<div id="dcPhotoBox" class="hidden" style="border:1px solid #cfc7b5;border-radius:8px;padding:8px;margin:0 0 8px;background:#fbf8f1">
-<div style="font-size:12px;color:#58574f;margin-bottom:6px">1) Загрузите картинку разреза фрезы. 2) Впишите выше Ø (самое широкое) и высоту закрашенной части. 3) Коснитесь закрашенной части разреза — профиль обведётся сам. Дальше его можно править точками.</div>
-<canvas id="dcPhotoCv" style="width:100%;max-height:34vh;object-fit:contain;touch-action:manipulation;border:1px solid #ddd;background:#fff;cursor:crosshair"></canvas>
-<div class="fields" style="margin-top:6px"><div class="field"><label for="dcPhotoMode">Что на картинке</label><select id="dcPhotoMode"><option value="A">Авто: полуразрез, ось ищу сам</option><option value="L">Половина разреза, ось слева</option><option value="R">Половина разреза, ось справа</option><option value="C">Разрез целиком (обе половины)</option><option value="T">Фото: ось отмечу сам</option></select></div><div class="field"><label for="dcPhotoTol">Допуск цвета</label><input id="dcPhotoTol" type="range" min="10" max="140" value="30"></div></div>
-<div class="cutter-card-actions" style="margin-top:6px"><button type="button" id="dcPhotoAxisBtn" class="hidden">Отметить ось (следующее касание)</button></div><div id="dcPhotoMsg" style="font-size:12px;color:#58574f;margin-top:4px"></div></div>
-<div class="cutter-card-actions" style="margin:6px 0"><button type="button" id="dcModeDraw" class="primary">✎ Точки</button><button type="button" id="dcModeEdit">✋ Двигать</button><button type="button" id="dcUndo">↶ Отменить</button><button type="button" id="dcClear">Очистить</button><button type="button" id="dcAddPt">＋ Точка</button></div>
-<svg id="dcSvg" viewBox="0 0 100 60" style="width:100%;height:auto;max-height:50vh;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px;touch-action:none"></svg>
+<div id="dcOverlay" class="modal-overlay hidden" style="z-index:100000"><section class="modal-card" style="max-height:94%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding-bottom:0" role="dialog" aria-modal="true" aria-labelledby="dcTitle"><button class="modal-close" id="dcClose" type="button" aria-label="Закрыть">×</button><h2 id="dcTitle" style="margin:0 0 8px;padding-right:40px">Редактор фрезы</h2>
+<div class="fields" style="gap:6px 8px"><div class="field"><label for="dcName">Название</label><input id="dcName" maxlength="40" value="Моя фреза"></div><div class="field"><label for="dcTpl">Шаблон</label><select id="dcTpl"><option value="">— выбрать —</option><option value="handle">Ручка 30.0277.01</option><option value="bulb">Шарик на шейке</option><option value="cyl">Цилиндр с радиусом дна</option><option value="v90">V-фреза 90°</option><option value="v60">V-фреза 60°</option><option value="flatc">Прямая (плоское дно)</option><option value="ball">Шаровая</option><option value="round">Скругление кромки</option></select></div>
+<div class="field"><label for="dcD">Ø головки, мм</label><input id="dcD" type="text" inputmode="decimal" autocomplete="off" value="38.1"></div><div class="field"><label for="dcH">I — высота головки, мм</label><input id="dcH" type="text" inputmode="decimal" autocomplete="off" value="22"></div></div>
+<div class="cutter-card-actions" style="margin:8px 0 6px"><button type="button" id="dcPhotoBtn">📷 Форма по фото / DXF</button><input type="file" id="dcPhotoFile" accept="image/*,.dxf,.DXF,.dwg,.DWG" class="hidden"></div>
+<div id="dcPhotoBox" class="hidden" style="border:1px solid #cfc7b5;border-radius:10px;padding:8px;margin:0 0 8px;background:#fbf8f1">
+<canvas id="dcPhotoCv" style="width:100%;max-height:30vh;object-fit:contain;touch-action:manipulation;border:1px solid #ddd;border-radius:6px;background:#fff"></canvas>
+<div class="dc-sl"><span>Верх</span><input id="dcSlTop" type="range" min="0" max="1000" value="100"><b id="dcSlTopV"></b></div>
+<div class="dc-sl"><span>Низ</span><input id="dcSlBot" type="range" min="0" max="1000" value="900"><b id="dcSlBotV"></b></div>
+<div class="dc-sl"><span>Край</span><input id="dcSlEdge" type="range" min="0" max="1000" value="900"><b></b></div>
+<div class="dc-sl"><span>Середина</span><input id="dcSlAx" type="range" min="0" max="1000" value="500"><b id="dcSlAxV"></b></div>
+<div class="cutter-card-actions" style="margin:6px 0 4px"><button type="button" id="dcPhotoGo" class="primary">🔍 Определить</button><button type="button" id="dcMkClr">↺ Авто</button></div>
+<div id="dcPhotoMsg" style="font-size:12px;color:#58574f"></div>
+<details style="margin-top:4px"><summary style="font-size:12px;cursor:pointer;color:#58574f">Дополнительно</summary><div class="fields" style="margin-top:6px"><div class="field"><label for="dcPhotoMode">Что на картинке</label><select id="dcPhotoMode"><option value="S">Авто: силуэт фрезы</option><option value="A">Полуразрез, ось ищу сам</option><option value="L">Половина разреза, ось слева</option><option value="R">Половина разреза, ось справа</option><option value="C">Разрез целиком</option><option value="T">Разрез, ось отмечу сам</option></select></div><div class="field"><label for="dcPhotoTol">Допуск цвета (для разреза)</label><input id="dcPhotoTol" type="range" min="10" max="140" value="30"></div></div>
+<label style="font-size:12px;display:flex;align-items:center;gap:6px;margin:4px 0 0"><input type="checkbox" id="dcBgOn" checked style="width:14px;height:14px;min-height:0;padding:0;margin:0;flex:none"> показывать фото под сеткой</label></details></div>
+<div class="cutter-card-actions dc-tools" style="margin:6px 0"><button type="button" id="dcModeDraw" class="primary" title="Ставить точки">✎ Точки</button><button type="button" id="dcModeEdit" title="Двигать точки">✋ Двигать</button><button type="button" id="dcUndo" title="Отменить">↶</button><button type="button" id="dcAddPt" title="Добавить точку">＋</button><button type="button" id="dcClear" title="Очистить">🗑</button></div>
+<svg id="dcSvg" viewBox="0 0 100 60" style="width:100%;height:auto;max-height:46vh;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px;touch-action:none"></svg>
 <div id="dcNote" style="font-size:12px;color:#58574f;margin:6px 0"></div>
-<div id="dcSelBox" class="hidden"><div class="fields"><div class="field"><label for="dcX">X (от оси), мм</label><input id="dcX" type="text" inputmode="decimal" autocomplete="off"></div><div class="field"><label for="dcY">Y (от кончика), мм</label><input id="dcY" type="text" inputmode="decimal" autocomplete="off"></div></div><div class="fields"><div class="field"><label for="dcR">Радиус скругления в этой точке, мм (0 — угол)</label><input id="dcR" type="text" inputmode="decimal" autocomplete="off"></div><div class="field" style="align-self:end"><button type="button" id="dcDel">Удалить точку</button></div></div></div>
-<div class="fields"><div class="field"><label for="dcSnap">Шаг привязки</label><select id="dcSnap"><option value="0.5">0,5 мм</option><option value="1">1 мм</option><option value="0.1">0,1 мм</option><option value="0">свободно</option></select></div><div class="field"><label for="dcAllR">Скруглить все углы, R мм</label><div style="display:flex;gap:6px"><input id="dcAllR" type="text" inputmode="decimal" autocomplete="off" value="2"><button type="button" id="dcAllBtn">ОК</button></div></div></div>
-<h3 style="margin:8px 0 4px;font-size:13px">Вид фрезы целиком</h3><svg id="dcPrev" viewBox="0 0 100 60" style="width:100%;height:auto;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px"></svg>
-<div class="cutter-card-actions" style="margin-top:10px"><button type="button" id="dcSave" class="primary">Сохранить в каталог фрез</button><button type="button" id="dcCancel">Закрыть</button></div></section></div>
+<div id="dcSelBox" class="hidden" style="border:1px solid #cfc7b5;border-radius:8px;padding:6px;margin-bottom:6px"><div class="fields" style="grid-template-columns:1fr 1fr 1fr auto;gap:6px"><div class="field"><label for="dcX">X, мм</label><input id="dcX" type="text" inputmode="decimal" autocomplete="off"></div><div class="field"><label for="dcY">Y, мм</label><input id="dcY" type="text" inputmode="decimal" autocomplete="off"></div><div class="field"><label for="dcR">Радиус</label><input id="dcR" type="text" inputmode="decimal" autocomplete="off"></div><div class="field" style="align-self:end"><button type="button" id="dcDel" title="Удалить точку">🗑</button></div></div></div>
+<div class="fields" style="gap:6px 8px"><div class="field"><label for="dcSnap">Шаг привязки</label><select id="dcSnap"><option value="0.1" selected>0,1 мм</option><option value="0.05">0,05 мм</option><option value="0.5">0,5 мм</option><option value="1">1 мм</option><option value="0">свободно</option></select></div><div class="field"><label for="dcAllR">Скруглить все углы, R</label><div style="display:flex;gap:6px"><input id="dcAllR" type="text" inputmode="decimal" autocomplete="off" value="2"><button type="button" id="dcAllBtn">ОК</button></div></div></div>
+<details style="margin-top:8px"><summary style="font-size:13px;cursor:pointer;font-weight:600">Вид фрезы целиком</summary><svg id="dcPrev" viewBox="0 0 100 60" style="width:100%;height:auto;max-height:200px;margin-top:6px;background:#fbf8f1;border:1px solid #cfc7b5;border-radius:8px"></svg></details>
+<div class="cutter-card-actions" style="position:sticky;bottom:0;background:var(--panel,#f0ebe1);margin:10px -2px 0;padding:8px 2px;border-top:1px solid #cfc7b5;z-index:2"><button type="button" id="dcSave" class="primary">Сохранить в каталог</button><button type="button" id="dcCancel">Закрыть</button></div></section></div>
+<style>.dc-sl{display:grid;grid-template-columns:64px 1fr;gap:6px;align-items:center;margin-top:6px;font-size:12px}.dc-sl input{width:100%;height:26px}.dc-sl b{display:none}.dc-tools button{min-width:44px}</style>
 <div id="frameOverlay" class="modal-overlay hidden"><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="frameTitle"><button class="modal-close" id="closeFrame" type="button" aria-label="Закрыть">×</button><h2 id="frameTitle" style="margin:0 0 8px;padding-right:40px">Фасад из профиля</h2>
 <p class="sub">Профиль распиливается на 4 планки, фасад собирается рамкой вокруг филёнки. Профиль на фасаде получается по внешнему краю.</p>
 <div class="sd-row"><label>Ширина фасада, мм<input id="frW" type="number" min="80" max="3000" value="596"></label><label>Высота фасада, мм<input id="frH" type="number" min="80" max="3000" value="716"></label></div>
@@ -7169,7 +7175,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
   const dcNum=id=>Number(String($(id).value).replace(',','.'));
   const dcR2=v=>Math.round(v*1000)/1000;
   function dcDims(){const D=dcNum('dcD'),H=dcNum('dcH');return{D:D>=4&&D<=200?D:38.1,H:H>=2&&H<=100?H:22};}
-  function dcSnapV(v){const st=Number($('dcSnap').value);return st>0?Math.round(v/st)*st:dcR2(v);}
+  function dcSnapV(v){const st=Number($('dcSnap').value);return dcR2(st>0?Math.round(v/st)*st:v);}
   function dcPush(){DC.hist.push(JSON.stringify(DC.pts));if(DC.hist.length>60)DC.hist.shift();}
   // профиль со скруглёнными углами: [[x,y]...] в мм
   function dcPath(){return dcPathOf(DC.pts,dcDims().H);}
@@ -7259,8 +7265,26 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
   }
 
   // ===== Профиль с фото разреза: закрашенная часть → контур → точки =====
+  async function dcCadLoad(file){
+    const msg=$('dcPhotoMsg');
+    try{
+      const buf=await file.arrayBuffer(),head=new TextDecoder('latin1').decode(buf.slice(0,6));
+      if(/^AC10/.test(head)||/\.dwg$/i.test(file.name)){msg.textContent='DWG — закрытый двоичный формат, прочитать его прямо в браузере нельзя. Сохраните чертёж фрезы как DXF (в КОМПАС, AutoCAD, nanoCAD: «Сохранить как…» → DXF, ASCII) и загрузите его.';return;}
+      const text=await readDxfFile(file);
+      let imp=parseAsciiDxf(text,{excludeLayers:new Set()});
+      const ex=new Set(imp.layers.filter(l=>/dim|размер|text|текст|центр|center|осев|axis|hidden|скрыт|defpoints|hatch|штрих|рамк|frame/i.test(l.name)).map(l=>l.name));
+      if(ex.size){try{imp=parseAsciiDxf(text,{excludeLayers:ex});}catch(e){}}
+      const w=imp.viewBox.width,h=imp.viewBox.height,k=Math.min(1000/Math.max(w,h),60),m=24;
+      const W=Math.round(w*k+2*m),Hh=Math.round(h*k+2*m),cv=$('dcPhotoCv');cv.width=W;cv.height=Hh;
+      const cx=cv.getContext('2d');cx.fillStyle='#fff';cx.fillRect(0,0,W,Hh);cx.setTransform(k,0,0,k,m,m);cx.strokeStyle='#000';cx.lineWidth=2/k;cx.lineJoin='round';cx.stroke(new Path2D(imp.d));cx.setTransform(1,0,0,1,0,0);
+      DC.photo={W,H:Hh,data:cx.getImageData(0,0,W,Hh).data,seed:null,axis:null,arm:false,img:cx.getImageData(0,0,W,Hh),pxmm:k};
+      $('dcPhotoMode').value='S';msg.textContent=`DXF прочитан: ${w.toFixed(1)} × ${h.toFixed(1)} мм. Ищу профиль…`;
+      setTimeout(dcPhotoSil,20);
+    }catch(e){msg.textContent='Не удалось прочитать DXF: '+(e&&e.message||e);}
+  }
   function dcPhotoLoad(file){
     if(!file)return;
+    if(/\.(dxf|dwg)$/i.test(file.name)){dcCadLoad(file);return;}
     const url=URL.createObjectURL(file),img=new Image();
     img.onload=()=>{
       const mx=Math.max(img.width,img.height),up=mx<700?Math.min(4,Math.ceil(700/mx)):(mx>1400?1400/mx:1),W=Math.round(img.width*up),Hh=Math.round(img.height*up);
@@ -7272,16 +7296,139 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     img.src=url;
   }
   function dcPhotoAutoSeed(){
-    const ph=DC.photo,{W,H:Hh,data}=ph,cnt=new Map();
-    for(let i=0;i<W*Hh;i++){const o=i*4,r=data[o],g=data[o+1],b=data[o+2],mx=Math.max(r,g,b),mn=Math.min(r,g,b);
-      if(mx-mn>=36&&mx<205&&mn>40){const k=(r>>4)*256+(g>>4)*16+(b>>4);const e=cnt.get(k);if(e)e.n++,e.s.push(i);else cnt.set(k,{n:1,s:[i]});}}
-    let best=null;cnt.forEach(v=>{if(!best||v.n>best.n)best=v;});
-    if(!best||best.n<W*Hh*0.01){$('dcPhotoMsg').textContent='Закрашенный разрез не нашёлся сам — коснитесь его заливки на картинке.';return;}
+    if($('dcPhotoMode').value==='S'){dcPhotoSil();return;}
+    const ph=DC.photo,{W,H:Hh,data}=ph;let best=null;
+    for(const [minCh,maxV] of [[36,205],[22,225],[10,215]]){
+      const cnt=new Map();
+      for(let i=0;i<W*Hh;i++){const o=i*4,r=data[o],g=data[o+1],b=data[o+2],mx=Math.max(r,g,b),mn=Math.min(r,g,b);
+        if(mx-mn>=minCh&&mx<maxV&&mn>30){const k=(r>>4)*256+(g>>4)*16+(b>>4);const e=cnt.get(k);if(e)e.n++,e.s.push(i);else cnt.set(k,{n:1,s:[i]});}}
+      best=null;cnt.forEach(v=>{if(!best||v.n>best.n)best=v;});
+      if(best&&best.n>=W*Hh*0.01)break;best=null;
+    }
+    if(!best){$('dcPhotoMsg').textContent='Закрашенный разрез не нашёлся сам — коснитесь его заливки на картинке.';return;}
     const xs=best.s.map(i=>i%W).sort((a,b)=>a-b),ys=best.s.map(i=>Math.floor(i/W)).sort((a,b)=>a-b),mx=xs[xs.length>>1],my=ys[ys.length>>1];
     let bi=best.s[0],bd=1e18;for(const i of best.s){const d=(i%W-mx)**2+(Math.floor(i/W)-my)**2;if(d<bd){bd=d;bi=i;}}
     ph.seed=[bi%W,Math.floor(bi/W)];dcPhotoTrace();
   }
-  function dcPhotoAxisDraw(){const ph=DC.photo,cv=$('dcPhotoCv'),cx=cv.getContext('2d');cx.putImageData(ph.img,0,0);if(ph.axis!=null){cx.strokeStyle='#c0392b';cx.lineWidth=Math.max(1,cv.width/300);cx.setLineDash([6,4]);cx.beginPath();cx.moveTo(ph.axis+.5,0);cx.lineTo(ph.axis+.5,cv.height);cx.stroke();}}
+  function dcPhotoDetect(){
+    if(!DC.photo){$('dcPhotoMsg').textContent='Сначала выберите картинку фрезы (кнопка «Взять форму с фото»).';$('dcPhotoFile').click();return;}
+    DC.photo.seed=null;$('dcPhotoMsg').textContent='Определяю форму…';
+    setTimeout(()=>{dcPhotoAutoSeed();},20);
+  }
+
+  // Силуэт фрезы: фон → заливка контура → отсев тонких линий/текста → хвостовик → головка → профиль (цвет не важен)
+  function dcMorph(src,W,Hh,rad,dil){
+    const t=new Uint8Array(W*Hh),o=new Uint8Array(W*Hh),full=2*rad+1;
+    for(let y=0;y<Hh;y++){let c=0;for(let x=-rad;x<W+rad;x++){const xa=x+rad,xr=x-rad-1;if(xa<W&&xa>=0)c+=src[y*W+xa];if(xr>=0&&xr<W)c-=src[y*W+xr];if(x>=0&&x<W)t[y*W+x]=dil?(c>0?1:0):(c===full?1:0);}}
+    for(let x=0;x<W;x++){let c=0;for(let y=-rad;y<Hh+rad;y++){const ya=y+rad,yr=y-rad-1;if(ya<Hh&&ya>=0)c+=t[ya*W+x];if(yr>=0&&yr<Hh)c-=t[yr*W+x];if(y>=0&&y<Hh)o[y*W+x]=dil?(c>0?1:0):(c===full?1:0);}}
+    return o;
+  }
+  function dcPhotoSil(){
+    const ph=DC.photo,msg=$('dcPhotoMsg');if(!ph)return;
+    const {W,H:Hh,data}=ph,D=dcDims().D,R=D/2,N=W*Hh;
+    const med=a=>{a.sort((x,y)=>x-y);return a[a.length>>1];},br=[[],[],[]];
+    const bp=(x,y)=>{const o=(y*W+x)*4;br[0].push(data[o]);br[1].push(data[o+1]);br[2].push(data[o+2]);};
+    for(let x=0;x<W;x++){bp(x,0);bp(x,Hh-1);}for(let y=0;y<Hh;y++){bp(0,y);bp(W-1,y);}
+    const bg=br.map(med),rc=Math.max(1,Math.round(Math.max(W,Hh)/350)),ro=Math.max(2,Math.round(Math.min(W,Hh)/80));
+    const lab4=(mask,minN)=>{const lab=new Int32Array(N),comps=[];let L=0;
+      for(let i0=0;i0<N;i0++){if(!mask[i0]||lab[i0])continue;L++;const s2=[i0],px=[i0];lab[i0]=L;
+        while(s2.length){const i=s2.pop(),x=i%W,y=(i-x)/W;
+          if(x>0&&mask[i-1]&&!lab[i-1]){lab[i-1]=L;s2.push(i-1);px.push(i-1);}if(x<W-1&&mask[i+1]&&!lab[i+1]){lab[i+1]=L;s2.push(i+1);px.push(i+1);}
+          if(y>0&&mask[i-W]&&!lab[i-W]){lab[i-W]=L;s2.push(i-W);px.push(i-W);}if(y<Hh-1&&mask[i+W]&&!lab[i+W]){lab[i+W]=L;s2.push(i+W);px.push(i+W);}}
+        comps.push(px);}
+      return comps;};
+    const holesOf=m=>{const reach=new Uint8Array(N),st=[];const push=i=>{if(!m[i]&&!reach[i]){reach[i]=1;st.push(i);}};
+      for(let x=0;x<W;x++){push(x);push((Hh-1)*W+x);}for(let y=0;y<Hh;y++){push(y*W);push(y*W+W-1);}
+      while(st.length){const i=st.pop(),x=i%W,y=(i-x)/W;if(x>0)push(i-1);if(x<W-1)push(i+1);if(y>0)push(i-W);if(y<Hh-1)push(i+W);}
+      const h=new Uint8Array(N);for(let i=0;i<N;i++)h[i]=(!m[i]&&!reach[i])?1:0;return h;};
+    // этап 1 — фото: отличие от фона; заливаем только тонкие «дыры» (блики), большие (рамки, чертёж детали) не трогаем
+    // этап 2 — чертёж-контур: только тёмные нейтральные линии, всё внутри контура заливается
+    const stage=k=>{
+      let m=new Uint8Array(N);
+      if(k===1){for(let i=0;i<N;i++){const o=i*4;m[i]=Math.max(Math.abs(data[o]-bg[0]),Math.abs(data[o+1]-bg[1]),Math.abs(data[o+2]-bg[2]))>=45?1:0;}
+        m=dcMorph(dcMorph(m,W,Hh,rc,true),W,Hh,rc,false);
+        const holes=holesOf(m),big=dcMorph(dcMorph(holes,W,Hh,ro,false),W,Hh,ro,true);
+        const keep=new Uint8Array(N);lab4(holes).forEach(px=>{let isBig=false;for(const i of px)if(big[i]){isBig=true;break;}if(!isBig)for(const i of px)keep[i]=1;});
+        for(let i=0;i<N;i++)if(keep[i])m[i]=1;}
+      else{for(let i=0;i<N;i++){const o=i*4,r=data[o],g=data[o+1],b=data[o+2],mx=Math.max(r,g,b),mn=Math.min(r,g,b);m[i]=(0.3*r+0.59*g+0.11*b<150&&mx-mn<45)?1:0;}
+        m=dcMorph(dcMorph(m,W,Hh,rc*2,true),W,Hh,rc*2,false);const holes=holesOf(m);for(let i=0;i<N;i++)if(holes[i])m[i]=1;}
+      const fg=m,op=dcMorph(dcMorph(fg,W,Hh,ro,false),W,Hh,ro,true);
+      let best=null;lab4(op).forEach(px=>{if(!best||px.length>best.length)best=px;});
+      if(!best||best.length<N*0.02)return null;
+      const core=new Uint8Array(N);for(const i of best)core[i]=1;
+      const dl=dcMorph(core,W,Hh,ro,true),sil=new Uint8Array(N);for(let i=0;i<N;i++)sil[i]=(dl[i]&&fg[i])?1:0;
+      const rowL=new Int32Array(Hh).fill(-1),rowR=new Int32Array(Hh).fill(-1);let y0=Hh,y1=-1;
+      for(let y=0;y<Hh;y++)for(let x=0;x<W;x++)if(sil[y*W+x]){if(rowL[y]<0)rowL[y]=x;rowR[y]=x;if(y<y0)y0=y;if(y>y1)y1=y;}
+      return{rowL,rowR,y0,y1};
+    };
+    const analyse=r=>{
+      if(!r)return null;const {rowL,rowR,y0}=r;let y1=r.y1;const h=y1-y0+1,wd=y=>rowL[y]<0?0:rowR[y]-rowL[y]+1;
+      if(h<30)return null;
+      const sw=[],sc0=[];for(let y=y0+Math.round(h*0.08);y<=y0+Math.round(h*0.18);y++)if(wd(y)>0){sw.push(wd(y));sc0.push((rowL[y]+rowR[y]+1)/2);}
+      if(sw.length<3)return null;
+      const S=med(sw.slice()),ax=med(sc0.slice());
+      // хвостовик должен быть узким и ровным
+      if(Math.max(...sw)>1.35*Math.min(...sw)||S>h*0.45)return null;
+      let yh=-1;for(let y=y0+Math.round(h*0.18);y<=y1-3;y++){if(wd(y)>=1.2*S&&wd(y+1)>=1.2*S&&wd(y+2)>=1.2*S){yh=y;break;}}
+      if(yh<0)return null;
+      let mxw=0;for(let y=yh;y<=y1;y++)if(wd(y)>mxw)mxw=wd(y);
+      // подшипник / штифт под фрезой: резкий скачок ширины у самого низа
+      let cutB=false;
+      for(let y=y1-3;y>=yh+4&&(y1-y)<0.45*(y1-yh);y--){if(wd(y)-wd(y+3)>=0.3*mxw&&wd(y+3)>0){y1=y;cutB=true;break;}}
+      if(cutB){mxw=0;for(let y=yh;y<=y1;y++)if(wd(y)>mxw)mxw=wd(y);}
+      if(mxw<1.5*S)return null;
+      return{rowL,rowR,wd,y0,y1,yh,S,ax,mxw,cutB};
+    };
+    const mk=ph.manual?(ph.marks||{}):{},hasMk=mk.top!=null&&mk.bot!=null&&mk.bot>mk.top+8;
+    let raw1=stage(1),st1=analyse(raw1),how='фото';
+    if(!st1){const raw2=stage(2);st1=analyse(raw2);if(st1)how='чертёж';else if(!raw1&&raw2)raw1=raw2;}
+    if(!st1&&hasMk&&raw1){const {rowL,rowR,y0,y1}=raw1;st1={rowL,rowR,wd:y=>rowL[y]<0?0:rowR[y]-rowL[y]+1,y0,y1,yh:mk.top,S:0,ax:mk.axis!=null?mk.axis:W/2,mxw:1,cutB:false};how='по меткам';}
+    if(!st1){msg.textContent='Фрезу по силуэту найти не удалось: нужна картинка на светлом фоне, фреза целиком, хвостовик вверху. Попробуйте режим «по цвету разреза».';return;}
+    let {wd,yh,y1,S,ax,mxw,cutB}=st1;
+    if(mk.axis!=null)ax=mk.axis;if(mk.top!=null&&mk.top<y1-8)yh=mk.top;if(mk.bot!=null&&mk.bot>yh+8){y1=mk.bot;cutB=false;}
+    // Размеры из полей — главные: форма подгоняется под введённые Ø и I, а фото под сеткой остаётся пропорциональным (не растягивается)
+    const known=!!ph.pxmm;
+    let capAx=null,capSide=0;
+    if(known){let minL=1e9,maxR=-1,n=0;for(let y=yh;y<=Math.min(y1,st1.y1);y++)if(wd(y)>0){n++;if(st1.rowL[y]<minL)minL=st1.rowL[y];if(st1.rowR[y]>maxR)maxR=st1.rowR[y];}
+      let cL=0,cR=0;for(let y=yh;y<=Math.min(y1,st1.y1);y++)if(wd(y)>0){if(st1.rowL[y]<=minL+3)cL++;if(st1.rowR[y]>=maxR-3)cR++;}
+      if(n>0&&cL>0.7*n&&cR<=0.7*n){capAx=minL;capSide=1;}else if(n>0&&cR>0.7*n&&cL<=0.7*n){capAx=maxR+1;capSide=-1;}
+      if(capAx!=null)ax=capAx;}
+    const rr=y=>capSide===1?st1.rowR[y]+1-capAx:(capSide===-1?capAx-st1.rowL[y]:(mk.axis!=null?Math.max(0,((ax-st1.rowL[y])+(st1.rowR[y]+1-ax))/2):wd(y)/2));
+    const rowsMax=(a0,b0)=>{let m=0;for(let y=a0;y<=Math.min(b0,st1.y1);y++)if(wd(y)>0){const v=rr(y);if(v>m)m=v;}return m;};
+    const Hn=dcNum('dcH'),Hok=Hn>=2&&Hn<=100,fitX=!known||!!DC.dUser;
+    let yT=yh;
+    const sxOf=a0=>(mk.edge!=null&&hasMk&&mk.edge>ax+8)?(mk.edge-ax)/(D/2):(fitX?rowsMax(a0,y1)/(D/2):ph.pxmm);
+    let sx=sxOf(yT),sy=sx,fitY=false;
+    if(hasMk&&Hok){sy=(y1+1-yT)/Hn;}
+    else if(DC.hUser&&Hok){
+      const ratio=((y1+1-yh)/sx)/Hn;
+      if(ratio>=0.88&&ratio<=1.12){sy=(y1+1-yh)/Hn;fitY=true;}   // найденная головка почти равна введённой I — подгоняем по высоте
+      else{for(let it=0;it<3;it++){const yc=Math.round(y1+1-Hn*sy);if(!(yc>yh&&yc<y1-3))break;yT=yc;sx=sxOf(yT);sy=sx;}}   // иначе в кадре лишнее (буртик/хвостовик) — обрезаем по I
+    }
+    const Hd=Math.max(2,Math.min(100,(y1+1-yT)/sy));
+    const prof=[];for(let y=Math.min(y1,st1.y1);y>=yT;y--)if(wd(y)>0)prof.push([Math.min(known&&!DC.dUser?1e9:R*1.02,rr(y)/sx),(y1+1-y-0.5)/sy]);
+    prof[0][1]=0;prof[prof.length-1][1]=Hd;
+    const sm=prof.map((q,i)=>{const a=prof[Math.max(0,i-1)][0],b=prof[Math.min(prof.length-1,i+1)][0];return[(a+q[0]*2+b)/4,q[1]];});
+    sm[0][0]=prof[0][0];sm[sm.length-1][0]=prof[prof.length-1][0];
+    const simp=dcDP(sm,Math.max(0.12,D/260));
+    if(!DC.hUser)$('dcH').value=String(Number(Hd.toFixed(1)));
+    let eg=0;for(let y=yT;y<=Math.min(y1,st1.y1);y++)if(st1.rowR[y]+1>eg)eg=st1.rowR[y]+1;ph.auto={top:yT,bot:y1+1,axis:ax,edge:eg};dcPhotoSyncSl();dcPhotoAxisDraw();
+    dcPush();
+    DC.pts=simp.map(q=>({x:dcR2(q[0]),y:dcR2(Math.min(q[1],Hd)),r:0})).filter((q,i,arr)=>!(q.x<0.001&&q.y>=Hd-0.001&&i>0&&arr[i-1].x<0.001));
+    DC.sel=-1;DC.mode='edit';
+    const tmp=document.createElement('canvas');tmp.width=W;tmp.height=Hh;tmp.getContext('2d').putImageData(ph.img,0,0);
+    DC.bg={href:tmp.toDataURL('image/jpeg',0.85),x:-ax/sx,y:Hd-(y1+1)/sx,w:W/sx,h:Hh/sx};   // одинаковый масштаб по X и Y — фото не деформируется
+    const Dm=2*Math.max(...simp.map(q=>q[0]));
+    if(known&&!DC.dUser)$('dcD').value=String(Number(Dm.toFixed(1)));
+    const mism=Math.abs(sx/sy-1),Dshow=known&&!DC.dUser?Dm:D;
+    msg.textContent=`Фреза найдена (${how}${hasMk?', по вашим меткам':''}) и подогнана под Ø${Dshow.toFixed(1)} × I ${Hd.toFixed(1)} мм${hasMk?'':(DC.hUser?(fitY?' (высота подогнана под введённую I)':' (лишнее над головкой обрезано по I)'):' (I определена сама — впишите свою, и форма подгонится)')}. Хвостовик ≈ Ø${(S/sx).toFixed(1)}${cutB?', подшипник/штифт внизу отброшен':''}.${mism>0.04?` Пропорции картинки и введённых размеров отличаются на ${Math.round(mism*100)}% — форма подогнана под ваши размеры, фото не растягивается.`:''} ${DC.pts.length} точек — можно двигать и скруглять.`;
+    $('dcBgOn').checked=true;dcDraw();
+  }
+  function dcPhotoAxisDraw(){const ph=DC.photo,cv=$('dcPhotoCv'),cx=cv.getContext('2d');cx.putImageData(ph.img,0,0);const mk=(ph.manual?ph.marks:ph.auto)||{};cx.lineWidth=Math.max(1.5,cv.width/260);cx.setLineDash([8,5]);
+    const ln=(x1,y1,x2,y2,c)=>{cx.strokeStyle=c;cx.beginPath();cx.moveTo(x1,y1);cx.lineTo(x2,y2);cx.stroke();};
+    if(mk.axis!=null)ln(mk.axis+.5,0,mk.axis+.5,cv.height,'#c0392b');if(mk.top!=null)ln(0,mk.top+.5,cv.width,mk.top+.5,'#1f6fd6');if(mk.bot!=null)ln(0,mk.bot+.5,cv.width,mk.bot+.5,'#1f9d55');if(mk.edge!=null)ln(mk.edge+.5,0,mk.edge+.5,cv.height,'#e08a00');cx.setLineDash([]);}
+  function dcPhotoSyncSl(){const ph=DC.photo,cv=$('dcPhotoCv');if(!ph||!ph.auto||ph.manual)return;const a=ph.auto;
+    $('dcSlTop').value=String(Math.round(a.top/cv.height*1000));$('dcSlBot').value=String(Math.round(a.bot/cv.height*1000));$('dcSlAx').value=String(Math.round(a.axis/cv.width*1000));$('dcSlEdge').value=String(Math.round(a.edge/cv.width*1000));}
   function dcDP(pts,tol){
     if(pts.length<3)return pts.slice();
     const a=pts[0],b=pts[pts.length-1],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1e-9;let im=-1,md=0;
@@ -7290,6 +7437,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     const L=dcDP(pts.slice(0,im+1),tol),Rr=dcDP(pts.slice(im),tol);return L.concat(Rr.slice(1));
   }
   function dcPhotoTrace(){
+    if(DC.photo&&$('dcPhotoMode').value==='S'){dcPhotoSil();return;}
     const ph=DC.photo;if(!ph||!ph.seed)return;
     const {W,H:Hh,data}=ph,msg=$('dcPhotoMsg'),tol=Number($('dcPhotoTol').value),mode=$('dcPhotoMode').value,{D,H}=dcDims(),R=D/2;
     const [sx,sy]=ph.seed;let r0=0,g0=0,b0=0,n0=0;
@@ -7337,7 +7485,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     DC.sel=-1;DC.mode='edit';
     // фото под сеткой: пиксель (px,py) → x=(px-axis)/sxm, y=(y1+1-py)/sym ; для «справа» зеркалим по X
     const cv=$('dcPhotoCv'),tmp=document.createElement('canvas');tmp.width=W;tmp.height=Hh;const tc=tmp.getContext('2d');
-    if(mode==='R'){tc.translate(W,0);tc.scale(-1,1);}tc.drawImage(cv,0,0);
+    if(mode==='R'){tc.translate(W,0);tc.scale(-1,1);}tc.putImageData(ph.img,0,0);
     const ax=mode==='R'?W-axis:axis;
     DC.bg={href:tmp.toDataURL('image/jpeg',0.85),x:-ax/sxm,y:H-(y1+1)/sym*1+0,w:W/sxm,h:Hh/sym};
     DC.bg.y=H-(y1+1)/sym;   // верх картинки в мм по Y в системе SVG (Y=H−y)
@@ -7346,7 +7494,7 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
     $('dcBgOn').checked=true;dcDraw();
   }
   function openDrawCutter(preset,after){
-    DC.after=after||null;DC.bg=null;DC.photo=null;$('dcPhotoBox').classList.add('hidden');DC.drag=-1;DC.sel=-1;DC.pts=[];DC.hist=[];DC.mode='draw';
+    DC.after=after||null;DC.bg=null;DC.photo=null;DC.hUser=false;DC.dUser=false;$('dcPhotoBox').classList.add('hidden');DC.drag=-1;DC.sel=-1;DC.pts=[];DC.hist=[];DC.mode='draw';
     $('dcName').value='Моя фреза';
     if(preset&&(preset.design||preset.profile)){
       const R=(preset.profileRadius||preset.width/2),H=preset.profileHeight||Math.max(...preset.profile.map(q=>q[1]))*R;
@@ -8358,11 +8506,17 @@ body.hide-left.hide-right .app{grid-template-columns:0 minmax(0,1fr) 0!important
   $('dcPhotoBtn').addEventListener('click',()=>{$('dcPhotoBox').classList.remove('hidden');$('dcPhotoFile').value='';$('dcPhotoFile').click();});
   $('dcPhotoFile').addEventListener('change',e=>dcPhotoLoad(e.target.files&&e.target.files[0]));
   $('dcPhotoCv').addEventListener('click',ev=>{const ph=DC.photo;if(!ph)return;const cv=$('dcPhotoCv'),r=cv.getBoundingClientRect(),k=Math.min(r.width/cv.width,r.height/cv.height),ox=(r.width-cv.width*k)/2,oy=(r.height-cv.height*k)/2;
-    const x=Math.round((ev.clientX-r.left-ox)/k),y=Math.round((ev.clientY-r.top-oy)/k);if(x<0||y<0||x>=cv.width||y>=cv.height)return;if(ph.arm){ph.axis=x;ph.arm=false;dcPhotoAxisDraw();$('dcPhotoMsg').textContent='Ось отмечена.';if(ph.seed)dcPhotoTrace();return;}ph.seed=[x,y];dcPhotoTrace();});
+    const x=Math.round((ev.clientX-r.left-ox)/k),y=Math.round((ev.clientY-r.top-oy)/k);if(x<0||y<0||x>=cv.width||y>=cv.height)return;if($('dcPhotoMode').value==='S')return;ph.seed=[x,y];dcPhotoTrace();});
   ['dcPhotoMode','dcPhotoTol'].forEach(id=>$(id).addEventListener('change',dcPhotoTrace));
   $('dcBgOn').addEventListener('change',dcDraw);
-  $('dcPhotoAxisBtn').addEventListener('click',()=>{if(DC.photo){DC.photo.arm=true;$('dcPhotoMsg').textContent='Коснитесь картинки на линии оси фрезы.';}});
-  $('dcPhotoMode').addEventListener('change',()=>{$('dcPhotoAxisBtn').classList.toggle('hidden',$('dcPhotoMode').value!=='T');});
+  $('dcPhotoGo').addEventListener('click',dcPhotoDetect);
+  $('dcH').addEventListener('input',()=>{DC.hUser=true;});
+  $('dcD').addEventListener('input',()=>{DC.dUser=true;});
+  let dcRedoT=null;['dcD','dcH'].forEach(id=>$(id).addEventListener('change',()=>{if(DC.photo&&(DC.photo.seed||$('dcPhotoMode').value==='S')){clearTimeout(dcRedoT);dcRedoT=setTimeout(dcPhotoTrace,150);}}));
+  const dcSlRead=()=>{const ph=DC.photo,cv=$('dcPhotoCv');if(!ph)return;let t=Number($('dcSlTop').value)/1000*cv.height,b=Number($('dcSlBot').value)/1000*cv.height;const ax=Number($('dcSlAx').value)/1000*cv.width;
+    ph.marks={top:Math.round(Math.min(t,b)),bot:Math.round(Math.max(t,b)),axis:Math.round(ax),edge:Math.round(Number($('dcSlEdge').value)/1000*cv.width)};ph.axis=ph.marks.axis;ph.manual=true;};
+  ['dcSlTop','dcSlBot','dcSlAx','dcSlEdge'].forEach(id=>{$(id).addEventListener('input',()=>{if(!DC.photo)return;dcSlRead();dcPhotoAxisDraw();});$(id).addEventListener('change',()=>{if(!DC.photo)return;dcSlRead();dcPhotoTrace();});});
+  $('dcMkClr').addEventListener('click',()=>{if(DC.photo){DC.photo.manual=false;DC.photo.marks={};DC.photo.axis=null;dcPhotoDetect();}});
   $('dcDel').addEventListener('click',()=>{if(DC.sel>=0){dcPush();DC.pts.splice(DC.sel,1);DC.sel=-1;dcDraw();}});
   const dcField=(id,key)=>$(id).addEventListener('input',()=>{const q=DC.pts[DC.sel];if(!q)return;const v=dcNum(id);if(!Number.isFinite(v))return;if(!DC._fh){dcPush();DC._fh=1;setTimeout(()=>{DC._fh=0;},800);}const {D,H}=dcDims();q[key]=key==='x'?Math.min(D/2,Math.max(0,v)):key==='y'?Math.min(H,Math.max(0,v)):Math.max(0,v);dcDraw();});
   dcField('dcX','x');dcField('dcY','y');dcField('dcR','r');
