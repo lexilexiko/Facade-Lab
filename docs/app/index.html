@@ -4552,13 +4552,16 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       if(!D.blocks.length)throw new Error('Нет блоков: соберите профиль или нажмите «Подобрать фрезы».');
       D.blocks.forEach((b,i)=>{if(!cutterShape(b.cutter))throw new Error(`У блока ${i+1} не найдена фреза.`);if(b.depth>D.T+1e-6)throw new Error(`Глубина блока ${i+1} больше толщины ${D.T} мм.`);});
     }
-    function applyToFacade(clear){checkBlocks();return applyBlocks(D.blocks,D.T,clear,0);}
-    function applyBlocks(blocks,T,clear,opening){
+    function applyToFacade(clear){checkBlocks();const r=applyBlocks(D.blocks,D.T,clear,0,true);D.designId=activeDesignId;D.facSig=facSigNow();return r;}
+    function applyBlocks(blocks,T,clear,opening,replace){
       if(state.objectType!=='facade')throw new Error('Текущее изделие — не фасад. Нажмите «Создать фасад».');
       snapshot();
       const notes=[];
       if(Math.abs(Number(state.thickness)-T)>.01){state.thickness=T;notes.push(`толщина заготовки теперь ${T} мм`);}
       if(clear){state.contours=[];state.pockets=[];}
+      else if(replace){const gone=new Set(state.contours.filter(isEd).map(c=>c.id));
+        if(gone.size){state.contours=state.contours.filter(c=>!gone.has(c.id)).map(c=>gone.has(c.parentId)?{...c,parentId:0}:c);}
+        state.outerCutter='none';state.outerAdditionalCutters=[];state.outerShift=0;state.outerSide='on';}
       const edge=[],inner=[];
       blocks.forEach(b=>{if(b.mode==='out'){if(b.center+b.width/2<.1)edge.push({...b,side:'outside',shift:0});else inner.push(b);}else if(b.center<.01)edge.push({...b,side:'on',shift:0});else if(Math.abs(b.center-b.width/2)<.01)edge.push({...b,side:'inside'});else inner.push(b);});
       if(edge.length){
@@ -4663,7 +4666,22 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       lines.push('0','ENDSEC','0','EOF');return sealDxf(lines);
     }
     // ---------- события ----------
+    const isEd=c=>c.parentId===0&&c.direction==='in'&&c.shape==='rect'&&c.cutter&&c.cutter!=='none'&&!!cutterShape(c.cutter);
+    function facSigNow(){return JSON.stringify([state.outerCutter,state.outerDiameter,state.outerDepth,state.outerSide,state.outerAdditionalCutters,state.thickness,state.contours.filter(isEd).map(c=>[c.id,c.cutter,c.diameter,c.depth,c.side,c.offset])]);}
+    function loadFromFacade(){
+      D.blocks=[];D.line=[];D.raw=null;sel=0;D.T=clamp(Number(state.thickness)||19,1,100);D.fw=Number(state.width)||596;D.fh=Number(state.height)||716;
+      const add=(cutter,w,depth,side,pos)=>{if(!cutter||cutter==='none'||!cutterShape(cutter))return;const mode=side==='inside'?'in':side==='outside'?'out':'on';
+        const b=addBlock({cutter,width:w,depth,mode,center:0});if(!b)return;b.mode=mode;b.center=fmt(pos+shiftOf(b));b.pos=fmt(pos);};
+      add(state.outerCutter,state.outerDiameter,state.outerDepth,state.outerSide,0);
+      (state.outerAdditionalCutters||[]).forEach(c=>add(c.cutter,c.diameter,c.depth,c.side,0));
+      state.contours.filter(isEd).sort((p,q)=>Number(p.offset)-Number(q.offset)).forEach(c=>add(c.cutter,c.diameter,c.depth,c.side||'on',Number(c.offset)));
+      const far=D.blocks.reduce((m,b)=>Math.max(m,b.center+b.width/2),0);D.L=clamp(Math.max(40,Math.ceil(far)+4),5,300);
+      D.designId=activeDesignId;D.facSig=facSigNow();
+    }
     function open(inline){
+      if(state.objectType==='facade'&&(D.designId!==activeDesignId||D.facSig!==facSigNow()))loadFromFacade();
+      else if(state.objectType!=='facade'&&state.objectType!=='comb'&&D.designId!==activeDesignId){D.blocks=[];D.line=[];D.raw=null;sel=0;D.designId=activeDesignId;}
+      if(state.objectType==='comb'&&D.designId!==activeDesignId){D.designId=activeDesignId;D.combSig='';}
       if(state.objectType==='comb'&&D.combSig!==combSigNow())loadFromComb();
       D.blocks=D.blocks.filter(b=>cutterShape(b.cutter));D.blocks.forEach(b=>{if(b.pos===undefined)b.pos=b.center;if(!b.mode)b.mode='on';});
       if(!D.blocks.length&&!D.line.length)D.T=Number(state.thickness)||19;
