@@ -418,7 +418,7 @@ body.hide-hint #canvasHint{display:none}
 @media(max-width:800px){.sd-main{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(190px,42%) minmax(0,1fr);gap:8px}.sd-left{min-height:0}.sd-stage{min-height:0}.sd-tools button{padding:5px 8px;font-size:12px;min-height:34px;min-width:40px}.sd-info{display:none}.guide-dialog.sd-dialog{padding:8px 8px calc(8px + env(safe-area-inset-bottom))}}
 .guide-dialog{width:min(1000px,100%);max-height:calc(100vh - 40px);grid-template-rows:auto auto minmax(0,1fr);padding:18px 20px;overflow:hidden}.gd-head{display:flex;align-items:center;gap:10px;min-width:0}.gd-head h2{flex:1;min-width:0}.guide-dialog .gd-head .modal-close{position:static;flex:none;width:38px;height:38px;padding:0;display:grid;place-items:center;line-height:1}
 .guide-dialog h2{margin:0;font-size:20px}.guide-dialog h2 .sub{font-size:12px;font-weight:400;margin-left:6px}
-.gd-tabs{display:flex;flex-wrap:wrap;gap:6px}.gd-tabs button{flex:none;height:34px;padding:0 12px;white-space:nowrap}.gd-tabs button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:-1px;padding:0}.gd-head{justify-content:space-between}.gd-switch{display:flex;gap:0;flex:1;min-width:0}.gd-switch button{flex:1;height:36px;padding:0 10px;border-radius:0;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gd-switch button:first-child{border-radius:8px 0 0 8px}.gd-switch button:last-child{border-radius:0 8px 8px 0;margin-left:-1px}.gd-switch button.active{background:var(--blue);color:#fff;border-color:var(--blue)}.gd-tabs{display:flex;flex-wrap:wrap;gap:6px}.gd-tabs button{flex:none;height:34px;padding:0 12px;white-space:nowrap}.gd-tabs button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
 .gd-body{overflow:auto;min-height:0;padding-right:4px;font-size:13px;line-height:1.45}
 .gd-lead{margin:0 0 10px;color:#58574f}.gd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:12px}
 .gd-card{display:grid;grid-template-columns:100px 1fr;gap:10px;border:1px solid var(--line);background:#faf8f1;border-radius:10px;padding:10px}
@@ -473,6 +473,26 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
 .ol-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}.ol-row label{display:flex;flex-direction:column;font-size:11px;gap:2px;flex:1;min-width:110px}
 .ol-tablewrap{max-height:230px;overflow:auto}#olTable{width:100%;border-collapse:collapse;font-size:12px}#olTable th{font-weight:600;font-size:10.5px;text-align:left;padding:2px}#olTable td{padding:1px}#olTable input{width:100%;min-width:52px;padding:4px 5px;font-size:12px}#olTable tr.sel td{background:#35676122}
 .ol-foot{display:flex;justify-content:flex-end;gap:8px;padding:10px 14px;border-top:1px solid var(--line)}
+
+.cnc-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 12px;margin-bottom:12px;background:#faf8f1;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.ac-dlg{background:#d4d0c8;border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:1px 1px 0 #808080;font-family:Tahoma,Verdana,Arial,sans-serif;font-size:12px;color:#000;max-width:760px;margin:0 auto}
+.ac-title{background:#fff;border-bottom:1px solid #808080;padding:5px 8px;font-size:13px}
+.ac-body{display:grid;grid-template-columns:minmax(0,1.15fr) 150px minmax(0,1fr);gap:10px;padding:10px}
+.ac-col{min-width:0}.ac-r{display:grid;grid-template-columns:78px minmax(0,1fr);gap:6px;align-items:center;margin:0 0 7px}.ac-r.v{grid-template-columns:minmax(0,1fr) 74px;gap:6px}
+.ac-r span{font-size:12px;color:#000;line-height:1.15}.ac-r.v span.ac-two{display:flex;gap:3px;grid-column:auto}.ac-r.v{grid-template-columns:minmax(0,1fr) 110px!important}.ac-two input{padding:1px 2px!important}
+.ac-dlg input,.ac-dlg select{height:22px;padding:1px 4px;font:12px Tahoma,Verdana,Arial,sans-serif;background:#fff;color:#000;border:2px solid;border-color:#808080 #fff #fff #808080;border-radius:0;min-width:0;width:100%;box-sizing:border-box}
+.ac-dlg select:disabled{background:#d4d0c8;color:#404040}.ac-two input{width:100%}
+.ac-lbl{margin:4px 0 2px}.ac-hd{font-weight:700;margin:0 0 8px;padding-bottom:3px;border-bottom:1px solid #808080}.ac-wide{margin:0 10px;height:auto!important;max-height:340px}.cncV.off,.cncS.off{display:none}.ac-notes{height:250px;overflow:auto;background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080;padding:4px 6px;font-size:12px;line-height:1.35}
+.ac-notes ul{margin:0 0 6px;padding-left:16px}.ac-notes li{margin:4px 0}.ac-notes p{margin:2px 0}
+.ac-c{display:flex;flex-direction:column;align-items:center;gap:6px}.ac-c svg.gd-tool{width:96px;height:200px}.ac-dd{width:92px;border-top:1px solid #000;height:12px;position:relative;text-align:center;border-left:1px solid #000;border-right:1px solid #000}.ac-dd span{position:relative;top:-9px;background:#d4d0c8;padding:0 4px;font-weight:700}
+.ac-prof{width:100%;box-sizing:border-box}.ac-prof svg{width:100%;height:auto;max-height:90px;display:block}.ac-prof{border:2px solid;border-color:#808080 #fff #fff #808080;background:#fff;padding:2px}
+.ac-sp{height:16px}.ac-info{margin-top:8px;font-size:12px;line-height:1.4;background:#e8e4da;border:1px solid #808080;padding:4px 6px}
+.ac-btns{display:flex;justify-content:center;gap:10px;padding:6px 10px 12px}.ac-btns button{min-width:90px;height:26px;padding:0 12px;background:#d4d0c8;color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;border-radius:0;font:12px Tahoma,Verdana,Arial,sans-serif}
+.ac-btns button:active{border-color:#404040 #fff #fff #404040}
+.cnc-form{border:1px solid var(--line);background:#e7e3d9;border-radius:10px;padding:10px 12px}.cnc-form h4{margin:0 0 6px;font-size:14px}.cnc-form ol{margin:4px 0 0;padding-left:18px}.cnc-form li{margin:5px 0}
+.cnc-warn{color:#8a4b12}.cnc-ok{color:#1d6b3a}.cnc-chk{background:#f5f1e6;border:1px solid #c9c1ae;padding:4px 6px 4px 20px!important}
+.gd-cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:8px}.gd-cc{display:flex;flex-direction:column;gap:3px;text-align:left;background:#faf8f1;border:1px solid var(--line);border-radius:10px;padding:6px;font-size:12px;cursor:pointer}.gd-exn{font-size:12px;color:#6b675d;margin:2px 0 4px}.gd-cc svg{width:100%;height:78px}.gd-cc span{color:#6b675d}.cnc-src{margin-top:12px;font-size:12px}.cnc-src summary{cursor:pointer;font-weight:600}
+@media (max-width:760px){.ac-body{grid-template-columns:minmax(0,1fr)}.ac-c{flex-direction:row;justify-content:center}.ac-c svg.gd-tool{width:70px;height:140px}.ac-notes{height:auto;max-height:340px}.ac-r.v{grid-template-columns:minmax(0,1fr) 90px}}
 </style>
 <link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#d6d1c7"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png"></head>
 <body>
@@ -916,8 +936,8 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
 <input id="projectPicker" type="file" accept=".json,application/json">
 <input id="vectorPicker" type="file" accept=".svg,.dxf,.dwg,image/svg+xml,application/dxf"><input id="artProjectPicker" type="file" accept=".art" hidden>
 <input id="artcamToolPicker" type="file" accept=".tdb,.tbx" multiple hidden><input id="dxfCutterPicker" type="file" accept=".dxf" hidden><input id="dxfCatalogPicker" type="file" accept=".dxf" hidden><input id="cuttersJsonPicker" type="file" accept=".json,application/json" hidden><input id="scanCameraPicker" type="file" accept="image/*" capture="environment" hidden><input id="scanFilePicker" type="file" accept="image/*,.svg,image/svg+xml" hidden>
-<div id="helpOverlay" class="modal-overlay hidden"><section class="modal-card guide-dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="gd-head"><h2 id="helpTitle">Инструкция <span class="sub">ФасадЛаб 1.5.0.0</span></h2><button class="modal-close" id="closeHelp" type="button" aria-label="Закрыть">×</button></div><div class="gd-tabs" id="hpTabs" role="tablist"></div><select class="gd-tabsel" id="hpSel" aria-label="Раздел"></select><div class="gd-body" id="hpBody"></div></section></div>
-<div id="guideOverlay" class="modal-overlay hidden"><section class="modal-card guide-dialog" role="dialog" aria-modal="true" aria-labelledby="guideTitle"><div class="gd-head"><h2 id="guideTitle">Справочник фрез <span class="sub">виды · выбор · измерение · износ</span></h2><button class="modal-close" id="closeGuide" type="button" aria-label="Закрыть">×</button></div><div class="gd-tabs" id="gdTabs" role="tablist"></div><select class="gd-tabsel" id="gdSel" aria-label="Раздел"></select><div class="gd-body" id="gdBody"></div></section></div>
+<div id="helpOverlay" class="modal-overlay hidden"><section class="modal-card guide-dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="gd-head"><h2 id="helpTitle" class="sr-only">Инструкция <span class="sub">ФасадЛаб 1.5.0.0</span></h2><div class="gd-switch" role="group" aria-label="Справка"><button type="button" data-sw="help" class="active">Инструкция</button><button type="button" data-sw="guide">Справочник фрез</button></div><button class="modal-close" id="closeHelp" type="button" aria-label="Закрыть">×</button></div><div class="gd-tabs" id="hpTabs" role="tablist"></div><select class="gd-tabsel" id="hpSel" aria-label="Раздел"></select><div class="gd-body" id="hpBody"></div></section></div>
+<div id="guideOverlay" class="modal-overlay hidden"><section class="modal-card guide-dialog" role="dialog" aria-modal="true" aria-labelledby="guideTitle"><div class="gd-head"><h2 id="guideTitle" class="sr-only">Справочник фрез <span class="sub">виды · выбор · измерение · износ</span></h2><div class="gd-switch" role="group" aria-label="Справка"><button type="button" data-sw="help">Инструкция</button><button type="button" data-sw="guide" class="active">Справочник фрез</button></div><button class="modal-close" id="closeGuide" type="button" aria-label="Закрыть">×</button></div><div class="gd-tabs" id="gdTabs" role="tablist"></div><select class="gd-tabsel" id="gdSel" aria-label="Раздел"></select><div class="gd-body" id="gdBody"></div></section></div>
 <div id="panelDlg" class="modal-overlay hidden"><section class="modal-card" style="max-height:92%;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y" role="dialog" aria-modal="true" aria-labelledby="panelDlgTitle"><button class="modal-close" id="panelDlgClose" type="button" aria-label="Закрыть">×</button><h2 id="panelDlgTitle" style="margin:0 0 8px;padding-right:40px"></h2><div id="panelDlgBody"></div></section></div>
 <style>
 .hd-dialog{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;overflow:hidden!important;max-height:100%!important}
@@ -2048,6 +2068,11 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
           if (derivedProfile) item.derived = true;
           withProfile++;
         }
+        try {
+          const k = toMm, fm = { 0: 60, 1: 1, 2: 1000, 3: 25.4, 4: 25.4 }[u32(descriptionInfo.end + 32)];
+          const pass = f64(descriptionInfo.end) * k, rpm = f64(descriptionInfo.end + 8), feed = f64(descriptionInfo.end + 16) * fm, plunge = f64(descriptionInfo.end + 24) * fm;
+          if (fm && rpm >= 1000 && rpm <= 100000 && feed > 0 && feed < 60000 && plunge >= 0 && pass > 0 && pass < 200) item.set = { pass: Number(pass.toFixed(3)), rpm: Math.round(rpm), feed: Math.round(feed), plunge: Math.round(plunge) };
+        } catch (setError) { /* настройки в файле необязательны */ }
         tools.push(item);
       } catch (error) {
         try { const info = readString(event.body + 5); if (info) { const guess = tdbGuessFromName(info.text.trim(), 0); if (guess) { tools.push({ name: info.text.trim().slice(0, 80), shape: guess.shape, width: Number(guess.width.toFixed(4)), source: 'ArtCAM TDB', exact: false, approx: true, ...(guess.profile ? { profile: guess.profile.points, profileRadius: Number(guess.profile.radius.toFixed(4)), profileHeight: Number((Math.max(...guess.profile.points.map(point => point[1])) * guess.profile.radius).toFixed(3)) } : {}) }); return; } } } catch (inner) { /* запись не читается */ }
@@ -4106,7 +4131,8 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
 
   // ===== Сворачивание боковых панелей, жесты 3D =====
   // ===== Инструкция к программе: разделы, кнопки, ArtCAM для начинающих =====
-  let cutterGuideOpen=null;
+  let cutterGuideOpen=null,helpOpenHook=null;
+  document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-sw]');if(!b)return;if(b.dataset.sw==='guide'&&cutterGuideOpen)cutterGuideOpen();else if(b.dataset.sw==='help'&&helpOpenHook)helpOpenHook();});
   // ===== Чертёж в разрезе: профиль кромки собирается из блоков-фрез (как «лего») =====
   function bindSectionDraw() {
     const KEY='fasadlab-secdraw';
@@ -4343,8 +4369,8 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     let palTab='Все';
     function renderPalette(){
       const items=[['flat','Прямая',6,3],['round','Радиусная',6,3],['v90','V-фреза 90°',8,4],['roundover','Завал (радиус)',10,5]].map(([value,name,w,d])=>({value,name,w,d,custom:false,tab:'Стандартные'}));
-      customCutters.forEach(c=>{const sh=cutterShape('custom:'+c.id);if(sh)items.push({value:'custom:'+c.id,name:c.name,w:Number(c.width)||6,d:Number(c.profileHeight)||3,width:Number(c.width)||6,depth:Number(c.profileHeight)||0,custom:true,tab:String(c.group||(c.sourceFile?c.sourceFile.replace(/\.(tdb|tbx)$/i,''):'')||'Свои').split(' / ')[0].trim()});});
-      const tabs=['Все',...new Set(items.map(it=>it.tab))];if(!tabs.includes(palTab))palTab='Все';
+      customCutters.forEach(c=>{const sh=cutterShape('custom:'+c.id);if(sh)items.push({value:'custom:'+c.id,name:c.name,w:Number(c.width)||6,d:Number(c.profileHeight)||3,width:Number(c.width)||6,depth:Number(c.profileHeight)||0,custom:true,tab:(/КОЛОР|Wood or Plastic|Legacy Woodworking/i.test(String(c.group||''))?'Дерево / МДФ':String(c.group||(c.sourceFile?c.sourceFile.replace(/\.(tdb|tbx)$/i,''):'')||'Свои').split(' / ')[0].trim())});});
+      const tabs=['Все',...[...new Set(items.map(it=>it.tab))].sort((x,y)=>(y==='Дерево / МДФ')-(x==='Дерево / МДФ'))];if(!tabs.includes(palTab))palTab='Все';
       const box=$('sdPalette');
       let strip=$('sdPalTabs');if(!strip){strip=document.createElement('div');strip.id='sdPalTabs';strip.style.cssText='display:flex;gap:5px;flex-wrap:wrap;margin:4px 0 8px';box.parentNode.insertBefore(strip,box);}
       strip.innerHTML=tabs.map(t=>`<button type="button" data-paltab="${esc(t)}" class="${t===palTab?'active':''}" style="padding:4px 9px;font-size:12px;${t===palTab?'background:var(--acc,#356761);color:#fff;':''}">${esc(t)} <span class="sub" style="${t===palTab?'color:#fff':''}">${t==='Все'?items.length:items.filter(it=>it.tab===t).length}</span></button>`).join('');
@@ -4881,11 +4907,11 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       ${sec('Верхняя панель',li(['<b>3D / Вид сверху / Разрез / ✎ Редактор</b> — переключение видов; «Редактор» — тонкий редактор разреза (блоки-фрезы, DXF/SVG, линейка).','<b>🗺 Карта листа</b> — теперь в нижней панели: раскрой деталей.','<b>Линейка в «Разрезе»</b> — выберите инструмент «Линейка», тяните по чертежу вверх-вниз: линия на глубине, на всю длину, с замерами выборки.','<b>Открыть / Сохранить</b> — проект в файл JSON.','<b>Меню</b> — настройки экрана, порядок и показ панелей, стиль интерфейса и чертежа, 3D-архив.','<b>Фрезы</b> — библиотека фрез, импорт каталога ArtCAM (.TDB).','<b>О программе</b> — версия и эта инструкция.']))}
       ${sec('Нижняя строка чертежа',li(['<b>↶ ↷</b> — отменить / вернуть (Ctrl+Z, Ctrl+Y).','<b>▼ / ▲</b> — свернуть или показать панель инструментов.','<b>Стили</b> — готовые шаблоны фасадов.','<b>● Проверка</b> — состояние геометрии.','<b>Значение, мм</b> — число для скругления, фаски, смещения.']))}
       ${sec('Чертёж в разрезе (слева, перед импортом)',li(['<b>✎ Чертёж в разрезе</b> — собрать профиль кромки из блоков-фрез: готовые блоки (завал, фаска, четверть, паз), линия и дуга по сетке или загрузка DXF/SVG разреза.','Окно открывается на весь экран: колесо мыши или щипок — масштаб, перетаскивание пустого места — сдвиг. Фрезы — карточки: нажмите, и блок встанет на чертёж; блоки прилипают к краю, к концу профиля и друг к другу.','Фреза в блоке стоит там, где нужно получить рисунок, и при смене режима «вдоль / снаружи / внутри» не двигается — меняется только вектор для станка (его положение показано под настройками). Так можно заменить фрезу Ø12 на Ø10 и добавить ещё один вектор. Размеры вводятся руками, запятая тоже работает.','<b>⚙ Подобрать фрезы по линии</b> — программа сама подберёт фрезы из вашего каталога.','Перенос: в текущий фасад, в новый фасад или в профиль (багет).','<b>▦ Собрать фасад из профиля</b> (в настройках изделия «Профиль») — профиль пилится на 4 планки (усо 45° или встык), планки попадают в заказ раскроя, а фасад-сборка показывает готовую рамку.']))}${sec('Панель инструментов',li(['<b>Выбор</b> — выбрать вектор или область.','<b>Линейка</b> — измерить расстояние между точками.','<b>Замеры</b> — убрать замеры с чертежа.','<b>Скруглить угол / Фаска угла</b> — щёлкнуть рядом с углом вектора.','<b>Смещение</b> — вектор на отступе: внутрь или наружу.','<b>Удалить</b> — вектор, русты, выборку.','<b>Выборка</b> — область между векторами под выбор фрезой.','<b>Русты</b> — диагонали от углов.','<b>Импорт</b> — загрузить SVG / DXF.']))}
-      ${sec('Нижняя панель экрана',li(['<b>📖 Справочник фрез</b> — виды, как выбрать, как измерить, износ, режимы, калькуляторы.','<b>✓ Проверить</b> — проверка геометрии.','<b>⇩ Форматы</b> — PDF, карта DXF, 3D-архив, пакет ArtCAM.','<b>DXF / SVG</b> — быстрый экспорт чертежа.']))}
+      ${sec('Нижняя панель экрана',li(['<b>📖 Справочник фрез</b> — виды и устройство фрез, как выбрать, фрезы из каталога, ЧПУ-калькулятор режимов, как измерить, износ, безопасность, ручки. Вверху окна переключатель «Инструкция / Справочник фрез».','<b>✓ Проверить</b> — проверка геометрии.','<b>⇩ Форматы</b> — PDF, карта DXF, 3D-архив, пакет ArtCAM.','<b>DXF / SVG</b> — быстрый экспорт чертежа.']))}
       ${sec('Свернуть панели',li(['Стрелки ◀ ▶ у боковых панелей — левая и правая колонки.','▲ в заголовке «Разрез изделия» — свернуть разрез.','Кнопки «Генератор стиля», «Скан по фото» и «Импорт чертежа как изделие» по умолчанию скрыты — включить: Меню → раздел с кнопками → «Показывать».','Порядок панелей и их показ меняются в «Меню → Вкладки».']))}</div>`;
 
-    const cuttersHtml=`<p class="gd-lead">Фреза определяет, какой профиль получится в детали. Подробные описания, рисунки и калькуляторы — в «Справочнике фрез».</p>
-      <p><button type="button" class="primary" data-open-guide="kinds">Открыть справочник фрез</button> <button type="button" data-open-guide="calc">Калькуляторы</button> <button type="button" data-open-guide="measure">Как измерить</button></p>
+    const cuttersHtml=`<p class="gd-lead">Фреза определяет, какой профиль получится в детали. Подробные описания, рисунки, ЧПУ-калькулятор режимов и калькуляторы — в «Справочнике фрез» (это отдельное окно только про фрезы; здесь — про саму программу).</p>
+      <p><button type="button" class="primary" data-open-guide="kinds">Открыть справочник фрез</button> <button type="button" data-open-guide="cnc">ЧПУ-калькулятор</button> <button type="button" data-open-guide="measure">Как измерить</button></p>
       <div class="gd-two">
       ${sec('Как задать фрезу в программе',li(['Для вектора: блок «Вектор» → «Фреза», диаметр (ширина) и глубина.','Для выборки: прямая фреза, шаг, глубина прохода.','Для русты и острых углов: V-фреза и её угол.','Профильные и фасонные фрезы заводятся в «Фрезы» (библиотека): рисуете профиль и выбираете его как фрезу.','Дополнительные фрезы к вектору («＋ Добавить фрезу») — для тонкой доработки после основной.']))}
       ${sec('Что проверять',li(['Диаметр фрезы должен быть меньше самого узкого места, иначе программа сообщит.','Внутренний угол не может быть острее радиуса фрезы.','Глубина не больше толщины заготовки.','Для сквозного реза глубина = толщина + небольшой запас в жертвенный стол (его задаёте в ArtCAM).']))}
@@ -4940,8 +4966,9 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     if(hsel)hsel.addEventListener('change',()=>show(hsel.value));
     tabs.addEventListener('click',event=>{const b=event.target.closest('button[data-hp]');if(b)show(b.dataset.hp);});
     body.addEventListener('click',event=>{const b=event.target.closest('[data-open-guide]');if(b&&cutterGuideOpen)cutterGuideOpen(b.dataset.openGuide);});
-    const open=tab=>{ov.classList.remove('hidden');show(tab||current);};
+    const open=tab=>{$('guideOverlay').classList.add('hidden');ov.classList.remove('hidden');show(tab||current);};
     const close=()=>ov.classList.add('hidden');
+    helpOpenHook=open;
     $('openHelp').addEventListener('click',()=>open());
     if($('aboutOpenHelp'))$('aboutOpenHelp').addEventListener('click',()=>{$('aboutOverlay').classList.add('hidden');open('about');});
     $('closeHelp').addEventListener('click',close);
@@ -4973,6 +5000,18 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       };
       return defs[K]||flat;
     };
+    // «Живая» фреза по профилю из каталога ArtCAM: корпус повторяет настоящую форму режущей части
+    const toolDefFromCutter=c=>{
+      if(!c)return null;
+      let prof=c.shape==='form'?c.profile:null,rad0=Number(c.profileRadius);
+      if(!prof&&/^v\d+$/.test(String(c.shape))){const sp=shapeToolProfile(c.shape,c.width);prof=sp.profile;rad0=sp.profileRadius;}
+      if(!Array.isArray(prof)||prof.length<2)return null;
+      const rad=rad0||Number(c.width)/2,pts=prof.map(p=>[Number(p[0]),Number(p[1])]).filter(p=>p.every(Number.isFinite));
+      if(!(rad>0)||pts.length<2)return null;
+      const ymax=Math.max(...pts.map(p=>p[1])),H=Math.max(ymax*rad,rad*.3),sp=Math.min(120/H,48/rad),R=Math.max(3,Math.min(48,rad*sp)),bot=112+Math.max(8,Math.min(124,H*sp));
+      return{R,bot,r:y=>{const h=(bot-y)/sp/rad;if(h>=ymax-1e-9)return R;let x=0;for(const p of pts)if(p[1]<=h+1e-9&&p[0]>x)x=p[0];return Math.max(.4,Math.min(1,x)*R);}};
+    };
+    cutterLiveSvg=(c,crop)=>{const d=toolDefFromCutter(c);if(!d)return null;let sv=toolSvg('profile',{def:d,uid:c.id});sv=crop?sv.replace('viewBox="0 0 120 250"',`viewBox="0 60 120 ${Math.round(d.bot-60+16)}"`):sv.replace('viewBox="0 0 120 250"',`viewBox="0 0 120 ${Math.round(d.bot+16)}"`);return sv;};
     const fluteSpec=kind=>{
       if(['up','flat','ball','wave'].includes(kind))return{k:.046,z:2,w:1.05,phi:0};
       if(kind==='down')return{k:-.046,z:2,w:1.05,phi:0};
@@ -4983,7 +5022,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       return null;
     };
     const toolSvg=(kind,opts={})=>{
-      const u=n=>`gd${n}${kind}${opts.anat?'a':''}`,def=toolDef(kind),head=112,bot=def.bot,r=def.r;
+      const u=n=>`gd${n}${kind}${opts.anat?'a':''}${opts.def?'x'+(opts.uid||''):''}`,def=opts.def||toolDef(kind),head=112,bot=def.bot,r=def.r;
       const wide=kind==='plane',sr=wide?14:13;
       const ys=[];for(let y=head;y<=bot;y+=1)ys.push(y);ys.push(bot);
       const left=ys.map(y=>`${(CX-r(y)).toFixed(2)} ${y}`),right=ys.slice().reverse().map(y=>`${(CX+r(y)).toFixed(2)} ${y}`);
@@ -5147,8 +5186,22 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
         sizes:'D 25–80 мм',teeth:'2–4 пластины',
         tell:'Широкий диск с пластинами по краю.',mist:'Слишком глубокий проход — шпиндель перегружен.'}
     ];
-    const kindsHtml=`<p class="gd-lead">Рисунки нарисованы для наглядности, остриём вниз: у фрез разных производителей канавки немного отличаются. Справа от каждой фрезы — что она оставляет в детали (разрез). В строке «В программе» указано, как этот вид выбирается в ФасадЛаб: приложение считает форму рабочей части (прямая, радиус, V, профиль), а направление спирали и число зубов — свойство реальной фрезы.</p>
-      <div class="gd-grid">${KINDS.map(x=>`<article class="gd-card"><div class="gd-pic">${toolSvg(x.k)}</div><div class="gd-txt"><h4>${x.t}</h4><div class="gd-en">${x.en}</div><p>${x.what}</p><div class="gd-res-box">${resultSvg(x.k)}<span>Результат в детали (разрез)</span></div><p><b>Где применяют:</b> ${x.use}</p><p><b>Плюс:</b> ${x.pro}</p><p><b>Минус:</b> ${x.con}</p><p><b>Размеры:</b> ${x.sizes}. <b>Зубья:</b> ${x.teeth}.</p><p><b>Как узнать:</b> ${x.tell}</p><p><b>Частая ошибка:</b> ${x.mist}</p><span class="gd-chip">В программе: ${x.app}</span></div></article>`).join('')}</div>`;
+    // Пример фрезы нужного вида из каталога ArtCAM (с профилем в файле): для «живого» рисунка в справочнике
+    const kindExemplar=kind=>{
+      const ok=c=>c&&((c.shape==='form'&&Array.isArray(c.profile)&&c.profile.length>1)||/^v\d+$/.test(String(c.shape))),nm=c=>String(c.name),ang=c=>{const a=[...nm(c).matchAll(/(?<![\d.,])(\d{2,3})(?![\d.,]|\s*(?:mm|мм))/gi)].map(x=>+x[1]).filter(v=>v>=40&&v<=170);return a.length?a[a.length-1]:0;};
+      const own=c=>/КОЛОР/.test(String(c.group||''))?0:1;
+      let pool=customCutters.filter(ok),test=null;
+      if(kind==='v90'||kind==='v60'||kind==='v120'){const want={v90:90,v60:60,v120:120}[kind];pool=pool.filter(c=>c.toolClass==='VBitTool'&&Math.abs(ang(c)-want)<=3);}
+      else if(kind==='round')pool=pool.filter(c=>c.toolClass==='RoundoverTool'&&!/veining/i.test(nm(c)));
+      else if(kind==='cove')pool=pool.filter(c=>/cove|core ?box/i.test(nm(c)));
+      else if(kind==='chamfer')pool=pool.filter(c=>/chamfer|bevel|фаск/i.test(nm(c)));
+      else if(kind==='wave')pool=pool.filter(c=>/OgeeTool/.test(c.toolClass||''));
+      else return null;
+      pool.sort((a,b)=>own(a)-own(b)||Number(a.width)-Number(b.width));
+      return pool.length?pool[Math.floor((pool.length-1)/2)]:null;
+    };
+    const kindsHtml=()=>`<div class="field" style="max-width:340px;margin-bottom:8px"><label for="kindPicSel">Рисунок фрез</label><select id="kindPicSel"><option value="live" ${cutterPicLive?'selected':''}>Живая фреза (точная форма из каталога ArtCAM)</option><option value="profile" ${cutterPicLive?'':'selected'}>Схема (прежний вид)</option></select></div><p class="gd-lead">Рисунки нарисованы для наглядности, остриём вниз: у фрез разных производителей канавки немного отличаются. Справа от каждой фрезы — что она оставляет в детали (разрез). В строке «В программе» указано, как этот вид выбирается в ФасадЛаб: приложение считает форму рабочей части (прямая, радиус, V, профиль), а направление спирали и число зубов — свойство реальной фрезы.</p>
+      <div class="gd-grid">${KINDS.map(x=>`<article class="gd-card"><div class="gd-pic">${(()=>{const ex=cutterPicLive?kindExemplar(x.k):null;let live=null;try{live=ex?cutterLiveSvg(ex,false):null;}catch(e){}return live||toolSvg(x.k);})()}</div><div class="gd-txt"><h4>${x.t}</h4>${(()=>{const ex=cutterPicLive?kindExemplar(x.k):null;return ex?`<div class="gd-exn">Рисунок — фреза из вашего каталога: ${esc(String(ex.name).replace(/^\(КОЛОР\)\s*/,'').slice(0,40))}, Ø ${Math.round(Number(ex.width)*100)/100} мм</div>`:'';})()}<div class="gd-en">${x.en}</div><p>${x.what}</p><div class="gd-res-box">${resultSvg(x.k)}<span>Результат в детали (разрез)</span></div><p><b>Где применяют:</b> ${x.use}</p><p><b>Плюс:</b> ${x.pro}</p><p><b>Минус:</b> ${x.con}</p><p><b>Размеры:</b> ${x.sizes}. <b>Зубья:</b> ${x.teeth}.</p><p><b>Как узнать:</b> ${x.tell}</p><p><b>Частая ошибка:</b> ${x.mist}</p><span class="gd-chip">В программе: ${x.app}</span></div></article>`).join('')}</div>`;
     const anatSvg=`<svg viewBox="0 0 440 262" class="gd-wide gd-anat" aria-hidden="true">${toolSvg('up',{anat:true}).replace('<svg ','<svg x="0" y="6" width="120" height="250" ')}
       <g stroke="#a34942" stroke-width="1.3" fill="#a34942" font-family="sans-serif" font-size="14">
         ${[[72,66,'1. Хвостовик — зажимается в цанге'],[76,128,'2. Режущая часть (длина L1)'],[48,158,'3. Режущая кромка (зуб)'],[60,192,'4. Канавка — путь стружки'],[74,238,'5. Торец с кромками — режет вниз']].map(([x,y,t])=>`<line x1="${x}" y1="${y+6}" x2="190" y2="${y+6}"/><circle cx="${x}" cy="${y+6}" r="2.6" stroke="none"/><text x="196" y="${y+11}" stroke="none">${t}</text>`).join('')}
@@ -5301,23 +5354,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
         <li>Глубина прохода не больше диаметра на МДФ; для V-фрез и мелких фрез ещё меньше.</li>
         <li>Ведите журнал: сколько метров резов или часов отработала каждая фреза.</li></ul></section></div>`;
 
-    const modesHtml=`<p class="gd-lead">Ориентировочные значения для МДФ и мягкой древесины. Точные режимы смотрите в паспорте фрезы и станка и подбирайте пробным резом: слушайте звук, смотрите на стружку.</p>
-      <table class="gd-table"><thead><tr><th>Диаметр</th><th>Подача на зуб fz, мм</th><th>Глубина прохода</th></tr></thead><tbody>
-        <tr><td>Ø 3 мм</td><td>0,03–0,06</td><td>до 1–1,5 мм</td></tr>
-        <tr><td>Ø 6 мм</td><td>0,06–0,15</td><td>2–4 мм</td></tr>
-        <tr><td>Ø 8–10 мм</td><td>0,10–0,20</td><td>3–6 мм</td></tr>
-        <tr><td>Ø 12 мм</td><td>0,12–0,25</td><td>4–8 мм</td></tr>
-        <tr><td>V-фреза</td><td>как у Ø 3–6 по диаметру кромки</td><td>по ширине линии, обычно 1–3 мм</td></tr></tbody></table>
-      <div class="gd-two"><section class="gd-calc"><h4>Калькулятор подачи</h4>
-        <div class="fields"><div class="field"><label for="gdRpm">Обороты, об/мин</label><input id="gdRpm" type="number" min="1000" step="500" value="18000"></div>
-        <div class="field"><label for="gdZ">Число зубов</label><input id="gdZ" type="number" min="1" max="8" step="1" value="2"></div></div>
-        <div class="field"><label for="gdFz">Подача на зуб, мм</label><input id="gdFz" type="number" min="0.01" step="0.01" value="0.08"></div>
-        <div class="notice" id="gdFeedOut"></div></section>
-      <section><h4>По стружке и звуку</h4><ul>
-        <li><b>Мелкая пыль, подпалины</b> — подача мала или фреза тупая. Подачу поднимать, а не снижать.</li>
-        <li><b>Крупные рваные куски, дрожь, визг</b> — подача велика или фреза плохо закреплена.</li>
-        <li><b>Ровная мелкая стружка</b>, ровный звук, фреза слегка тёплая — режим хороший.</li>
-        <li>Подача в программе: если станок ниже заданной скорости, сокращайте глубину прохода или шаг, а не обороты.</li></ul></section></div>`;
+
 
     const safeHtml=`<div class="gd-two"><section><h4>Как не перепутать фрезы</h4><ul>
         <li>Нанесите на хвостовик метку: тип, диаметр и угол (маркером или цветной лентой). Фрезы 60°, 90°, 120° и Ø 6 с Ø 6,35 внешне почти не отличаются.</li>
@@ -5337,56 +5374,259 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
         <li>Перед хранением очистите от смолы, при необходимости смажьте.</li>
         <li>Не бросайте на стол и не роняйте: твёрдый сплав хрупкий.</li></ul></section></div>`;
 
-    const calcHtml=`<p class="gd-lead">Калькуляторы для расчётов на станке. Это ориентиры: сверяйте с паспортом фрезы и станка.</p>
-      <div class="gd-two">
-      <section class="gd-calc"><h4>Шаг шаровой фрезой и гребешки</h4>
-        <div class="fields"><div class="field"><label for="gdBD">Диаметр фрезы, мм</label><input id="gdBD" type="number" min="0.5" step="0.5" value="6"></div>
-        <div class="field"><label for="gdBS">Шаг между проходами, мм</label><input id="gdBS" type="number" min="0.01" step="0.05" value="0.6"></div></div>
-        <div class="notice" id="gdBOut"></div>
-        <p>Шаг в процентах диаметра: 5–8 % — гладкая чистовая, 8–12 % — стандарт, 12–15 % — быстрая. Гребешок h = R − √(R² − (s/2)²).</p></section>
-      <section class="gd-calc"><h4>Подача (скорость движения)</h4>
-        <div class="fields"><div class="field"><label for="gdFRpm">Обороты, об/мин</label><input id="gdFRpm" type="number" min="1000" step="500" value="18000"></div>
-        <div class="field"><label for="gdFZ">Число зубов</label><input id="gdFZ" type="number" min="1" max="8" step="1" value="2"></div></div>
-        <div class="field"><label for="gdFFz">Подача на зуб, мм</label><input id="gdFFz" type="number" min="0.01" step="0.01" value="0.08"></div>
-        <div class="notice" id="gdFOut"></div></section>
-      <section class="gd-calc"><h4>Скорость резания</h4>
-        <div class="fields"><div class="field"><label for="gdVcD">Диаметр, мм</label><input id="gdVcD" type="number" min="0.5" step="0.5" value="6"></div>
-        <div class="field"><label for="gdVcN">Обороты, об/мин</label><input id="gdVcN" type="number" min="1000" step="500" value="18000"></div></div>
-        <div class="notice" id="gdVcOut"></div>
-        <p>Для МДФ и дерева обычно 300–700 м/мин по кромке; в первую очередь ориентируйтесь на паспорт фрезы.</p></section>
-      <section class="gd-calc"><h4>Число проходов по глубине</h4>
-        <div class="fields"><div class="field"><label for="gdPDepth">Общая глубина, мм</label><input id="gdPDepth" type="number" min="0.1" step="0.1" value="19"></div>
-        <div class="field"><label for="gdPPass">Глубина прохода, мм</label><input id="gdPPass" type="number" min="0.1" step="0.1" value="4"></div></div>
-        <div class="notice" id="gdPOut"></div>
-        <p>Ориентир для МДФ: до 1 диаметра за проход для прямой фрезы; для мелких и V-фрез меньше.</p></section>
-      <section class="gd-calc"><h4>Время реза</h4>
-        <div class="fields"><div class="field"><label for="gdTLen">Длина реза, мм</label><input id="gdTLen" type="number" min="1" step="10" value="3000"></div>
-        <div class="field"><label for="gdTF">Подача, мм/мин</label><input id="gdTF" type="number" min="10" step="100" value="3000"></div></div>
-        <div class="field"><label for="gdTN">Число проходов</label><input id="gdTN" type="number" min="1" step="1" value="5"></div>
-        <div class="notice" id="gdTOut"></div></section>
-      <section class="gd-calc"><h4>Ширина фаски</h4>
-        <div class="fields"><div class="field"><label for="gdCA">Угол к вертикали, °</label><input id="gdCA" type="number" min="1" max="89" step="0.5" value="45"></div>
-        <div class="field"><label for="gdCD">Глубина по фаске, мм</label><input id="gdCD" type="number" min="0.1" step="0.1" value="3"></div></div>
-        <div class="notice" id="gdCOut"></div>
-        <p>Для 45° ширина фаски равна глубине; для 30° — 0,58 глубины.</p></section>
-      <section class="gd-calc"><h4>Ширина паза и V-фреза</h4>
-        <div class="fields"><div class="field"><label for="gdGA">Угол V-фрезы α, °</label><input id="gdGA" type="number" min="10" max="170" value="90"></div>
-        <div class="field"><label for="gdGW">Нужная ширина линии, мм</label><input id="gdGW" type="number" min="0.1" step="0.1" value="3"></div></div>
-        <div class="notice" id="gdGOut"></div></section>
-      <section class="gd-calc"><h4>Допуск на износ</h4>
-        <div class="fields"><div class="field"><label for="gdWD">Диаметр новой, мм</label><input id="gdWD" type="number" min="0.5" step="0.01" value="6"></div>
-        <div class="field"><label for="gdWM">Измеренный сейчас, мм</label><input id="gdWM" type="number" min="0.5" step="0.01" value="5.95"></div></div>
-        <div class="notice" id="gdWOut"></div>
-        <p>Если разница больше 0,05–0,1 мм, фреза даёт заметно другой размер: внесите новый диаметр в настройки или замените.</p></section></div>`;
-    const TABS=[['kinds','Виды фрез',kindsHtml],['anat','Устройство фрезы',anatomyHtml],['choose','Как выбрать',chooseHtml],['measure','Как измерить',measureHtml],['dull','Тупая или нет',dullHtml],['modes','Режимы',modesHtml],['calc','Калькуляторы',calcHtml],['safe','Не перепутать и безопасность',safeHtml],['handles','Ручки: Stail / Trend',()=>`<div class="gd-two"><section><h4>Чертёж ручек Stail / Trend</h4>${window.__handleRefHtml||'<p>Откройте окно «Ручка», чтобы здесь появился чертёж.</p>'}</section><section><h4>Три вида ручки</h4><ul><li><b>Stail</b> — с лица: выборка 23 мм, дно 5 мм, подрез под губой 11 мм.</li><li><b>Trend</b> — с тыла: четверть под вставку, выборка 50 мм, подрез 10 мм, накладка 50+10+20 = 80 мм.</li><li><b>Простой подрез</b> — обычная ручка: выборки нет, только подрез профильной фрезой и выборка за краем фасада: два квадрата 42×42 мм и полоса между ними шириной с фрезу (настраивается) для посадки и выхода фрезы (траектория П-образная). На части кромки; «На весь торец» — насквозь, посадка и выход за краями фасада.</li></ul><p>Тип выбирается в окне «Ручка» в списке «Тип ручки» — размеры подставятся сами.</p></section></div>`]];
+
+    // ===== ЧПУ-калькулятор режимов (как окно «Редактировать инструмент» в ArtCAM) =====
+    // Данные: подача на зуб — таблицы Freud Tools (рекомендации для ЧПУ, пересчёт дюймов в мм) и Rennie Tool (мм),
+    // макс. обороты по диаметру — Amana Tool «Max RPM Guide», глубина за проход и признаки неполадок — открытые справочники (см. «Источники»).
+    const CNC_MAT=[['mdf','МДФ / ДСП'],['ldsp','ЛДСП (ламинированная плита)'],['hard','Массив твёрдый (дуб, бук, ясень)'],['soft','Массив мягкий (сосна, ель)'],['ply','Фанера'],['acr','Акрил / мягкий пластик'],['hplast','Твёрдый пластик / искусственный камень'],['alu','Алюминий']];
+    const CNC_SPIRAL={d:[2,3.175,6.35,9.525,12.7],
+      mdf:[[.047,.082],[.102,.178],[.330,.432],[.457,.533],[.584,.686]],ldsp:[null,[.076,.152],[.254,.381],[.356,.457],[.559,.660]],
+      hard:[[.038,.064],[.051,.127],[.203,.279],[.356,.406],[.457,.533]],soft:[null,[.102,.152],[.254,.305],[.406,.483],[.508,.584]],
+      ply:[[.056,.077],[.076,.127],[.152,.229],[.381,.457],[.457,.533]],acr:[[.042,.071],[.076,.127],[.152,.229],[.254,.305],[.305,.381]],
+      hplast:[[.028,.055],[.051,.102],[.127,.203],[.203,.254],[.254,.305]],alu:[[.051,.084],[.076,.102],[.127,.178],[.152,.203],[.203,.254]]};
+    const CNC_PROF={d:[3.175,6.35,9.525,12.7,15.875,19.05],
+      mdf:[[.051,.102],[.102,.152],[.127,.178],[.152,.178],[.152,.178],[.178,.229]],ldsp:[[.076,.152],[.152,.203],[.178,.229],[.203,.254],[.229,.279],[.254,.305]],
+      hard:[[.051,.102],[.127,.178],[.152,.203],[.203,.254],[.203,.305],[.229,.330]],soft:[[.076,.127],[.152,.203],[.203,.254],[.203,.305],[.229,.330],[.254,.305]],
+      ply:[[.076,.127],[.127,.152],[.152,.203],[.178,.229],[.203,.254],[.229,.279]],acr:[[.076,.152],[.152,.203],[.178,.229],[.203,.254],[.229,.279],[.254,.305]],
+      hplast:[[.051,.102],[.102,.152],[.127,.178],[.152,.178],[.152,.178],[.178,.229]],alu:null};
+    const CNC_PASS={mdf:[1,1.5],ldsp:[1,1.5],soft:[1,2],ply:[1,2],hard:[.5,1],acr:[.5,1],hplast:[.5,1],alu:[.05,.1]};
+    const CNC_AMANA=[[50,28000],[60,22000],[70,19000],[80,16000],[90,15000],[100,13000]];
+    const cncProfileKind=k=>['v90','v60','v120','chamfer','round','cove','wave','plane','taper','profile'].includes(k);
+    const CNC_EXTRA=[{k:'taper',t:'Коническая (тейпер, 3D-гравировка)'},{k:'profile',t:'Профильная / фасонная / ручка / филёнка'}];
+    function cncChip(kind,mat,D,tipped){
+      const prof=cncProfileKind(kind)||!!tipped,T=prof?CNC_PROF:CNC_SPIRAL,rows=T[mat],notes=[];
+      if(!rows)return{none:true,notes:['Для профильных (V, радиусных, фасочных) фрез в таблице Freud алюминий не указан — данных нет. Берите режим из паспорта фрезы.']};
+      const ds=T.d;let lo,hi;
+      const rowAt=i=>{let r=rows[i];if(!r){const j=rows.findIndex(x=>x);r=rows[j];notes.push(`Для Ø ${ds[i]} мм в таблице нет значения для этого материала — взято значение для Ø ${ds[j]} мм.`);}return r;};
+      if(D<=ds[0]){const r=rowAt(0);lo=r[0];hi=r[1];if(D<ds[0]-1e-9)notes.push(`Диаметр меньше ${ds[0]} мм — взято значение для Ø ${ds[0]} мм; у тонких фрез подачу на зуб стоит снижать ещё.`);}
+      else if(D>=ds[ds.length-1]){const r=rowAt(ds.length-1);lo=r[0];hi=r[1];if(D>ds[ds.length-1]+1e-9)notes.push(`Диаметр больше ${ds[ds.length-1]} мм — таблица заканчивается, взято значение для Ø ${ds[ds.length-1]} мм (экстраполяции нет). Сверьтесь с паспортом.`);}
+      else{let i=0;while(D>ds[i+1])i++;const a=rowAt(i),b=rowAt(i+1),t=(D-ds[i])/(ds[i+1]-ds[i]);lo=a[0]+(b[0]-a[0])*t;hi=a[1]+(b[1]-a[1])*t;}
+      return{lo,hi,notes,table:prof?'профильные и прямые фрезы с твердосплавными пластинами (Freud)':'цельные твердосплавные фрезы (Freud, Rennie)'};
+    }
+    const cncAmanaMax=D=>{if(D<50)return 28000;for(const [lim,rpm] of CNC_AMANA){if(D<=lim)return rpm;}return 13000;};
+    const cncKindOf=(name,c)=>{const n=String(name||'');if(/conical|конус|taper|тейпер/i.test(n))return'taper';if(!/v-?bit|v-?groov|v-фрез|compress|ball|шар|chamfer|фас|straight|прямокан|surfac|планир|cove|галтел|down|вниз/i.test(n)&&(/raiser|panel|филён|profile|профил|ручк|ogee|roman|bead|rail|stile|lock|замк/i.test(n)||(c&&(c.group==='Ручки'||c.shape==='form'))))return'profile';
+      if(/compress|компресс/i.test(n))return'comp';if(/v-?bit|v-?groov|v-фрез/i.test(n)){const a=/(\d{2,3})\s*(deg|°|град)/i.exec(n),all=[...n.matchAll(/(?<![\d.,])(\d{2,3})(?![\d.,]|\s*(?:mm|мм))/gi)].map(x=>Number(x[1])).filter(v=>v>=40&&v<=170);const ang=a?Number(a[1]):all.length?all[all.length-1]:90;return ang<=70?'v60':ang>=110?'v120':'v90';}
+      if(/chamfer|фас/i.test(n))return'chamfer';if(/ball|шар/i.test(n))return'ball';if(/roundover|round over|радиус кромк|скругл/i.test(n))return'round';if(/cove|галтел/i.test(n))return'cove';
+      if(/down|вниз/i.test(n))return'down';if(/straight|прямокан/i.test(n))return'straight';if(/surfac|планир|fly/i.test(n))return'plane';if(c&&c.toolClass==='SlotDrillTool'&&!/spiral|спираль|upcut|up-cut|helic/i.test(n))return'straight';return'up';};
+    function cncProfSvg(kind){
+      const st='fill="none" stroke="#333" stroke-width="1.4"';
+      const shapes={ball:'<path d="M6 4 V14 A14 14 0 0 0 34 14 V4"/>',v90:'<path d="M6 4 L20 22 L34 4"/>',v60:'<path d="M6 4 L20 26 L34 4"/>',v120:'<path d="M6 4 L20 16 L34 4"/>',chamfer:'<path d="M6 4 L20 22 L34 4"/>',round:'<path d="M6 4 Q6 22 20 22 Q34 22 34 4"/>',cove:'<path d="M6 22 Q6 4 20 4 Q34 4 34 22"/>',wave:'<path d="M6 8 Q13 2 20 12 T34 8 V22 H6z"/>',plane:'<path d="M4 22 H36"/>'};
+      return `<svg viewBox="0 0 40 28" width="64" height="44" aria-hidden="true" ${st}>${shapes[kind]||'<path d="M6 4 V22 H34 V4"/>'}</svg>`;
+    }
+    function cncHtml(){
+      const kinds=KINDS.concat(CNC_EXTRA).map(k=>`<option value="${k.k}">${k.t}</option>`).join('');
+      const mats=CNC_MAT.map(([v,t])=>`<option value="${v}">${t}</option>`).join('');
+      const cat=customCutters.length?`<div class="field"><label for="cncCat">Фреза из вашего каталога</label><select id="cncCat"><option value="">— выбрать —</option>${customCutters.slice(0,400).map(c=>`<option value="${c.id}">${String(c.name).replace(/</g,'&lt;').slice(0,60)} · Ø${Number(c.width)||''}</option>`).join('')}</select></div>`:'';
+      return `<p class="gd-lead">Слева в окне опишите свою фрезу: впишите обозначение (например ST2F-D10.0-L52 — диаметр, длина режущей части и число зубов подставятся сами) или заполните поля руками. Сверху выберите, что режете. Справа сами появятся значения, которые надо поставить в ArtCAM; любое можно поправить — в «Примечаниях» будет оценка и причины.</p>
+      <div class="cnc-strip">${cat}
+        <div class="field"><label for="cncPicSel">Рисунок фрезы</label><select id="cncPicSel"><option value="live">Живая фреза (точная форма)</option><option value="profile">Схема (прежний вид)</option></select></div>
+        <div class="field"><label for="cncMat">Материал</label><select id="cncMat">${mats}</select></div>
+        <div class="field"><label for="cncDepth">Сколько надо пройти за весь рез (толщина / глубина паза), мм</label><input id="cncDepth" type="number" min="0.1" step="0.5" value="19"></div>
+        <div class="field"><label for="cncSpin">Макс. обороты шпинделя</label><input id="cncSpin" type="number" min="3000" step="500" value="18000"></div>
+        <div class="field"><label for="cncFmax">Макс. подача станка, мм/мин (0 — без предела)</label><input id="cncFmax" type="number" min="0" step="500" value="0"></div>
+        <div class="field"><label for="cncBitRpm">Обороты по паспорту фрезы (0 — не знаю)</label><input id="cncBitRpm" type="number" min="0" step="500" value="0"></div></div>
+      <div class="ac-dlg"><div class="ac-title">Редактировать инструмент</div>
+        <div class="ac-body">
+          <div class="ac-col ac-l">
+            <label class="ac-r"><span>Обозначение</span><input id="cncDes" type="text" maxlength="60" placeholder="напр. ST2F-D10.0-L52" autocomplete="off"></label>
+            <label class="ac-r"><span>Описание</span><input id="cncName" type="text" maxlength="60"></label>
+            <label class="ac-r"><span>Тип</span><select id="cncKind">${kinds}</select></label>
+            <label class="ac-r"><span>Номер</span><input id="cncNo" type="number" min="1" value="1" style="max-width:70px"></label>
+            <label class="ac-r"><span>Единицы</span><select id="cncUn" disabled><option>мм</option></select></label>
+            <label class="ac-r"><span>Подача</span><select id="cncFu"><option value="s">мм/сек</option><option value="m">мм/мин</option></select></label>
+            <label class="ac-r"><span>Диаметр (D)</span><input id="cncD" type="number" min="0.5" max="100" step="0.001" value="6"></label>
+            <label class="ac-r cncS"><span>Длина режущей части (L)</span><input id="cncL" type="number" min="0" step="0.5" value="0" placeholder="0 — не знаю"></label>
+            <label class="ac-r cncS"><span>Конструкция</span><select id="cncCon"><option value="auto">как обычно для типа</option><option value="solid">цельная твердосплавная</option><option value="tipped">с пластинами / напаянная</option></select></label>
+            <label class="ac-r cncS"><span>Число зубов</span><input id="cncZ" type="number" min="1" max="6" step="1" value="2"></label>
+            <label class="ac-r cncV"><span>Угол (A), °</span><input id="cncA" type="number" min="1" max="89" step="0.5" value="45"></label>
+            <label class="ac-r cncV"><span>Радиус кромки (F)</span><input id="cncF" type="number" min="0" step="0.01" value="0"></label>
+            <label class="ac-r cncV"><span>Длина реж. кромки (C)</span><input id="cncC" type="number" readonly disabled></label>
+          </div>
+          <div class="ac-col ac-c"><div class="ac-dd"><span>D</span></div><div id="cncPic"></div><div class="ac-prof" id="cncProf"></div></div>
+          <div class="ac-col ac-rt">
+            <div class="ac-hd">Что выставить в ArtCAM</div>
+            <label class="ac-r v"><span>Глуб. обраб. за проход</span><input id="cncPass" type="number" min="0.01" step="0.01"></label>
+            <div class="ac-r v"><span id="cncSLb">Шаг (величина в % от D)</span><span class="ac-two"><input id="cncStepM" type="number" min="0" step="0.01"><input id="cncStepP" type="number" min="0" max="100" step="1"></span></div>
+            <label class="ac-r v"><span>Частота вращения (об/мин)</span><input id="cncRpm" type="number" min="0" step="100"></label>
+            <label class="ac-r v"><span id="cncFLb">Рабочая подача (мм/сек)</span><input id="cncFeed" type="number" min="0" step="0.1"></label>
+            <label class="ac-r v"><span id="cncPLb">Подача врезания (мм/сек)</span><input id="cncPlunge" type="number" min="0" step="0.1"></label>
+            <div class="ac-info" id="cncInfo"></div>
+            <div class="ac-info ac-file" id="cncFile" hidden></div>
+          </div></div>
+        <div class="ac-lbl" style="padding:0 10px">Примечания:</div><div class="ac-notes ac-wide" id="cncWhy"></div>
+        <div class="ac-btns"><button type="button" id="cncOk">OK</button><button type="button" id="cncReset">Сброс к расчёту</button></div></div>
+      <div class="gd-two" style="margin-top:12px"><section class="cnc-form"><h4>Что-то не так: фреза свистит, горит, рвёт…</h4>
+        <div class="field"><label for="cncSym">Что наблюдаете</label><select id="cncSym"><option value="squeal">Свист / визг при резе</option><option value="burn">Подпалины, потемнение кромки, дым</option><option value="fuzz">Рваная кромка, ворс, шероховатость</option><option value="chip">Сколы верхней или нижней кромки</option><option value="chat">Вибрация, дребезг, волны на стенке</option><option value="break">Ломаются фрезы</option><option value="clog">Забивается стружкой, пластик плавится</option></select></div>
+        <div id="cncSymOut"></div></section>
+      <details class="cnc-src" open><summary>Источники и оговорки</summary><ul>
+        <li>Формула подачи F = обороты × число зубов × подача на зуб — у Freud, Amana, Rennie, cncrouterstore одна и та же. Для прямых фрез с пластинами (Amana RC-3100, Ø 1/2″, 2 зуба, МДФ, 18 000 об/мин) производитель даёт 0,0056″ = 0,142 мм на зуб, 200 дюйм/мин ≈ 5080 мм/мин; у Freud для таких фрез 0,15–0,18 мм — значения близки, поэтому прямые фрезы считаются по таблице «с пластинами».</li>
+        <li>Подача на зуб (мм) для цельных твердосплавных фрез и для профильных/прямых фрез с пластинами: таблицы Freud Tools «Router Bit Feed and Speed for CNC» (дюймы пересчитаны в мм); для цельных фрез сверено с таблицей Rennie Tool «Solid Carbide Router Bits Speeds and Feeds» (значения совпадают). Для Ø 2 мм — по Rennie. В исходнике Freud есть опечатки; значения приведены к одному виду.</li>
+        <li>Подача = обороты × число зубов × подача на зуб (Freud, Rennie). Поправка на глубину: при 2×D снижать подачу на зуб не менее чем на 25 %, при 3×D — не менее чем на 50 % (Freud).</li>
+        <li>Обороты 18 000 для большинства фрез на 2–3 зуба — рекомендация Rennie. Предел оборотов по диаметру — Amana Tool «Max RPM Guide» (до 50 мм — 28 000, 50–60 — 22 000, 60–70 — 19 000, 70–80 — 16 000, 80–90 — 15 000, 90–100 — 13 000). Обороты по паспорту фрезы главнее.</li>
+        <li>Глубина за проход (в диаметрах) — стартовые ориентиры cncrouterstore.ca (не данные производителя); Rennie советует до 1×D.</li>
+        <li>Подача врезания = рабочая подача ÷ число зубов (формула «ramp-down» из таблицы Amana Tool для прямых фрез). Шаг 40 % для прямых фрез — значение стандартного инструмента ArtCAM (шаг 40 %), у производителей такого нет. Для шаровой шаг 8–12 % D — из раздела «Калькуляторы» этого справочника. Для фрез без центрального реза врезайтесь по спирали или наклонно.</li>
+        <li>У компрессионных фрез подача на зуб у разных серий отличается до 5 раз: взята нижняя граница таблицы для спиральных; берите диапазон из паспорта серии.</li>
+        <li>Причины свиста: отраслевые источники не называют одну причину, поэтому дан список проверок по порядку.</li></ul></details></div>`;
+    }
+    let cncFileSet=null,cncAnSet=null,cncCatId=null;
+    function cncAnalog(kind,D){
+      const cls={up:'SlotDrillTool',down:'SlotDrillTool',comp:'SlotDrillTool',straight:'SlotDrillTool',ball:'BallnoseTool',v90:'VBitTool',v60:'VBitTool',v120:'VBitTool',round:'RoundoverTool',taper:'ConicalTool',profile:'Panel'}[kind];
+      if(!cls||!(D>0))return null;
+      const pool=customCutters.filter(c=>c.set&&c.toolClass&&/КОЛОР/.test(String(c.group||''))&&c.toolClass.includes(cls==='Panel'?'RaisedPanel':cls)&&Number(c.width)>0);
+      if(!pool.length)return null;
+      const near=pool.map(c=>({c,d:Math.abs(Math.log(Number(c.width)/D))})).sort((a,b)=>a.d-b.d).slice(0,3),med=a=>{const x=a.slice().sort((p,q)=>p-q);return x[Math.floor(x.length/2)];};
+      return{n:near.length,names:near.map(o=>String(o.c.name).replace(/^\(КОЛОР\)\s*/,'').slice(0,22)).join(', '),pass:med(near.map(o=>o.c.set.pass/Number(o.c.width)))*D,rpm:med(near.map(o=>o.c.set.rpm)),feed:med(near.map(o=>o.c.set.feed)),plunge:med(near.map(o=>o.c.set.plunge/o.c.set.feed))*med(near.map(o=>o.c.set.feed)),far:near[0].d>Math.log(1.6)};
+    }
+    const CNC_PRIM=new Set(['cncKind','cncD','cncMat','cncZ','cncDepth','cncSpin','cncFmax','cncBitRpm','cncCat','*','cncReset','cncA','cncF','cncL','cncDes','cncCon']);
+    function cncCalc(src){
+      const g=id=>$(id),n=id=>Number(g(id)&&g(id).value);
+      if(!g('cncRpm'))return;
+      const kind=g('cncKind').value,mat=g('cncMat').value,D=n('cncD'),Z=Math.max(1,Math.round(n('cncZ'))||1),depth=n('cncDepth'),spin=n('cncSpin'),fmax=n('cncFmax')||0,bitRpm=n('cncBitRpm')||0;
+      const K=KINDS.concat(CNC_EXTRA).find(x=>x.k===kind)||KINDS[0],prof=cncProfileKind(kind),f2=v=>(Math.round(v*1000)/1000).toString(),mm=v=>Math.round(v).toLocaleString('ru-RU');
+      const fu=g('cncFu').value,prevU=g('cncOk').dataset.u||fu,toMin=(v,u)=>u==='s'?v*60:v,fromMin=v=>fu==='s'?v/60:v;
+      // смена единиц: пересчитать то, что стоит в полях
+      if(src==='cncFu'&&prevU!==fu){['cncFeed','cncPlunge'].forEach(id=>{const v=n(id);if(v>0)g(id).value=f2(prevU==='s'?(fu==='m'?v*60:v):(fu==='s'?v/60:v));});}
+      g('cncOk').dataset.u=fu;
+      g('cncFLb').textContent=`Рабочая подача (${fu==='s'?'мм/сек':'мм/мин'})`;g('cncPLb').textContent=`Подача врезания (${fu==='s'?'мм/сек':'мм/мин'})`;
+      const isV=['v90','v60','v120','chamfer','taper'].includes(kind),picKind=kind==='taper'?'v60':kind==='profile'?'round':kind;
+      document.querySelectorAll('.cncV').forEach(e=>e.classList.toggle('off',!isV));document.querySelectorAll('.cncS').forEach(e=>e.classList.toggle('off',isV));const L=isV?0:n('cncL');
+      if(isV&&(['cncKind','cncCat','cncReset'].includes(src)||(src==='*'&&!g('cncA').dataset.set))){if(!g('cncA').dataset.fromName||src==='cncKind')g('cncA').value={v90:45,v60:30,v120:60,chamfer:45,taper:5}[kind];g('cncA').dataset.fromName='';g('cncF').value=0;g('cncA').dataset.set='1';}
+      if(isV){const A=n('cncA'),F=n('cncF')||0;g('cncC').value=A>0?f2(Math.max(0,(D/2-F)/Math.tan(A*Math.PI/180))):'';}
+      const stepBase=(isV&&n('cncF')>0)?2*n('cncF'):D;
+      g('cncSLb').textContent=stepBase===D?'Шаг (величина в % от D)':'Шаг (величина в % от 2×F)';
+      if(g('cncPic').dataset.k!==kind+'|'+cncCatId+'|'+cutterPicLive){g('cncPic').dataset.k=kind+'|'+cncCatId+'|'+cutterPicLive;if(g('cncPicSel'))g('cncPicSel').value=cutterPicLive?'live':'profile';{let live=null;try{live=cncCatId&&cutterPicLive?toolDefFromCutter(customCutters.find(x=>x.id===cncCatId)):null;}catch(e){}g('cncPic').innerHTML=toolSvg(live?'profile':picKind,live?{def:live}:{});}g('cncProf').innerHTML=cncProfSvg(picKind);}
+      {let real='';try{real=cncCatId?cutterThumb('custom:'+cncCatId):'';}catch(e){real='';}if(real){if(g('cncProf').dataset.real!==String(cncCatId)){g('cncProf').innerHTML=real;g('cncProf').dataset.real=String(cncCatId);}}else{if(g('cncProf').dataset.real){g('cncProf').dataset.real='';g('cncProf').innerHTML=cncProfSvg(picKind);}}}
+      if(!(D>0)||!(spin>0)){g('cncWhy').innerHTML='<p>Введите диаметр и обороты шпинделя.</p>';g('cncSymOut').innerHTML='';return;}
+      const con=g('cncCon').value,tipped=con==='tipped'||(con==='auto'&&kind==='straight'),chip=cncChip(kind,mat,D,tipped);
+      if(chip.none){g('cncWhy').innerHTML='<p>'+chip.notes[0]+'</p>';g('cncSymOut').innerHTML='';return;}
+      // ---- расчёт ----
+      const why=[],warn=[];
+      let rpm=18000,by='рекомендация Rennie (18 000 для большинства фрез на 2–3 зуба)';
+      [['обороты шпинделя',spin],['предел Amana для Ø '+D+' мм',cncAmanaMax(D)],...(bitRpm>0?[['паспорт фрезы',bitRpm]]:[])].forEach(([nm,v])=>{if(v<rpm){rpm=v;by='ограничено: '+nm;}});
+      let fzLo=chip.lo,fzHi=kind==='comp'?chip.lo:chip.hi;
+      if(kind==='comp')warn.push('Компрессионная фреза: подача на зуб у разных серий отличается до 5 раз — взята нижняя граница таблицы для спиральных фрез. Возьмите диапазон из паспорта своей серии.');
+      const ratio=CNC_PASS[mat]?CNC_PASS[mat][0]:1,passMm=prof?Math.min(depth,Math.max(.1,D/2)):Math.min(depth,ratio*D,L>0?L:1e9);
+      let red=0;if(!prof&&passMm/D>1)red=Math.min(.5,(passMm/D-1)*.25);
+      if(red>0){fzLo*=1-red;fzHi*=1-red;}
+      let Flo=rpm*Z*fzLo,Fhi=rpm*Z*fzHi,machineNote='';
+      if(fmax>0&&Flo>fmax){const r2=Math.round(fmax/(Z*fzLo));machineNote=`Станок не держит подачу ${mm(Flo)} мм/мин (предел ${mm(fmax)}). Подачу не уменьшаем — это даст трение и перегрев, — а снижаем обороты до ${mm(r2)} об/мин, чтобы подача на зуб осталась в норме (cncrouterstore).`;rpm=r2;by='снижено под предел подачи станка';Flo=rpm*Z*fzLo;Fhi=Math.min(rpm*Z*fzHi,fmax);}
+      else if(fmax>0&&Fhi>fmax)Fhi=fmax;
+      const stepP=kind==='ball'?10:40,plunge=Flo/Z,steps=Math.ceil(depth/passMm-1e-9);
+      // ---- заполнение полей ----
+      if(CNC_PRIM.has(src)){
+        if(!g('cncName').dataset.edited||src==='cncKind'||src==='cncCat')g('cncName').value=`${K.t.split(' (')[0].split(' — ')[0]} Ø${f2(D)} мм`;
+        g('cncPass').value=f2(passMm);g('cncStepP').value=stepP;g('cncStepM').value=f2(stepBase*stepP/100);g('cncRpm').value=rpm;
+        g('cncFeed').value=f2(fromMin(Flo));g('cncPlunge').value=f2(fromMin(plunge));
+      }
+      // ---- оценка введённых значений ----
+      const myRpm=n('cncRpm'),myF=toMin(n('cncFeed'),fu),myPl=toMin(n('cncPlunge'),fu),myPass=n('cncPass'),myStepP=n('cncStepP');
+      const chk=[];
+      if(myRpm>0&&myF>0){const fz=myF/(myRpm*Z),lo0=fzLo,hi0=fzHi;
+        g('cncInfo').innerHTML=`Подача на зуб: <b>${f2(fz)} мм</b> (норма ${f2(lo0)}–${f2(hi0)})<br>Скорость на кромке: <b>${Math.round(Math.PI*D*myRpm/1000)} м/мин</b>`;
+        if(fz<lo0*.9)chk.push(['bad',`Подача на зуб ${f2(fz)} мм ниже нормы ${f2(lo0)}–${f2(hi0)}: фреза скорее трёт, чем режет — мелкая пыль, перегрев, свист, подпалины. Поднимайте подачу шагами 10–20 % либо снижайте обороты, оставляя подачу.`]);
+        else if(fz>hi0*1.1)chk.push(['bad',`Подача на зуб ${f2(fz)} мм выше нормы ${f2(lo0)}–${f2(hi0)}: большая нагрузка — шероховатая кромка, вибрация, риск поломки. Снизьте подачу или поднимите обороты.`]);
+        else chk.push(['ok',`Подача на зуб ${f2(fz)} мм — в пределах нормы ${f2(lo0)}–${f2(hi0)}.`]);
+      }else g('cncInfo').textContent='';
+      const lim=Math.min(spin,cncAmanaMax(D),bitRpm>0?bitRpm:1e9);
+      if(myRpm>lim+1)chk.push(['bad',`Обороты ${mm(myRpm)} выше допустимых ${mm(lim)} (${lim===spin?'шпиндель':lim===bitRpm?'паспорт фрезы':'таблица Amana для этого диаметра'}). Фреза выше паспортных оборотов может разрушиться.`]);
+      if(!prof&&myPass>0&&myPass/D>(CNC_PASS[mat]?CNC_PASS[mat][1]:1.5)+.01)chk.push(['bad',`Глубина за проход ${f2(myPass)} мм = ${f2(myPass/D)}×D; для этого материала ориентир ${CNC_PASS[mat][0]}–${CNC_PASS[mat][1]}×D. Глубже — подачу на зуб уменьшайте (Freud: на 25 % при 2×D, на 50 % при 3×D).`]);
+      if(myPl>0&&myF>0&&myPl>myF/Z*1.25+1)chk.push(['bad','Подача врезания выше рабочей, делённой на число зубов (формула ramp-down у Amana Tool) — врезание нагружает фрезу торцом.']);
+      const chkHtml=chk.map(([t,x])=>`<li class="${t==='bad'?'cnc-warn':'cnc-ok'}">${t==='bad'?'⚠':'✔'} ${x}</li>`).join('');
+      // ---- пояснения ----
+      why.push(`<b>Обороты ${mm(rpm)} об/мин</b> — ${by}.`);
+      why.push(`<b>Подача на зуб ${f2(fzLo)}–${f2(fzHi)} мм</b> для ${CNC_MAT.find(x=>x[0]===mat)[1].toLowerCase()}, Ø ${f2(D)} мм: таблица «${chip.table}».${red>0?` Проход глубже диаметра — подача на зуб снижена на ${Math.round(red*100)} % (Freud).`:''}`);
+      why.push(`<b>Подача ${mm(Flo)} мм/мин</b> (${f2(Flo/60)} мм/сек) = ${mm(rpm)} × ${Z} × ${f2(fzLo)}. Начинайте с нижней границы, поднимайте шагами 10–20 %: видна стружка, а не пыль — режим в норме (Rennie, toolstoday).`);
+      if(machineNote)why.push(machineNote);
+      if(!prof)why.push(`<b>Глубина за проход ${f2(passMm)} мм</b> (${f2(passMm/D)}×D); нужно ${f2(depth)} мм → ${steps} ${steps===1?'проход':steps<5?'прохода':'проходов'}. Ориентир cncrouterstore: ${CNC_PASS[mat][0]}–${CNC_PASS[mat][1]}×D, Rennie — до 1×D; на новом материале проверьте на обрезке.${kind==='comp'?' Компрессионной первый проход — примерно один диаметр, глубже длины верхней спирали.':''}`);
+      else why.push('<b>Глубина</b> задаётся профилем фрезы; глубокий рез профилем делайте за несколько проходов — широкая кромка нагружается сильнее цилиндрической.');
+      why.push(`<b>Шаг ${stepP} %</b> (${f2(stepBase*stepP/100)} мм)${kind==='ball'?': для шаровой 8–12 % D — обычная чистовая, 5–8 % — гладкая.':': как в стандартном инструменте ArtCAM; в пазе на всю ширину фрезы шаг равен 100 %, нагрузка максимальна.'}`);
+      if(kind==='ball'){const a=Math.min(D/2,Math.max(.01,Math.min(depth,D/2))),de=2*Math.sqrt(Math.max(0,a*(D-a)));why.push(`<b>Шаровая:</b> при глубине ${f2(a)} мм режет не весь диаметр, а эффективный Ø ≈ ${f2(de)} мм (2·√(a·(D−a))); скорость на кромке ≈ ${Math.round(Math.PI*de*rpm/1000)} м/мин вместо ${Math.round(Math.PI*D*rpm/1000)}.`);}
+      if(kind==='v90'||kind==='v60'||kind==='v120'){const ang=kind==='v60'?60:kind==='v120'?120:90;why.push(`<b>V-фреза ${ang}°:</b> ширина линии на глубине h = 2·h·tan(${ang/2}°) = ${f2(2*Math.tan(ang*Math.PI/360))}·h.`);}
+      if(kind==='up')why.push('<b>Upcut:</b> стружка вверх, греется меньше, но верхняя кромка может рваться (шпон, ламинат) — для чистого верха берите Downcut или Compression.');
+      if(kind==='taper')why.push('<b>Коническая 3D-фреза:</b> режет острым кончиком — угол A и радиус кончика F берите из паспорта. Для неё в ArtCAM шаг задаётся в % от 2×F, глубина за проход мала (в примерах ArtCAM 0,2–3 мм). Подача на зуб здесь взята из таблицы для профильных фрез — для тонких конусов она завышена; начинайте заметно ниже и поднимайте по звуку.');
+      if(kind==='profile')why.push('<b>Профильная/фасонная фреза:</b> режет широкой кромкой, нагрузка выше, чем у цилиндрической того же диаметра. Режимы по таблице Freud для профильных фрез; для крупных (Ø 30+) обороты берите из паспорта — у фрез большого диаметра они обычно ниже 18 000 (проверьте на упаковке и по таблице Amana).');
+      if(kind==='straight')why.push('<b>Прямая (без спирали):</b> кромка входит в материал сразу по всей глубине реза, а не плавно, как у спиральной, — нагрузка ударная, стружка уходит хуже. Поэтому на глубоком проходе она чувствительнее к вибрации; значения подачи на зуб взяты из той же таблицы, что и для спиральных, — на первом проходе начинайте с нижней границы.');
+      if(kind==='down')why.push('<b>Downcut:</b> стружка вдавливается в паз — в глубоком узком пазу забивается и греется; меньше глубину прохода, нужен отсос.');
+      if(kind==='comp')why.push('<b>Compression:</b> чистая кромка с обеих сторон плиты, но только если нижняя часть фрезы проходит материал насквозь.');
+      if(K.mist)why.push('<b>Частая ошибка:</b> '+K.mist);
+      if(L>0){const r=L/D;why.push(`<b>Режущая часть L = ${f2(L)} мм (L/D = ${f2(r)})</b>: за проход берём не больше ${f2(passMm)} мм. Вся длина — не рабочая глубина: фреза гнётся как консольная балка, прогиб растёт как вылет³ и падает как D⁴.`);
+        if(r>3)warn.push(`Длинная фреза (L/D = ${f2(r)}): жёсткость в ${f2(Math.pow(r/3,3))} раз ниже, чем при L = 3×D. Freud в таблице подач доходит до 3×D (−50 % подачи на зуб) — для длиннее данных нет. Свист и вибрация на длинной фрезе — признак прогиба или трения (слишком малая подача на зуб, слишком глубокий проход); единого подтверждённого источника по свисту нет, проверяйте по порядку. Режьте за несколько проходов, вылет из цанги делайте минимальным, цанга и фреза — чистые, без биения.`);}
+      chip.notes.forEach(t=>warn.push(t));
+      if(D<3.175)warn.push('Мелкая фреза хрупкая: жёсткость падает пропорционально четвёртой степени диаметра — уменьшайте глубину и вылет (cncrouterstore).');
+      g('cncWhy').innerHTML=(chkHtml?'<ul class="cnc-chk">'+chkHtml+'</ul>':'')+'<ul>'+why.map(t=>'<li>'+t+'</li>').join('')+warn.map(t=>'<li class="cnc-warn">⚠ '+t+'</li>').join('')+'</ul>';
+      const fb=g('cncFile'),an=cncAnalog(kind,D),parts=[];
+      if(cncFileSet){const F=cncFileSet,fzf=F.feed/(F.rpm*Z);
+        const verdict=fzf<fzLo*.8?`ниже нормы (${f2(fzLo)}–${f2(fzHi)}) — скорее трение, чем резание`:fzf>fzHi*1.2?`выше нормы (${f2(fzLo)}–${f2(fzHi)}) — большая нагрузка`:`в норме (${f2(fzLo)}–${f2(fzHi)})`;
+        parts.push(`<b>Записано в файле ArtCAM для этой фрезы:</b><br>проход ${f2(F.pass)} мм · ${mm(F.rpm)} об/мин · подача ${mm(F.feed)} мм/мин · врезание ${mm(F.plunge)} мм/мин<br>Подача на зуб (${Z} зуб.) ${f2(fzf)} мм — ${verdict}. Наш расчёт ${mm(Flo)} мм/мин (файл = ×${f2(F.feed/Flo)}).<br><button type="button" id="cncUseFile">Взять из файла</button>`);}
+      if(an){parts.push(`<b>По аналогии с вашими фрезами из файла</b> (${an.n} ближайших того же типа: ${an.names}):<br>проход ${f2(an.pass)} мм (${f2(an.pass/D)}×D) · ${mm(an.rpm)} об/мин · подача ${mm(an.feed)} мм/мин · врезание ${mm(an.plunge)} мм/мин (${f2(an.plunge/an.feed)} от подачи)${an.far?'<br>⚠ ближайшая по диаметру отличается более чем в 1,6 раза — значения приблизительные.':''}<br><button type="button" id="cncUseAn">Взять по аналогии</button>`);cncAnSet=an;}
+      if(fb){fb.hidden=!parts.length;fb.innerHTML=parts.join('<hr style="border:0;border-top:1px solid #808080;margin:6px 0">');}
+      cncSym(kind,mat,{fzLo,fzHi,Z,rpm,D});
+    }
+    function cncSym(kind,mat,c){
+      const s=$('cncSym').value,prof=cncProfileKind(kind),mm=v=>Math.round(v).toLocaleString('ru-RU');
+      const L={
+        squeal:[['Подача мала для оборотов — фреза трёт.','Берёт мелкую пыль вместо стружки, греется и визжит. Поднимайте подачу шагами 10–20 % или снижайте обороты при той же подаче (toolstoday; на форуме Avid CNC так «успокоили» визжащую фрезу: меньше оборотов, больше подача).'],
+          ['Вибрация длинной или тонкой фрезы.','Уменьшите вылет из цанги или возьмите фрезу толще: прогиб растёт с кубом длины — вдвое больший вылет даёт примерно в восемь раз больший прогиб (cncrouterstore).'],
+          ['Паз на всю ширину фрезы.','При полной ширине контакта нагрузка максимальна. Сделайте паз в два прохода (контур со смещением) или временно снизьте подачу и проверьте, уходит ли звук — по форумам это встречается, но не всегда.'],
+          ['Это шум станка, а не реза.','Проведите «воздушный рез» по той же траектории без материала: если звук остался — это привод или шпиндель, не фреза.'],
+          ['Общее правило звука.','«Тихий рез — обычно всё подобрано верно; визг или рычание — что-то идёт слишком быстро или слишком медленно» (Woodshop News). Сверьте режимы выше.']],
+        burn:[['Подача мала — фреза трёт.','Стружка должна уносить тепло; если она мелкая как пыль, тепло остаётся в кромке (Freud, toolstoday). Поднимайте подачу шагами 10–20 %.'],
+          ['Слишком высокие обороты при данной подаче.','Подача на зуб падает. Снизьте обороты и оставьте подачу — подача на зуб вырастет.'],
+          ['Тупая фреза или налипшая смола.','Осмотрите кромку, очистите. Смолистые породы (сосна), а также клён и вишня склонны к подпалинам.'],
+          ['Плохой вывод стружки.','Включите отсос или обдув; в глубоком узком пазу выбирайте Upcut.'],
+          ['Слишком малая глубина прохода.','Очень мелкие проходы дают больше трения, чем ожидают.'],
+          ['Признак: синий, коричневый или соломенный цвет на хвостовике или у излома — фреза работала перегретой (cncrouterstore).','']],
+        fuzz:[['Тупая фреза или неверные режимы.','Заменить или заточить, подобрать подачу и обороты по таблице (toolstoday).'],
+          ['Слишком большая подача на зуб.','Стружка слишком крупная — поверхность шероховатая (Freud). Снизьте подачу.'],
+          ['Подача слишком мала.','Фреза трёт — тоже ворс. Нужна подача в таблице.'],
+          ['Нужна другая конфигурация.','Для чистовой кромки берите двузубую фрезу; для двустороннего чистого края — компрессионную.']],
+        chip:[['Неверное направление спирали.','Upcut тянет верх вверх и рвёт верхнюю кромку (шпон, ламинат) — берите Downcut. Downcut лучше для верха плиты, Upcut для низа.'],
+          ['Для чистоты обеих сторон плиты — компрессионная фреза.','Работает только на полной толщине: нижняя часть должна пройти материал насквозь.'],
+          ['Тупая фреза или слишком большая подача на зуб.','Заточка и режимы по таблице.'],
+          ['Деталь плохо прижата.','Вакуум или упоры; плохо закреплённая деталь вибрирует и сколы растут.']],
+        chat:[['Фреза закреплена нецентрально или в изношенной цанге.','Биение должно быть меньше 0,013 мм (0,0005″), иначе меняйте цангу (cncrouterstore).'],
+          ['Большой вылет.','Возьмите короче или толще.'],
+          ['Подача на зуб слишком велика.','Слишком большая стружка вызывает вибрацию и плохую поверхность (toolstoday). Снизьте подачу.'],
+          ['Дисбаланс фрезы.','Закрепите и сбалансируйте, замените если погнута.']],
+        break:[['Подача мала — фреза перегрелась.','Следы синего/коричневого цвета у излома — признак (cncrouterstore).'],
+          ['Подача на зуб взята не из той серии.','Для одного диаметра и материала у разных серий разброс до 5 раз — берите из паспорта.'],
+          ['Слишком глубокий проход.','Таблица ориентиров по материалу выше; мелкие фрезы (≤3 мм) — очень мелко и с коротким вылетом.'],
+          ['Большой вылет.','Ломается у цанги — вылет в минимум.'],
+          ['Изношенная цанга и биение.','Если ломаются разные фрезы подряд — проверьте биение (меньше 0,013 мм).'],
+          ['Стружка перерезается в узком пазу.','Обдув, отсос, дробление прохода или фреза с меньшим числом зубов.'],
+          ['Врезание без центрального реза.','Если у фрезы нет центрального реза — врезайтесь по спирали или наклонно.']],
+        clog:[['Стружка не выходит.','Обдув/отсос; Upcut вытягивает стружку лучше; в пластике — подача выше.'],
+          ['Подача мала — пластик плавится.','Тот же механизм: мелкая стружка не уносит тепло (Freud). Поднимайте подачу и снижайте обороты, подбирайте однозубую фрезу для пластика.'],
+          ['Глубокий узкий паз.','Дробите на проходы, уменьшайте глубину.']]};
+      let items=L[s].slice();
+      let extra='';
+      if(s==='squeal'||s==='burn'){const my=`Для ваших параметров (Ø ${c.D} мм, ${c.Z} зуб.) подача на зуб должна быть ${Math.round(c.fzLo*1000)/1000}–${Math.round(c.fzHi*1000)/1000} мм, то есть при ${mm(c.rpm)} об/мин подача ${mm(c.rpm*c.Z*c.fzLo)}–${mm(c.rpm*c.Z*c.fzHi)} мм/мин. Если у вас ниже — это первая причина. Сверьте в блоке слева.`;extra='<p class="sub">'+my+'</p>';}
+      $('cncSymOut').innerHTML=extra+'<ol>'+items.map(([a,b])=>'<li><b>'+a+'</b>'+(b?' '+b:'')+'</li>').join('')+'</ol><p class="sub">Проверяйте по порядку, меняя за раз одну вещь.</p>';
+    }
+    const catalogHtml=()=>{
+      const esc2=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      if(!customCutters.length)return '<p class="gd-lead">Каталог пуст. Загрузите файл ArtCAM (.tdb или .tbx) кнопкой «Фрезы» — здесь появятся все фрезы с их настоящей формой из файла.</p>';
+      const wood=c=>/КОЛОР|Wood or Plastic|Legacy Woodworking/i.test(String(c.group||'')),grp=c=>wood(c)?'Дерево / МДФ':String(c.group||c.sourceFile||'Свои').split(' / ')[0].trim();
+      const by=new Map();customCutters.forEach(c=>{const k=grp(c);if(!by.has(k))by.set(k,[]);by.get(k).push(c);});
+      const keys=[...by.keys()].sort((a,b)=>(b==='Дерево / МДФ')-(a==='Дерево / МДФ'));
+      return `<p class="gd-lead">Форма взята из вашего файла ArtCAM. Нажмите на фрезу — она откроется в ЧПУ-калькуляторе со всеми данными.</p><div class="field" style="max-width:320px;margin-bottom:8px"><label for="catPicSel">Рисунок фрез</label><select id="catPicSel"><option value="live" ${cutterPicLive?'selected':''}>Живая фреза (точная форма)</option><option value="profile" ${cutterPicLive?'':'selected'}>Контур профиля</option></select></div>`+keys.map((k,i)=>`<details class="cnc-src" ${i===0?'open':''}><summary>${esc2(k)} · ${by.get(k).length}</summary><div class="gd-cat">${by.get(k).slice().sort((a,b)=>Number(a.width)-Number(b.width)).map(c=>{let pic='';try{pic=cutterPic('custom:'+c.id);}catch(e){}return `<button type="button" class="gd-cc" data-cncpick="${c.id}" title="${esc2(c.name)}">${pic}<b>${esc2(String(c.name).replace(/^\(КОЛОР\)\s*/,'').slice(0,38))}</b><span>Ø ${Math.round(Number(c.width)*100)/100} мм${c.set?` · ${c.set.rpm} об/мин · ${c.set.feed} мм/мин`:''}</span></button>`;}).join('')}</div></details>`).join('');
+    };
+    const TABS=[['kinds','Виды фрез',kindsHtml],['anat','Устройство фрезы',anatomyHtml],['choose','Как выбрать',chooseHtml],['catalog','Фрезы из каталога',catalogHtml],['cnc','ЧПУ-калькулятор',cncHtml],['measure','Как измерить',measureHtml],['dull','Тупая или нет',dullHtml],['safe','Не перепутать и безопасность',safeHtml],['handles','Ручки: Stail / Trend',()=>`<div class="gd-two"><section><h4>Чертёж ручек Stail / Trend</h4>${window.__handleRefHtml||'<p>Откройте окно «Ручка», чтобы здесь появился чертёж.</p>'}</section><section><h4>Три вида ручки</h4><ul><li><b>Stail</b> — с лица: выборка 23 мм, дно 5 мм, подрез под губой 11 мм.</li><li><b>Trend</b> — с тыла: четверть под вставку, выборка 50 мм, подрез 10 мм, накладка 50+10+20 = 80 мм.</li><li><b>Простой подрез</b> — обычная ручка: выборки нет, только подрез профильной фрезой и выборка за краем фасада: два квадрата 42×42 мм и полоса между ними шириной с фрезу (настраивается) для посадки и выхода фрезы (траектория П-образная). На части кромки; «На весь торец» — насквозь, посадка и выход за краями фасада.</li></ul><p>Тип выбирается в окне «Ручка» в списке «Тип ручки» — размеры подставятся сами.</p></section></div>`]];
     tabs.innerHTML=TABS.map(([id,label])=>`<button type="button" role="tab" data-gd="${id}">${label}</button>`).join('');
     let current='kinds';
-    const calc=()=>{
+    const calc=ev=>{
       const n=id=>Number($(id)?.value);
+      if($('cncRpm'))cncCalc(ev&&ev.target&&ev.target.id?ev.target.id:'*');
       if($('gdVOut')){const a=n('gdVAngle'),h=n('gdVDepth');$('gdVOut').textContent=a>0&&a<180&&h>0?`При угле ${a}° и глубине ${h} мм ширина линии ≈ ${(2*h*Math.tan(a*Math.PI/360)).toFixed(2)} мм.`:'Введите угол и глубину.';}
       if($('gdVOut2')){const w=n('gdVW'),h=n('gdVH');$('gdVOut2').textContent=w>0&&h>0?`Угол фрезы по пробному резу ≈ ${(2*Math.atan(w/(2*h))*180/Math.PI).toFixed(1)}°.`:'Введите ширину и глубину пробного паза.';}
       const out=(id,text)=>{if($(id))$(id).textContent=text;};
-      if($('gdBOut')){const D=n('gdBD'),sx=n('gdBS'),R=D/2;out('gdBOut',D>0&&sx>0&&sx<D?`Шаг ${sx} мм = ${(sx/D*100).toFixed(1)} % диаметра. Высота гребешка ≈ ${(R-Math.sqrt(R*R-(sx/2)*(sx/2))).toFixed(3)} мм.`:'Введите диаметр и шаг (шаг меньше диаметра).');}
+      if($('gdBOut')){const t=$('gdBT').value,D=n('gdBD'),sx=n('gdBS'),h0=n('gdBH'),f3=v=>(Math.round(v*1000)/1000).toString();
+        $('gdBDl').textContent=t==='taper'?'Радиус кончика F, мм':t==='round'?'Радиус профиля R, мм':t==='v'?'Угол V-фрезы (полный), °':'Диаметр фрезы, мм';
+        let msg='',note='';
+        if(t==='flat'){msg=D>0&&sx>0?`Шаг ${f3(sx)} мм = ${f3(sx/D*100)} % диаметра. Дно плоское — гребешков нет, шаг ограничен только нагрузкой.`:'Введите диаметр и шаг.';note='Плоским дном шаг по площади выбирают по нагрузке: в стандартном инструменте ArtCAM — 40 % от D; при пазе на всю ширину шаг равен 100 %.';}
+        else if(t==='v'){const th=D*Math.PI/360;if(D>=10&&D<180&&sx>0){const h=(sx/2)/Math.tan(th);msg=`V-фреза ${f3(D)}°, шаг ${f3(sx)} мм: гребешок между проходами h = (s/2)/tan(α/2) ≈ ${f3(h)} мм.`+(h0>0?` Для гребешка ${f3(h0)} мм шаг s = 2·h·tan(α/2) ≈ ${f3(2*h0*Math.tan(th))} мм.`:'');}else msg='Введите угол 10–179° и шаг.';note='Геометрия двух конусов: чем острее V-фреза, тем выше гребешок при том же шаге. Для чистового 3D острый угол ставят вместе с мелким шагом.';}
+        else{const R=t==='ball'?D/2:D;if(R>0&&sx>0&&sx/2<R){const h=R-Math.sqrt(R*R-(sx/2)*(sx/2));msg=`R = ${f3(R)} мм, шаг ${f3(sx)} мм`+(t==='ball'?` = ${f3(sx/D*100)} % диаметра`:'')+`. Высота гребешка ≈ ${f3(h)} мм.`+(h0>0&&h0<R?` Для гребешка ${f3(h0)} мм шаг s = 2·√(2Rh − h²) ≈ ${f3(2*Math.sqrt(2*R*h0-h0*h0))} мм.`:'');}else msg='Введите радиус и шаг (шаг меньше диаметра закругления).';note=t==='ball'?'Шаг в процентах диаметра: 5–8 % — гладкая чистовая, 8–12 % — стандарт, 12–15 % — быстрая. Гребешок h = R − √(R² − (s/2)²).':'У конической и радиусной фрезы гребешок определяет только радиус закругления кончика/профиля: h = R − √(R² − (s/2)²). Это геометрия, не табличные данные производителя.';}
+        out('gdBOut',msg);$('gdBNote').textContent=note;}
       if($('gdFOut')){const r=n('gdFRpm'),z=n('gdFZ'),f=n('gdFFz');out('gdFOut',r>0&&z>0&&f>0?`Подача F = ${r} × ${z} × ${f} ≈ ${Math.round(r*z*f)} мм/мин (${(r*z*f/1000).toFixed(2)} м/мин).`:'Введите обороты, число зубов и подачу на зуб.');}
       if($('gdVcOut')){const D=n('gdVcD'),N=n('gdVcN');out('gdVcOut',D>0&&N>0?`Скорость резания по кромке ≈ ${Math.round(Math.PI*D*N/1000)} м/мин.`:'Введите диаметр и обороты.');}
       if($('gdPOut')){const T=n('gdPDepth'),P=n('gdPPass');out('gdPOut',T>0&&P>0?`Нужно ${Math.ceil(T/P-1e-9)} проход(ов) по ${P} мм; последний проход ${(T-(Math.ceil(T/P-1e-9)-1)*P).toFixed(2)} мм.`:'Введите глубину и проход.');}
@@ -5396,16 +5636,20 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       if($('gdWOut')){const a=n('gdWD'),m=n('gdWM');out('gdWOut',a>0&&m>0?`Износ ${(a-m).toFixed(3)} мм по диаметру (${((a-m)/a*100).toFixed(1)} %). ${Math.abs(a-m)>.1?'Замените или внесите новый диаметр.':'В допуске.'}`:'Введите диаметры.');}
       if($('gdFeedOut')){const r=n('gdRpm'),z=n('gdZ'),f=n('gdFz');$('gdFeedOut').textContent=r>0&&z>0&&f>0?`Подача F = ${r} × ${z} × ${f} ≈ ${Math.round(r*z*f)} мм/мин (${(r*z*f/1000).toFixed(2)} м/мин).`:'Введите обороты, число зубов и подачу на зуб.';}
     };
-    const show=id=>{
+    const show=(id,keep)=>{
+      const keepTop=keep?body.scrollTop:0;
       current=TABS.some(t=>t[0]===id)?id:'kinds';
       tabs.querySelectorAll('button').forEach(b=>{b.classList.toggle('active',b.dataset.gd===current);b.setAttribute('aria-selected',String(b.dataset.gd===current));});
       if($('gdSel'))$('gdSel').value=current;
-      {const t=TABS.find(t=>t[0]===current)[2];body.innerHTML=typeof t==='function'?t():t;}body.scrollTop=0;calc();
+      {const t=TABS.find(t=>t[0]===current)[2];body.innerHTML=typeof t==='function'?t():t;}body.scrollTop=keepTop;calc();
     };
     const gsel=$('gdSel');if(gsel){gsel.innerHTML=TABS.map(([id,label])=>`<option value="${id}">${label}</option>`).join('');gsel.addEventListener('change',()=>show(gsel.value));}
     tabs.addEventListener('click',event=>{const b=event.target.closest('button[data-gd]');if(b)show(b.dataset.gd);});
     body.addEventListener('input',calc);
-    const open=tab=>{ov.classList.remove('hidden');show(typeof tab==='string'?tab:current);};
+    body.addEventListener('change',e=>{const t=e.target;if(!t||!t.id)return;if(t.id==='cncPicSel'||t.id==='catPicSel'||t.id==='kindPicSel'){setCutterPicLive(t.value==='live');if(t.id==='catPicSel')show('catalog',1);else if(t.id==='kindPicSel')show('kinds',1);else calc({target:{id:'cncPicSel'}});return;}if(t.id==='cncKind'){cncCatId=null;cncFileSet=null;}if(t.id==='cncCat'){const c=customCutters.find(x=>String(x.id)===t.value);if(c){$('cncD').value=Number(c.width)||6;const kd=cncKindOf(c.name,c);$('cncKind').value=kd;$('cncPic').dataset.k='';$('cncZ').value=Number(c.flutes)>0?c.flutes:2;$('cncL').value=Number(c.profileHeight)>0?c.profileHeight:0;$('cncF').value=0;{const nm=String(c.name),ag=/(\d{1,3}(?:[.,]\d+)?)\s*(?:-\s*)?(?:deg|°|град)/i.exec(nm)||(kd.startsWith('v')?[...nm.matchAll(/(?<![\d.,])(\d{2,3})(?![\d.,]|\s*(?:mm|мм))/gi)].filter(x=>x[1]>=40&&x[1]<=170).slice(-1)[0]:null),rd=/rad\w*\.?\s*(\d*[.,]?\d+)/i.exec(nm);if(ag){const a=Number(ag[1].replace(',','.'));$('cncA').value=kd==='taper'?a:a/2;$('cncA').dataset.fromName='1';}if(rd&&kd==='taper')$('cncF').value=Number(rd[1].replace(',','.'));}$('cncName').value=String(c.name).slice(0,60);$('cncName').dataset.edited='1';cncFileSet=c.set||null;cncCatId=c.id;}calc(e);}});
+    body.addEventListener('click',e=>{const pk=e.target.closest&&e.target.closest('[data-cncpick]');if(pk){const id=pk.dataset.cncpick;show('cnc');const sel=$('cncCat');if(sel){sel.value=id;sel.dispatchEvent(new Event('change',{bubbles:true}));}return;}const t=e.target;if(!t||!t.id)return;if(t.id==='cncUseAn'&&cncAnSet){const F=cncAnSet,u=$('cncFu').value;$('cncPass').value=Math.round(F.pass*100)/100;$('cncRpm').value=F.rpm;$('cncFeed').value=Math.round((u==='s'?F.feed/60:F.feed)*1000)/1000;$('cncPlunge').value=Math.round((u==='s'?F.plunge/60:F.plunge)*1000)/1000;calc({target:{id:'cncFeed'}});}if(t.id==='cncUseFile'&&cncFileSet){const F=cncFileSet,u=$('cncFu').value;$('cncPass').value=F.pass;$('cncRpm').value=F.rpm;$('cncFeed').value=Math.round((u==='s'?F.feed/60:F.feed)*1000)/1000;$('cncPlunge').value=Math.round((u==='s'?F.plunge/60:F.plunge)*1000)/1000;calc({target:{id:'cncFeed'}});}if(t.id==='cncReset'){$('cncName').dataset.edited='';calc({target:{id:'cncReset'}});}if(t.id==='cncOk'){close();}});
+    body.addEventListener('input',e=>{if(e.target&&e.target.id==='cncDes'){const t=e.target.value,m=x=>{const r=t.match(x);return r?Number(r[1].replace(',','.')):0};const d=m(/D\s*[-_=:]?\s*(\d+(?:[.,]\d+)?)/i),l=m(/L\s*[-_=:]?\s*(\d+(?:[.,]\d+)?)/i),z=m(/(\d)\s*F\b/i);if(/^\s*ST/i.test(t)){$('cncKind').value='straight';$('cncPic').dataset.k='';}if(d)$('cncD').value=d;if(l)$('cncL').value=l;if(z)$('cncZ').value=z;if(d||l||z){$('cncName').value=t.slice(0,60);$('cncName').dataset.edited='1';calc({target:{id:'cncD'}});}}if(e.target&&e.target.id==='cncName')e.target.dataset.edited='1';if(e.target&&e.target.id==='cncStepP'){const D=Number($('cncF').value)>0&&!$('cncF').parentNode.classList.contains('off')?2*Number($('cncF').value):Number($('cncD').value);$('cncStepM').value=Math.round(D*Number(e.target.value))/100;}if(e.target&&e.target.id==='cncStepM'){const D=Number($('cncF').value)>0&&!$('cncF').parentNode.classList.contains('off')?2*Number($('cncF').value):Number($('cncD').value);if(D>0)$('cncStepP').value=Math.round(Number(e.target.value)/D*10000)/100;}});
+    const open=tab=>{$('helpOverlay').classList.add('hidden');ov.classList.remove('hidden');show(typeof tab==='string'?tab:current);};
     const close=()=>ov.classList.add('hidden');
     cutterGuideOpen=tab=>open(tab);
     $('openCutterGuide').addEventListener('click',()=>open());
@@ -11309,6 +11553,13 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
   }
   // ---- Выбор фрезы с рисунком профиля: обычные <select> остаются под капотом, поверх — список с картинками ----
   const CUTTER_SELECT_SELECTOR='#vectorCutter,#combCutter,#combXCutter,#vEdgeCutter,#pEdgeCutter,#hEdgeCutter,#pStripCutter,#rustCutter,#pocketCutter,#isCutter,[data-band-cutter],[data-extra-shape]';
+  var cutterPicLive=(()=>{try{return localStorage.getItem('fasadlab-picstyle')!=='profile';}catch(e){return true;}})(),cutterLiveSvg;
+  function setCutterPicLive(v){cutterPicLive=!!v;try{localStorage.setItem('fasadlab-picstyle',v?'live':'profile');}catch(e){}}
+  // Рисунок фрезы для списков: «живая» фреза по профилю из каталога (если включено) или привычный контур
+  function cutterPic(value){
+    if(cutterPicLive&&cutterLiveSvg){const m=/^custom:(\d+)$/.exec(String(value)),c=m&&customCutters.find(x=>x.id===Number(m[1]));if(c){try{const sv=cutterLiveSvg(c,true);if(sv)return sv;}catch(e){}}}
+    return cutterThumb(value);
+  }
   function cutterThumb(value) {
     if(value==='none')return '<svg viewBox="0 0 120 78" aria-hidden="true"><path d="M 8 25 H 112" stroke="#8d887e" stroke-width="2" stroke-dasharray="4 3" fill="none"/></svg>';
     const shape=cutterShape(value);
@@ -11344,7 +11595,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
         const label=entry.option.textContent;
         if(text&&!`${label} ${pendingGroup||''}`.toLocaleLowerCase().includes(text))return;
         if(pendingGroup!==null){html+=`<div class="cutter-option-group">${esc(pendingGroup)}</div>`;pendingGroup=null;}
-        html+=`<button type="button" role="option" class="cutter-option${entry.option.value===select.value?' active':''}" data-value="${esc(entry.option.value)}" aria-selected="${entry.option.value===select.value}"><span class="cutter-thumb">${cutterThumb(entry.option.value)}</span><span class="cutter-option-name">${esc(label)}</span></button>`;
+        html+=`<button type="button" role="option" class="cutter-option${entry.option.value===select.value?' active':''}" data-value="${esc(entry.option.value)}" aria-selected="${entry.option.value===select.value}"><span class="cutter-thumb">${cutterPic(entry.option.value)}</span><span class="cutter-option-name">${esc(label)}</span></button>`;
       });
       list.innerHTML=html||'<div class="cutter-option-group">Ничего не найдено</div>';
     };
