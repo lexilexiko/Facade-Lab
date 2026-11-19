@@ -921,6 +921,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
             <button type="button" class="fit-card" data-fit="steps" role="radio"><svg viewBox="0 0 120 30" aria-hidden="true"><rect x="0" y="4" width="120" height="22" fill="none" stroke="#8a8478" stroke-width="1"/><rect x="0" y="4" width="10" height="22" fill="#cfc9bb"/><rect x="10" y="4" width="12" height="22" fill="#4a4639"/><rect x="22" y="4" width="17.33" height="22" fill="#d9822b"/><rect x="39.33" y="4" width="12" height="22" fill="#4a4639"/><rect x="51.33" y="4" width="17.33" height="22" fill="#d9822b"/><rect x="68.66" y="4" width="12" height="22" fill="#4a4639"/><rect x="80.66" y="4" width="17.34" height="22" fill="#d9822b"/><rect x="98.0" y="4" width="12" height="22" fill="#4a4639"/><rect x="110.0" y="4" width="10" height="22" fill="#cfc9bb"/></svg><div><b>Края как заданы</b><span>Ступеньки между резами делаются одинаковыми и чуть меняются (оранжевое).</span></div></button>
             <button type="button" class="fit-card" data-fit="edges" role="radio"><svg viewBox="0 0 120 30" aria-hidden="true"><rect x="0" y="4" width="120" height="22" fill="none" stroke="#8a8478" stroke-width="1"/><rect x="0" y="4" width="18" height="22" fill="#d9822b"/><rect x="18" y="4" width="12" height="22" fill="#4a4639"/><rect x="30" y="4" width="12" height="22" fill="#cfc9bb"/><rect x="42" y="4" width="12" height="22" fill="#4a4639"/><rect x="54" y="4" width="12" height="22" fill="#cfc9bb"/><rect x="66" y="4" width="12" height="22" fill="#4a4639"/><rect x="78" y="4" width="12" height="22" fill="#cfc9bb"/><rect x="90" y="4" width="12" height="22" fill="#4a4639"/><rect x="102" y="4" width="18" height="22" fill="#d9822b"/></svg><div><b>Ступеньки как заданы</b><span>Остаток делится поровну между левым и правым краем (оранжевое).</span></div></button>
             <button type="button" class="fit-card" data-fit="center" role="radio"><svg viewBox="0 0 120 30" aria-hidden="true"><rect x="0" y="4" width="120" height="22" fill="none" stroke="#8a8478" stroke-width="1"/><rect x="0" y="4" width="10" height="22" fill="#cfc9bb"/><rect x="10" y="4" width="12" height="22" fill="#4a4639"/><rect x="22" y="4" width="14" height="22" fill="#cfc9bb"/><rect x="36" y="4" width="12" height="22" fill="#4a4639"/><rect x="48" y="4" width="24" height="22" fill="#d9822b"/><rect x="72" y="4" width="12" height="22" fill="#4a4639"/><rect x="84" y="4" width="14" height="22" fill="#cfc9bb"/><rect x="98" y="4" width="12" height="22" fill="#4a4639"/><rect x="110" y="4" width="10" height="22" fill="#cfc9bb"/></svg><div><b>Края и ступеньки как заданы</b><span>Остаток уходит в середину — две стороны идут навстречу и сходятся посередине (оранжевое).</span></div></button>
+            <button type="button" class="fit-card" data-fit="all" role="radio"><svg viewBox="0 0 120 30" aria-hidden="true"><rect x="0" y="4" width="120" height="22" fill="none" stroke="#8a8478" stroke-width="1"/><rect x="0" y="4" width="14.4" height="22" fill="#d9822b"/><rect x="14.4" y="4" width="12" height="22" fill="#4a4639"/><rect x="26.4" y="4" width="14.4" height="22" fill="#d9822b"/><rect x="40.8" y="4" width="12" height="22" fill="#4a4639"/><rect x="52.8" y="4" width="14.4" height="22" fill="#d9822b"/><rect x="67.2" y="4" width="12" height="22" fill="#4a4639"/><rect x="79.2" y="4" width="14.4" height="22" fill="#d9822b"/><rect x="93.60000000000001" y="4" width="12" height="22" fill="#4a4639"/><rect x="105.60000000000001" y="4" width="14.4" height="22" fill="#d9822b"/></svg><div><b>Максимум: везде поровну</b><span>Разница раскладывается на все плоскости сразу — и края, и ступеньки меняются одинаково (оранжевое).</span></div></button>
           </div>
           <div class="hint-small">Серое — как вы задали, оранжевое — то, что подгоняется. Всегда симметрично: ни левый, ни правый край не страдает.</div>
           <svg id="combStrip" class="comb-strip" viewBox="0 0 300 40" aria-label="Раскладка по длине"></svg>
@@ -980,7 +981,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
 .comb-sec{cursor:pointer;user-select:none}.comb-sec::after{content:'▾';margin-left:auto;font-size:12px;opacity:.6}.comb-sec.folded::after{content:'▸'}.comb-body.folded{display:none}
 .comb-extra{margin:8px 0;padding:6px 8px;border:1px solid #cfc9bb;border-radius:8px;background:rgba(255,255,255,.35)}.comb-extra summary{cursor:pointer;font-size:12px;font-weight:700;color:#3f3e37}
 .tgl-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}.tgl{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 6px;border:2px solid #cfc9bb;border-radius:8px;background:rgba(255,255,255,.55);color:#3f3e37;cursor:pointer;height:auto;line-height:1.2}.tgl-t{font-size:12px;font-weight:600}.tgl-s{font-size:11px;color:#6a675d}.tgl.on,.tgl.on:hover{border-color:#a45f40!important;background:#f6e6dc!important;color:#3f3e37!important}.tgl.on .tgl-s{color:#a45f40!important;font-weight:700}
-.comb-top-info{display:flex;flex-wrap:wrap;gap:4px 14px;padding:6px 8px 8px;font-size:12px;color:#3a3833;border-top:1px dashed #cfc9bb}.comb-top-info.hidden{display:none}.comb-top-info span b{font-weight:700}
+.comb-top-info{display:flex;flex-wrap:wrap;gap:4px 14px;padding:6px 8px 8px;font-size:12px;color:#3a3833;border-top:1px dashed #cfc9bb}.comb-top-info.hidden{display:none}.comb-strip-top{flex:1 0 100%;width:100%;max-height:54px;margin:0 0 2px}.profile-preview-panel.uc-on,.profile-preview-panel.comb-top{overflow:visible!important;height:auto!important;flex:none!important}.comb-top-info span b{font-weight:700}
 .comb-strip{width:100%;height:auto;margin:6px 0}
 #combSettings .hint-small{font-size:11px;line-height:1.35;color:#58574f;margin:4px 0 6px}
 .hd-dialog{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;overflow:hidden!important;max-height:100%!important}
@@ -1780,6 +1781,22 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     });
     $('combSecList').addEventListener('click',e=>{const b=e.target.closest('[data-secdel]');if(!b)return;const row=b.closest('[data-sec]');state.combSections.splice(Number(row.dataset.sec),1);combSecChanged();});
   }
+  // Полоса раскладки: серое — плоскости, тёмное — резы, оранжевое — то, что подогнано под размер
+  function combStripHtml(size){
+    if(combSectionsActive(state)||state.combCenterStep===true||!(size>0))return '';
+    const L=combPlaneLayout(size);if(L.error||!L.centers.length)return '';
+    const r=v=>Math.round(v*100)/100,TR=combTopRange(state),fw=state.combFirstWhole!==false,lw=state.combLastWhole!==false,k=300/size;
+    const merged=[];L.centers.map(c=>[Math.max(0,c-L.w/2),Math.min(size,c+L.w/2)]).filter(iv=>iv[1]>iv[0]).sort((p,q)=>p[0]-q[0]).forEach(iv=>{const l=merged[merged.length-1];if(l&&iv[0]<=l[1]+1e-6)l[1]=Math.max(l[1],iv[1]);else merged.push(iv.slice());});
+    const pl=[];let pv=0;merged.forEach(iv=>{if(iv[0]-pv>.004)pl.push([pv,iv[0]]);pv=iv[1];});if(size-pv>.004)pl.push([pv,size]);
+    const nom=(i,n)=>i===0?(fw?Number(state.combStart):(TR.on?TR.mid:L.r)):(i===n-1?(lw?Number(state.combEnd):(TR.on?TR.mid:L.r)):(TR.on?null:L.r));
+    let h='<rect x="0" y="6" width="300" height="26" fill="#cfc9bb" stroke="#8a8478"/>';
+    merged.forEach(iv=>{h+=`<rect x="${(iv[0]*k).toFixed(2)}" y="6" width="${((iv[1]-iv[0])*k).toFixed(2)}" height="26" fill="#4a4639"/>`;});
+    pl.forEach((q,i)=>{const wd=q[1]-q[0],ex=nom(i,pl.length),off=TR.on&&ex===null?(wd<TR.lo-.004||wd>TR.hi+.004):(ex!==null&&Math.abs(wd-ex)>.004&&!(TR.on&&i>0&&i<pl.length-1));
+      if(off)h+=`<rect x="${(q[0]*k).toFixed(2)}" y="6" width="${(wd*k).toFixed(2)}" height="26" fill="#d9822b"/>`;
+      if(wd*k>=15)h+=`<text x="${((q[0]+q[1])/2*k).toFixed(2)}" y="23" font-size="8.5" text-anchor="middle" fill="#2b2924">${r(wd)}</text>`;});
+    merged.forEach(iv=>{if((iv[1]-iv[0])*k>=15)h+=`<text x="${((iv[0]+iv[1])/2*k).toFixed(2)}" y="23" font-size="8.5" text-anchor="middle" fill="#fff">${r(iv[1]-iv[0])}</text>`;});
+    return h+`<text x="0" y="40" font-size="8" fill="#58574f">0</text><text x="300" y="40" font-size="8" text-anchor="end" fill="#58574f">${r(size)} мм</text>`;
+  }
   function renderCombLayoutInfo() {
     const legacy=false;
     {const fv=combNormFit($('combFit').value);document.querySelectorAll('#combFitCards .fit-card').forEach(c=>{const on=c.dataset.fit===fv;c.classList.toggle('active',on);c.setAttribute('aria-checked',on?'true':'false');});
@@ -1815,7 +1832,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       const L=combPlaneLayout(size);
       if(L.error){box.textContent=L.error;return;}
       if(state.combCenterStep===true){const cs=L.s||L.step+L.w,edge=L.centers.length&&L.centers[0]<=.01;box.textContent=`Проходов: ${L.n} · шаг между центрами ${r(cs)} мм`+(Math.abs(cs-Number(state.combPitch))>.004?` (задано ${r(Number(state.combPitch))} — подогнан под края)`:' — точно как задано')+` · фреза Ø ${r(L.w)} мм, соседние проходы перекрываются по очереди\nГребней между выборками: ${L.ridges}. Первый гребень ${r(L.left)} мм от левого края, последний ${r(L.right)} мм от правого`+(edge?'. Крайние выборки стоят на самом краю (видна половина).':'.');return;}
-      {const merged=[];L.centers.map(c=>[c-L.w/2,c+L.w/2]).sort((p,q)=>p[0]-q[0]).forEach(iv=>{const l=merged[merged.length-1];if(l&&iv[0]<=l[1]+1e-6)l[1]=Math.max(l[1],iv[1]);else merged.push(iv.slice());});
+      {const merged=[];L.centers.map(c=>[Math.max(0,c-L.w/2),Math.min(size,c+L.w/2)]).filter(iv=>iv[1]>iv[0]).sort((p,q)=>p[0]-q[0]).forEach(iv=>{const l=merged[merged.length-1];if(l&&iv[0]<=l[1]+1e-6)l[1]=Math.max(l[1],iv[1]);else merged.push(iv.slice());});
         const planes=[];let prev=0,cutSum=0;merged.forEach(iv=>{if(iv[0]-prev>.004)planes.push(iv[0]-prev);cutSum+=iv[1]-iv[0];prev=iv[1];});if(size-prev>.004)planes.push(size-prev);
         const grp=[];planes.map(v=>Math.round(v*100)/100).forEach(v=>{const g=grp[grp.length-1];if(g&&g[0]===v)g[1]+=1;else grp.push([v,1]);});
         const psum=planes.reduce((p,q)=>p+q,0),D=Number(state.combCutWidth)||0,TR=combTopRange(state),fw=state.combFirstWhole!==false,lw=state.combLastWhole!==false;
@@ -1828,15 +1845,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
         else if(fw&&lw&&L.n>1){const dl=Math.abs(L.left-state.combStart)>.004,dr=Math.abs(L.right-state.combEnd)>.004;if(dl||dr)t+=`\nКраевые плоскости: слева ${r(L.left)} (задано ${r(state.combStart)}), справа ${r(L.right)} (задано ${r(state.combEnd)}) — это остаток при выбранной подгонке`;if(Math.abs(L.step-L.r)>.004)t+=`\nСтупенька между резами ${r(L.step)} мм вместо ${r(L.r)} — подогнана, чтобы края были как заданы`;}
         else if(!fw||!lw)t+=`\n`+[!fw?`слева край вырезан на ${r(state.combStart)} мм`:'',!lw?`справа край вырезан на ${r(state.combEnd)} мм`:''].filter(Boolean).join(', ');
         box.textContent=t;
-        {const sv=$('combStrip');if(sv){const k=300/size,expTop=TR.on?null:L.r,nom=(i,n)=>i===0?(fw?Number(state.combStart):(TR.on?TR.mid:L.r)):(i===n-1?(lw?Number(state.combEnd):(TR.on?TR.mid:L.r)):(TR.on?null:L.r));
-          let h='<rect x="0" y="6" width="300" height="26" fill="#cfc9bb" stroke="#8a8478"/>';
-          merged.forEach(iv=>{h+=`<rect x="${(iv[0]*k).toFixed(2)}" y="6" width="${((iv[1]-iv[0])*k).toFixed(2)}" height="26" fill="#4a4639"/>`;});
-          const pl=[];let pv=0;merged.forEach(iv=>{if(iv[0]-pv>.004)pl.push([pv,iv[0]]);pv=iv[1];});if(size-pv>.004)pl.push([pv,size]);
-          pl.forEach((q,i)=>{const wd=q[1]-q[0],ex=nom(i,pl.length),off=TR.on&&ex===null?(wd<TR.lo-.004||wd>TR.hi+.004):(ex!==null&&Math.abs(wd-ex)>.004&&!(TR.on&&i>0&&i<pl.length-1));
-            if(off)h+=`<rect x="${(q[0]*k).toFixed(2)}" y="6" width="${(wd*k).toFixed(2)}" height="26" fill="#d9822b"/>`;
-            if(wd*k>=15)h+=`<text x="${((q[0]+q[1])/2*k).toFixed(2)}" y="23" font-size="8.5" text-anchor="middle" fill="#2b2924">${r(wd)}</text>`;});
-          merged.forEach(iv=>{if((iv[1]-iv[0])*k>=15)h+=`<text x="${((iv[0]+iv[1])/2*k).toFixed(2)}" y="23" font-size="8.5" text-anchor="middle" fill="#fff">${r(iv[1]-iv[0])}</text>`;});
-          h+=`<text x="0" y="40" font-size="8" fill="#58574f">0</text><text x="300" y="40" font-size="8" text-anchor="end" fill="#58574f">${r(size)} мм</text>`;sv.innerHTML=h;}}}
+        {const sv=$('combStrip');if(sv)sv.innerHTML=combStripHtml(size);}}
     }catch(e){box.textContent='';}
   }
   function renderVectorCutterPreview() {
@@ -2309,6 +2318,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     ['roughDiameter','roughPass','roughRpm','roughFeed','finishDiameter','finishPass','finishRpm','finishFeed'].forEach(id=>state[id]=number(id));
   }
   function syncInputs() {
+    try{setTimeout(()=>{if(typeof renderCombLayoutInfo==='function'&&state.objectType==='comb')renderCombLayoutInfo();},0);}catch(e){}
     ['width','height','thickness','inset','secondInset','panelInset','radius','profileDepth','profilePitch','profileLand','profileRadius','material','grain','symmetry','profileType','toolPreset',
       'roughDiameter','roughPass','roughRpm','roughFeed','finishDiameter','finishPass','finishRpm','finishFeed','projectName','objectType',
       'sheetWidth','sheetHeight','sheetThickness','sheetMargin','partGap',
@@ -2554,7 +2564,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     let lo=0,hi=1;for(let i=0;i<40;i++){const m=(lo+hi)/2;if(cutterReliefDepth(shape,m,h,d)>1e-6)lo=m;else hi=m;}
     return Number((lo*d).toFixed(4));}
   function combEffW(settings=state){const d=combCutW(settings),g=Math.max(0,Number(settings.combGroove)||0);return Math.max(d,g);}
-  function combNormFit(v,exact){return v==='last'||v==='first'?'center':['edges','center','steps'].includes(v)?v:(exact===false?'steps':'edges');}
+  function combNormFit(v,exact){return v==='last'||v==='first'?'center':['edges','center','steps','all'].includes(v)?v:(exact===false?'steps':'edges');}
   function combTopRange(settings=state){const a=Math.max(0,Number(settings.combTopMin)||0),b=Math.max(0,Number(settings.combTopMax)||0);if(settings.combCenterStep===true||!(a>0||b>0))return{on:false,lo:0,hi:0,mid:0};const lo=a>0?a:b,hi=Math.max(lo,b>0?b:a);return{on:true,lo,hi,mid:(lo+hi)/2};}
   // Выборка шире фрезы: несколько проходов с шагом не больше 90% диаметра, крайние края ровно по ширине выборки.
   function combSubOffsets(settings=state){const d=combCutW(settings),G=combEffW(settings);const mode=settings.combGrooveMode||'auto',fx=a=>a.map(v=>Number(v.toFixed(4)));
@@ -2599,18 +2609,19 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     if(!(L>0)||!(w>0)||!(Number(settings.combPitch)>0))return{...none,error:'Задайте размер, диаметр фрезы и шаг.'};
     const fit=settings.combFit||(settings.combExactPitch===true?'edges':'steps'),TR=combTopRange(settings);let best=null;
     for(let n=1;n<=(ov?Math.min(3000,Math.ceil(L/Math.max(.2,Number(settings.combPitch)))+2):Math.min(400,Math.floor(L/w)+1));n++){
-      let left,right,step,extra=0;
+      let left,right,step,extra=0,spread=0;
       if(fw&&lw){
         if(n===1){left=a;right=b;step=r;if(Math.abs(L-a-b-w)>.005){const e=(L-w)/2;left=e;right=e;}}
         else if(TR.on||fit==='steps'){step=(L-a-b-n*w)/(n-1);left=a;right=b;}
         else if(fit==='center'){step=r;left=a;right=b;extra=L-a-b-n*w-(n-1)*r;}
+        else if(fit==='all'){const e=(L-n*w-a-b-(n-1)*r)/(n+1);step=r+e;left=a+e;right=b+e;spread=e;}
         else{step=r;const rem=L-n*w-(n-1)*r;left=(rem+a-b)/2;right=(rem-a+b)/2;}
       }else if(fw){step=r;left=a;right=L-a-n*w-(n-1)*r;}
       else if(lw){step=r;right=b;left=L-b-n*w-(n-1)*r;}
       else{step=r;left=right=(L-n*w-(n-1)*r)/2;}
       if((step<0&&!ov)||left<-1e-9||right<-1e-9)continue;
       const dist=TR.on&&n>1?(step<TR.lo-.004?TR.lo-step:step>TR.hi+.004?step-TR.hi:0):0;
-      const score=fw&&lw?(n===1?Math.abs(step-r)+1e6*Math.abs(L-a-b-w):TR.on?dist*1000+Math.abs(step-TR.mid):fit==='center'?(extra<-1e-9?1e9:-n):fit==='edges'?Math.abs(left-a)+Math.abs(right-b):Math.abs(step-r)):-n;
+      const score=fw&&lw?(n===1?Math.abs(step-r)+1e6*Math.abs(L-a-b-w):TR.on?dist*1000+Math.abs(step-TR.mid):fit==='all'?Math.abs(spread):fit==='center'?(extra<-1e-9?1e9:-n):fit==='edges'?Math.abs(left-a)+Math.abs(right-b):Math.abs(step-r)):-n;
       if(!best||score<best.score)best={score,n,left,right,step,dist,extra};
     }
     if(TR.on&&fw&&lw&&best&&best.dist>0){let alt=null;
@@ -3784,7 +3795,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       }
     }catch(e){parts=[];}
     {const top=$('combTopInfo'),isC=state.objectType==='comb'&&parts.length>0;
-      if(top){top.classList.toggle('hidden',!isC);top.innerHTML=isC?parts.join(''):'';}
+      if(top){top.classList.toggle('hidden',!isC);{const pp=top.closest('.profile-preview-panel');if(pp)pp.classList.toggle('comb-top',isC);}let sh='';try{const sz=state.combDirection==='horizontal'?state.height:state.width,hh=isC?combStripHtml(sz):'';if(hh)sh=`<svg class="comb-strip comb-strip-top" viewBox="0 0 300 42" aria-label="Раскладка по длине">${hh}</svg>`;}catch(e){}top.innerHTML=isC?sh+parts.join(''):'';}
       box.style.display=isC?'none':'';if(isC){box.innerHTML='';return;}}
     box.innerHTML=`<span class="sel-track">${parts.join('')}</span>`;
     const tr=box.firstChild;requestAnimationFrame(()=>{const over=tr.scrollWidth-box.clientWidth;if(over>4){tr.style.setProperty('--sx',`-${over+2}px`);tr.style.setProperty('--sd',`${Math.max(3,over/28).toFixed(1)}s`);tr.classList.add('run');}});
@@ -3822,7 +3833,8 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
   }
   function renderUsedCutters(){
     const box=$('usedCutters'),panel=box&&box.closest('.profile-preview-panel');if(!box||!panel)return;
-    const list=activeView==='profile'&&!panel.classList.contains('expanded')?usedCutterList():[];
+    const list=activeView==='profile'&&!panel.classList.contains('expanded')&&state.objectType!=='comb'?usedCutterList():[];
+    if(state.objectType==='comb'&&activeView==='profile'&&!panel.classList.contains('expanded')){box.classList.add('hidden');panel.classList.add('uc-on');const t=panel.querySelector('.sec-title-text');if(t)t.textContent='Раскладка гребёнки';return;}
     if(!list.length){box.classList.add('hidden');panel.classList.remove('uc-on');const t=panel.querySelector('.sec-title-text');if(t)t.textContent='Разрез изделия';return;}
     const t=panel.querySelector('.sec-title-text');if(t)t.textContent='Используемые фрезы · нажмите, чтобы выбрать вектор';
     panel.classList.add('uc-on');box.classList.remove('hidden');
