@@ -624,7 +624,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     <section class="panel canvas-panel">
       <div id="canvas" class="canvas"><svg id="drawing" viewBox="0 0 800 800" role="img" aria-label="Чертёж фасада"></svg></div>
       <div id="real3DOverlay" class="inline-3d hidden"><div class="real3d-head"><div><strong id="real3DTitle">3D-модель обработки</strong><div id="real3DInfo">Поверхность построена по выбранным фрезам и глубинам.</div></div><div class="real3d-actions"><button id="real3DZoomOut" type="button" aria-label="Отдалить" title="Отдалить">−</button><button id="real3DZoomIn" type="button" aria-label="Приблизить" title="Приблизить">＋</button><button id="real3DPan" type="button" aria-pressed="false" title="Двигать деталь (или правая кнопка / Shift / два пальца)">✥</button><button id="real3DQuality" type="button" title="Качество 3D: быстро (грубее, не виснет) / высокое (мелкая сетка). Нажмите, чтобы переключить">Быстро</button><button id="real3DTop" type="button" title="Вид сверху">Сверху</button><button id="real3DDetail" type="button" title="Вся модель мелкой сеткой (хорошее качество)">Детально</button><button id="real3DHandleBtn" type="button" class="hidden" title="Сечение ручки: подрез под губой сверху не виден">Ручка</button><button id="real3DReset" type="button" title="Сбросить вид">Сброс</button></div></div><canvas id="real3DCanvas" aria-label="Вращаемая трёхмерная модель фрезерованного фасада"></canvas><div class="real3d-foot"><button id="real3DHelp" type="button" class="real3d-help" aria-expanded="false" title="Подсказка по управлению">?</button><span class="real3d-hint">Тяните — вращение · ✥ / правая кнопка / два пальца — двигать</span><span class="real3d-hint">Колесо или щипок — масштаб к курсору</span><span id="real3DStatus">Подготовка геометрии…</span></div></div>
-      <div class="canvas-bottom"><div class="sel-info" id="selInfo" aria-live="polite"></div><span class="bottom-tools"><div class="edit-actions" aria-label="Действия редактирования"><button id="undo" type="button" title="Отменить (Ctrl+Z)" aria-label="Назад">↶</button><button id="redo" type="button" title="Повторить (Ctrl+Y)" aria-label="Вперёд">↷</button><button id="toggleDock" type="button" title="Свернуть / развернуть панель инструментов" aria-label="Панель инструментов" aria-pressed="false">▼</button></div><button id="openStyles" type="button" title="Шаблоны фасадов, профилей и гребёнок">Стили</button><span id="validity" class="good" title="Проверка геометрии">● Проверка пройдена</span><span class="tool-options"><label id="toolValueLabel" for="toolValue">Значение, мм</label><input id="toolValue" type="number" min="0" step="0.5" value="10" title="Радиус скругления / размер фаски / расстояние смещения"><span class="sub" id="toolHint">Выбор и выборка</span></span></span><span id="canvasHint">Выберите инструмент, чтобы добавить вектор</span><span class="zoom"><button class="icon-button" id="zoomOut" aria-label="Уменьшить">−</button><span id="zoomValue">100%</span><button class="icon-button" id="zoomIn" aria-label="Увеличить">＋</button><button class="icon-button" id="zoomReset" aria-label="Сбросить масштаб">⛶</button></span></div>
+      <div class="canvas-bottom"><div class="sel-info" id="selInfo" aria-live="polite"></div><span class="bottom-tools"><div class="edit-actions" aria-label="Действия редактирования"><button id="undo" type="button" title="Отменить (Ctrl+Z)" aria-label="Назад">↶</button><button id="redo" type="button" title="Повторить (Ctrl+Y)" aria-label="Вперёд">↷</button><button id="toggleDock" type="button" title="Свернуть / развернуть панель инструментов" aria-label="Панель инструментов" aria-pressed="false">▼</button></div><button id="openStyles" type="button" title="Шаблоны фасадов, профилей и гребёнок">Стили</button><span id="validity" class="good" title="Проверка геометрии">● Проверка пройдена</span><span class="tool-options"><label id="toolValueLabel" for="toolValue">Значение, мм</label><input id="toolValue" type="number" min="0" step="0.5" value="10" title="Радиус скругления / размер фаски / расстояние смещения"><select id="archMode" class="hidden" title="Что вводится в поле: радиус дуги или высота арки над гранью"><option value="r">Радиус арки</option><option value="h">Высота арки</option><option value="off">Убрать арку (ровная грань)</option></select><span class="sub" id="toolHint">Выбор и выборка</span></span></span><span id="canvasHint">Выберите инструмент, чтобы добавить вектор</span><span class="zoom"><button class="icon-button" id="zoomOut" aria-label="Уменьшить">−</button><span id="zoomValue">100%</span><button class="icon-button" id="zoomIn" aria-label="Увеличить">＋</button><button class="icon-button" id="zoomReset" aria-label="Сбросить масштаб">⛶</button></span></div>
     </section>
     <section class="panel dock" aria-label="Данные чертежа и инструменты">
       <div class="canvas-heading dock-head"><div><strong id="viewTitle">Чертёж фасада</strong><div class="sub" id="viewSubtitle">Размеры в мм · векторы готовы к проверке</div></div><div class="canvas-heading-actions"><div class="stats"><span id="dimensions">596 × 716 мм</span><span id="vectorCount">Контуров: 2</span></div></div></div>
@@ -997,10 +997,11 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
 #combLayoutInfo{white-space:pre-line}
 .comb-sec{cursor:pointer;user-select:none}.comb-sec::after{content:'▾';margin-left:auto;font-size:12px;opacity:.6}.comb-sec.folded::after{content:'▸'}.comb-body.folded{display:none}
 .comb-extra{margin:8px 0;padding:6px 8px;border:1px solid #cfc9bb;border-radius:8px;background:rgba(255,255,255,.35)}.comb-extra summary{cursor:pointer;font-size:12px;font-weight:700;color:#3f3e37}
+.pil-preview{width:100%;height:auto;max-height:210px;margin:4px 0}
 .tgl-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}.tgl{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 6px;border:2px solid #cfc9bb;border-radius:8px;background:rgba(255,255,255,.55);color:#3f3e37;cursor:pointer;height:auto;line-height:1.2}.tgl-t{font-size:12px;font-weight:600}.tgl-s{font-size:11px;color:#6a675d}.tgl.on,.tgl.on:hover{border-color:#a45f40!important;background:#f6e6dc!important;color:#3f3e37!important}.tgl.on .tgl-s{color:#a45f40!important;font-weight:700}
 .comb-top-info{display:flex;flex-wrap:wrap;gap:4px 14px;padding:6px 8px 8px;font-size:12px;color:#3a3833;border-top:1px dashed #cfc9bb}.comb-top-info.hidden{display:none}.comb-strip-top{flex:1 0 100%;width:100%;max-height:54px;margin:0 0 2px}.profile-preview-panel.uc-on,.profile-preview-panel.comb-top{overflow:visible!important;height:auto!important;flex:none!important}.comb-top-info span b{font-weight:700}
 .comb-strip{width:100%;height:auto;margin:6px 0}
-#combSettings .hint-small{font-size:11px;line-height:1.35;color:#58574f;margin:4px 0 6px}
+#combSettings .hint-small,#pilasterSettingsPanel .hint-small{font-size:11px;line-height:1.35;color:#58574f;margin:4px 0 6px}
 .hd-dialog{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;overflow:hidden!important;max-height:100%!important}
 .hd-dialog .sd-main{grid-template-columns:minmax(0,1fr) 470px}
 .hd-dialog .hd-stage{display:flex;flex-direction:column;gap:6px;padding:8px;background:#fbf9f3}
@@ -1134,7 +1135,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
           </div>
           <div id="impostBox" class="hidden">
           <div class="sharp-title">Импосты (сплошные полосы без узора)</div>
-          <label class="field"><span>Ширина импоста — это</span><select id="impostMode"><option value="between">расстояние между первыми векторами соседних частей (как «перемычка» в каталогах)</option><option value="band">вся сплошная полоса; рамка у импоста считается дальше от неё</option></select></label>
+          <label class="field"><span>Ширина импоста — это</span><select id="impostMode"><option value="between">размер от первого вектора рамки: расстояние между рамками соседних частей = отступ рамки + размер импоста (рамка 30, импост 10 → 40 мм)</option><option value="band">вся сплошная полоса; рамка у импоста считается дальше от неё</option></select></label>
           <div id="impostList"></div>
           <div class="fields" style="margin-top:6px"><button type="button" class="generate-style" id="impostAddH">+ Горизонтальный</button><button type="button" class="generate-style" id="impostAddV">+ Вертикальный</button></div>
           <label style="display:flex;gap:6px;align-items:center;margin-top:6px;font-size:13px"><input id="impostLink" type="checkbox" checked style="width:auto">Одинаковые части связаны: правка в одной повторяется в остальных</label><div class="fields" style="margin-top:6px"><button type="button" class="generate-style" id="impostSplit" title="Каждая часть между импостами получит свои контуры и выборки — как два фасада, склеенных вместе">Собрать по частям</button><button type="button" class="generate-style" id="impostUnsplit" title="Вернуть контуры целого фасада">Вернуть целый</button></div>
@@ -2442,7 +2443,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       const bands=(state.imposts||[]).filter(im=>im.axis===axis&&im.width>0).map(im=>[Math.max(0,im.pos),Math.min(len,im.pos+im.width)]).sort((a,b)=>a[0]-b[0]);
       const segs=[];let at=0;bands.forEach(([a,b])=>{if(a-at>.01)segs.push([at,a]);at=Math.max(at,b);});if(len-at>.01)segs.push([at,len]);return segs;};
     const roots=state.contours.filter(c=>c.parentId===0&&!c.partBox&&c.direction!=='out'&&Number(c.offset)>0),F=state.impostMode==='band'||!roots.length?0:Math.min(...roots.map(c=>Number(c.offset)));
-    const widen=(segs,len)=>segs.map(([a,b])=>[a>0.01?Math.max(0,a-F):a,b<len-0.01?Math.min(len,b+F):b]);
+    const E=state.impostMode==='band'?0:F/2,widen=(segs,len)=>segs.map(([a,b])=>[a>0.01?Math.max(0,a-E):a,b<len-0.01?Math.min(len,b+E):b]);
     const xs=widen(cut('v',W),W),ys=widen(cut('h',H),H),parts=[];
     ys.forEach(([y0,y1])=>xs.forEach(([x0,x1])=>parts.push({x0,x1,y0,y1})));
     return {parts,W,H,F};
@@ -2466,13 +2467,17 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       const boxId=nextContourId++;
       outC.push({id:boxId,name:`Основа · часть ${i+1}`,parentId:0,shape:'free',direction:'in',offset:1,corner:0,rel:{x:fl(pt.x0/W),y:fl(pt.y0/H),w:fl((pt.x1-pt.x0)/W),h:fl((pt.y1-pt.y0)/H)},freeD:'M 0 0 L 1 0 L 1 1 L 0 1 Z',cutter:'none',diameter:6,depth:1,side:'on',additionalCutters:[],partBox:true});
       const map=new Map();tree.forEach(c=>map.set(c.id,nextContourId++));
-      tree.forEach(c=>{const n=JSON.parse(JSON.stringify(c));delete n.vitrina;delete n.pilaster;n.id=map.get(c.id);n.parentId=c.parentId===0?boxId:(map.get(c.parentId)??boxId);n.name=`${c.name} · часть ${i+1}`;n.pgSrc=c.id;if(n.cornerOf!==undefined)n.cornerOf=map.get(n.cornerOf)??n.cornerOf;outC.push(n);});
+      tree.forEach(c=>{const n=JSON.parse(JSON.stringify(c));delete n.vitrina;delete n.pilaster;n.id=map.get(c.id);n.parentId=c.parentId===0?boxId:(map.get(c.parentId)??boxId);n.name=`${c.name} · часть ${i+1}`;n.pgSrc=c.id;if(n.cornerOf!==undefined)n.cornerOf=map.get(n.cornerOf)??n.cornerOf;
+        // арка остаётся только у частей, которые касаются арочной грани фасада (верх — верхняя часть, низ — нижняя)
+        {const hasT=n.shape==='arch'||n.shape==='archBoth',hasB=n.shape==='archDown'||n.shape==='archBoth';
+         if(hasT||hasB){const t=hasT&&pt.y0<=.01,bt=hasB&&pt.y1>=H-.01;n.shape=t&&bt?'archBoth':t?'arch':bt?'archDown':'rect';if(n.shape==='rect')delete n.rise;}}
+        outC.push(n);});
       treePockets.forEach((pk,pi)=>{const n=JSON.parse(JSON.stringify(pk));n.pgSrc=pi;delete n.vitrina;delete n.pilaster;n.islandId=map.get(pk.islandId);n.parentId=pk.parentId===0?boxId:(map.get(pk.parentId)??boxId);outP.push(n);});
     });
     state.contours=outC;state.pockets=outP;selectedPocketRegion=null;state.selectedContour=0;
     if(quiet)return true;
     syncInputs();renderTemplateButtons();drawView();persistActiveDesign();
-    $('footerStatus').textContent=`Фасад собран из ${parts.length} частей${F>0?` (рамка ${Math.round(F*100)/100} мм, импост — между первыми векторами)`:''}: контуры и выборки повторены в каждой части (отмена — ↶ или «Вернуть целый»).`;
+    $('footerStatus').textContent=`Фасад собран из ${parts.length} частей${F>0?` (рамка ${Math.round(F*100)/100} мм; расстояние между рамками частей ${Math.round((F+Number(((state.imposts||[])[0]||{}).width||0))*100)/100} мм)`:''}: контуры и выборки повторены в каждой части (отмена — ↶ или «Вернуть целый»).`;
   }
   function impostUnsplit(quiet){
     quiet=quiet===true;
@@ -2493,7 +2498,10 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       groups.forEach((g,src)=>{
         if(g.length<2)return;
         const sigs=g.map(o=>sig(o)),changed=g.findIndex((o,i)=>pgSigs.has(key+o.id)&&pgSigs.get(key+o.id)!==sigs[i]);
-        if(changed>=0){const from=g[changed],data=JSON.parse(sig(from));g.forEach((o,i)=>{if(o===from)return;Object.keys(o).forEach(k=>{if(!skip.has(k)&&!(k in data))delete o[k];});Object.assign(o,data);});}
+        if(changed>=0){const from=g[changed],data=JSON.parse(sig(from));g.forEach((o,i)=>{if(o===from)return;Object.keys(o).forEach(k=>{if(!skip.has(k)&&!(k in data))delete o[k];});Object.assign(o,data);
+          // арка только у частей, касающихся арочной грани фасада
+          if(['arch','archDown','archBoth'].includes(o.shape)){let q=o,gd=0,box=null;while(q&&gd++<50){const par=state.contours.find(x=>x.id===q.parentId);if(!par)break;if(par.partBox){box=par;break;}q=par;}
+            if(box){const bb=getContourBounds(box.id),hasT=o.shape==='arch'||o.shape==='archBoth',hasB=o.shape==='archDown'||o.shape==='archBoth',t=hasT&&bb.y<=.01,bt=hasB&&bb.y+bb.height>=state.height-.01;o.shape=t&&bt?'archBoth':t?'arch':bt?'archDown':'rect';if(o.shape==='rect')delete o.rise;}}});}
         g.forEach(o=>pgSigs.set(key+o.id,sig(o)));
       });
     };
@@ -2521,7 +2529,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       else state.contours.forEach(c=>{if(c.partBox)return;try{const bb=getContourBounds(c.id);if(!bb)return;const a=im.axis==='h'?bb.y:bb.x,b2=a+(im.axis==='h'?bb.height:bb.width);
         if(b2>im.pos+1e-6&&a<im.pos+im.width-1e-6)issues.push(`Контур «${c.name||c.id}» заходит на импост ${i+1} (${Math.round(im.pos*100)/100}–${Math.round((im.pos+im.width)*100)/100} мм).`);}catch(e){}});
     });}
-    const minimumSize=state.objectType==='profile'?1:80;
+    const minimumSize=state.objectType==='profile'?1:20;
     if(!Number.isFinite(state.width)||!Number.isFinite(state.height)||state.width<minimumSize||state.width>3000||state.height<minimumSize||state.height>3000)issues.push(`Размеры заготовки должны быть от ${minimumSize} до 3000 мм.`);
     if(!Number.isFinite(state.thickness)||state.thickness<=0||state.thickness>1000)issues.push('Толщина заготовки должна быть больше нуля и не превышать 1000 мм.');
     if(state.objectType==='facade'&&(!Number.isFinite(state.outerCornerRadius)||state.outerCornerRadius<0||state.outerCornerRadius>Math.min(state.width,state.height)/2))issues.push('Радиус внешних углов должен быть от 0 до половины меньшего размера фасада.');
@@ -2586,6 +2594,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     if(cutterReliefDepth(shape,.999,h,d)>1e-6)return d;
     let lo=0,hi=1;for(let i=0;i<40;i++){const m=(lo+hi)/2;if(cutterReliefDepth(shape,m,h,d)>1e-6)lo=m;else hi=m;}
     return Number((lo*d).toFixed(4));}
+  function cutEffWidth(cutter,d,h){return combCutW({combCutter:cutter,combCutWidth:d,combCutDepth:h});}
   function combEffW(settings=state){const d=combCutW(settings),g=Math.max(0,Number(settings.combGroove)||0);return Math.max(d,g);}
   function combNormFit(v,exact){return v==='last'||v==='first'?'center':['edges','center','steps','all'].includes(v)?v:(exact===false?'steps':'edges');}
   function combTopRange(settings=state){const a=Math.max(0,Number(settings.combTopMin)||0),b=Math.max(0,Number(settings.combTopMax)||0);if(settings.combCenterStep===true||!(a>0||b>0))return{on:false,lo:0,hi:0,mid:0};const lo=a>0?a:b,hi=Math.max(lo,b>0?b:a);return{on:true,lo,hi,mid:(lo+hi)/2};}
@@ -10507,7 +10516,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
   $('hRemove').addEventListener('click',removeHandle);
   const closeHandle=()=>$('handleOverlay').classList.add('hidden');
   $('closeHandle').addEventListener('click',closeHandle);$('hCancel').addEventListener('click',closeHandle);
-  [['pThrough','through'],['pExtra','extra'],['pBottomOn','bottomOn']].forEach(([id,key])=>$(id).addEventListener('change',event=>{event.stopPropagation();changeKindSettings('pilaster',()=>{state.pilaster[key]=$(id).checked;});}));
+  [['pThrough','through'],['pExtra','extra'],['pBottomOn','bottomOn'],['pToolIn','toolIn'],['pEdgeL','edgeL'],['pEdgeR','edgeR']].forEach(([id,key])=>$(id).addEventListener('change',event=>{event.stopPropagation();changeKindSettings('pilaster',()=>{state.pilaster[key]=$(id).checked;});}));
   [['tWidth','stripWidth'],['tStraight','straight'],['tAngle','angle'],['tDiameter','diameter'],['tCutDia','cutDia'],['tEdges','edges'],['tVariant','variant'],['tRoundBy','byRadius']].forEach(([id,key])=>{
     ['input','change'].forEach(type=>$(id).addEventListener(type,event=>{
       event.stopPropagation();
@@ -10658,11 +10667,13 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
   $('impostToolBtn').addEventListener('click',()=>{$('impostPanel').classList.toggle('hidden');combSecRender();impostRender();updateMeasureStrip();});
   $('objectType').addEventListener('change',()=>setTimeout(()=>{try{updateMeasureStrip();}catch(e){}},60));
   $('impostClose').addEventListener('click',()=>{$('impostPanel').classList.add('hidden');updateMeasureStrip();});
+  $('pEdgeBox').addEventListener('click',e=>{const b=e.target.closest('.tgl');if(!b)return;const c=$(b.dataset.for);c.checked=!c.checked;c.dispatchEvent(new Event('change',{bubbles:true}));});
   $('combExtraBox').addEventListener('click',e=>{const b=e.target.closest('.tgl');if(!b)return;const c=$(b.dataset.for);c.checked=!c.checked;c.dispatchEvent(new Event('input',{bubbles:true}));c.dispatchEvent(new Event('change',{bubbles:true}));});
-  (function combFolds(){const root=$('combSettings');let saved={};try{saved=JSON.parse(localStorage.getItem('fasadlab-comb-folds')||'{}')||{};}catch(e){saved={};}
+  function initFolds(root,storeKey){let saved={};try{saved=JSON.parse(localStorage.getItem(storeKey)||'{}')||{};}catch(e){saved={};}
     [...root.querySelectorAll(':scope > .comb-sec')].forEach((h,i)=>{const body=document.createElement('div');body.className='comb-body';let n=h.nextElementSibling;while(n&&!n.classList.contains('comb-sec')){const nx=n.nextElementSibling;body.appendChild(n);n=nx;}h.after(body);
       const apply=f=>{h.classList.toggle('folded',f);body.classList.toggle('folded',f);};apply(!!saved[i]);
-      h.addEventListener('click',()=>{const f=!h.classList.contains('folded');apply(f);saved[i]=f;try{localStorage.setItem('fasadlab-comb-folds',JSON.stringify(saved));}catch(e){}});});})();
+      h.addEventListener('click',()=>{const f=!h.classList.contains('folded');apply(f);saved[i]=f;try{localStorage.setItem(storeKey,JSON.stringify(saved));}catch(e){}});});}
+  initFolds($('combSettings'),'fasadlab-comb-folds');initFolds($('pilasterBody'),'fasadlab-pilaster-folds');
   $('combFitCards').addEventListener('click',e=>{const b=e.target.closest('[data-fit]');if(!b)return;const i=$('combFit');i.value=b.dataset.fit;i.dispatchEvent(new Event('input',{bubbles:true}));i.dispatchEvent(new Event('change',{bubbles:true}));});
   ['combMode','combFirstWhole','combLastWhole','combFit','combTopMin','combTopMax','combCenterStep','combSecOn','combGroove','combGrooveMode','combGrooveShow','combStart','combEnd','combPitch','combCutWidth','combCutDepth','combCutter','combDirection'].forEach(id=>{const el=$(id);if(el){el.addEventListener('input',renderCombLayoutInfo);el.addEventListener('change',renderCombLayoutInfo);}});
   $('stylesImportPicker').addEventListener('change',async event=>{const files=[...event.target.files];event.target.value='';if(files.length)await importStylesFiles(files);});
