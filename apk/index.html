@@ -4854,15 +4854,19 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
     // подбор двумя способами (оценка только на участке / с учётом всего следа фрезы); остаётся тот, что точнее повторяет чертёж
     function fit(){
       const ids0=new Set(customCutters.map(t=>t.id));
-      const notesA=fitCore(false),qa=D.fitQ,blocksA=D.blocks.map(b=>({...b}));
-      let notesB=null,qb=null;try{notesB=fitCore(true);qb=D.fitQ;}catch(e){}
-      const sc=q=>q?q.rms+.25*q.max:1e9;
-      let notes=notesB,q=qb;
-      if(!notesB||sc(qa)<=sc(qb)){notes=notesA;q=qa;D.blocks=blocksA;sel=D.blocks[0]?.id||0;D.fitQ=qa;save();render();}
+      let best=null;
+      for(const [wide,pairs] of[[false,false],[true,false]]){
+        if(best&&best.sc<(pairs?.9:.5))break;   // достаточно точно — дальше не перебираем (быстрее на телефоне); пары — только если обычный подбор неточен
+        let notes=null,q=null;
+        try{notes=fitCore(wide,pairs);q=D.fitQ;}catch(e){if(!best)throw e;continue;}
+        const sc=q.rms+.25*q.max;
+        if(!best||sc<best.sc)best={sc,notes,q,blocks:D.blocks.map(b=>({...b}))};
+      }
+      D.blocks=best.blocks;sel=D.blocks[0]?.id||0;D.fitQ=best.q;save();render();
       const used=new Set(D.blocks.map(b=>b.cutter)),n0=customCutters.length;
       customCutters=customCutters.filter(t=>ids0.has(t.id)||used.has('custom:'+t.id));
       if(customCutters.length!==n0){try{persistCustomCutters();renderCutterOptions();}catch(e){}}
-      return notes;
+      return best.notes;
     }
     // насколько подобранные блоки повторяют чертёж: глубина реза по блокам против глубины эталона, мм
     function fitQuality(d,k){
@@ -4881,7 +4885,7 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
       }
       return{rms:Math.sqrt(s2/Math.max(1,m)),max:mx,at:mxAt};
     }
-    function fitCore(wide){
+    function fitCore(wide,pairs){
       if(D.line.length<2)throw new Error('Сначала нарисуйте линию («Линия» / «Дуга») или загрузите DXF/SVG профиля.');
       const L=D.L,T=D.T,k=.2,n=Math.max(2,Math.ceil(L/k)),d=new Array(n);
       for(let q=0;q<n;q++)d[q]=Math.min(T,refDepth((q+.5)*k));
@@ -4974,9 +4978,11 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
           else for(let t=Math.max(w0,i0-wpad);t<=Math.min(w1,i1+wpad);t++){const u=(t+.5)*k;let pred=base[t];for(const c of cs)pred=Math.max(pred,scanCandReliefAt(cand,z,u-c));err+=(pred-d[t])**2;m++;}
           return{eff,rms:Math.sqrt(err/Math.max(1,m))};
         };
+        const perCand=[];
         for(const cand of list){
           const z=Math.min(zmax,cand.maxDepth);if(!(z>0))continue;
           if(cand.shape==='v90'&&cand.width<Math.min(span,2*z)*.8)continue;
+          let cb=null;
           const eff=cand.shape==='v90'?Math.min(cand.width,2*z):cand.width,half=eff/2,opts=[];
           const cs=new Set([ra,rb,(ra+rb)/2,ra+half,rb-half]);if(ra<.35)cs.add(0);if(cand.synth)cs.add(cand.axis);
           for(let c=Math.max(0,ra-half);c<=Math.min(L,rb+half)+1e-9;c+=Math.max(.5,span/20))cs.add(fmt(c));
@@ -4994,8 +5000,40 @@ html.demo .demo-off{opacity:.45;cursor:not-allowed}
             if(count>=2){const cc=[];for(let t=0;t<count;t++)cc.push(ra+half+(span-eff)*t/(count-1));opts.push(cc);}
           }
           for(const cc of opts){
-            const ev=evalCs(cand,z,cc),score=ev.rms/Math.max(zmax,.5)+.012*(cc.length-1)+(cand.lib?0:.008)+(cand.synth?.06:String(cand.shape).startsWith('form')?.03:0);
+            const ev=evalCs(cand,z,cc),score=ev.rms/Math.max(zmax,.5)+.012*(cc.length-1)+(cand.lib?0:.008)+(cand.synth?.03:String(cand.shape).startsWith('form')?.03:0);
             if(!best||score<best.score)best={cand,z,cs:cc,eff:ev.eff,rms:ev.rms,score};
+            if(!cb||score<cb.score)cb={cand,z,cs:cc,eff:ev.eff,rms:ev.rms,score};
+          }
+          if(cb)perCand.push(cb);
+        }
+        // пара фрез на один участок (например шарик + V-фреза с пологим углом): перебор основной фрезы и второй
+        if(pairs&&lvl===0&&(!best||best.score>.12)&&perCand.length){
+          const mains=perCand.slice().sort((a,b)=>a.score-b.score).slice(0,4);
+          const seconds=list.filter(c=>c.width>=span/10&&c.width<=span*1.6&&(c.shape==='v90'||String(c.shape).startsWith('form')||c.shape==='round')).sort((a,b)=>(a.shape==='v90'||String(a.value).startsWith('custom')?0:1)-(b.shape==='v90'||String(b.value).startsWith('custom')?0:1)).slice(0,45);
+          const t0=Math.max(0,q-40),t1=Math.min(n-1,r+40),step=Math.max(1,span/30);
+          const relOf=(c,z,cen)=>{const a=[];for(let t=t0;t<=t1;t++)a.push(scanCandReliefAt(c,z,(t+.5)*k-cen));return a;};
+          let bp=null;
+          for(const A of mains){
+            const ra0=new Array(t1-t0+1).fill(0);A.cs.forEach(c=>{const rr=relOf(A.cand,A.z,c);for(let i=0;i<rr.length;i++)if(rr[i]>ra0[i])ra0[i]=rr[i];});
+            for(const B of seconds){
+              if(B.value===A.cand.value&&B.width===A.cand.width)continue;
+              for(const zf of[1,.7,.45]){
+                const zB=Math.min(zmax*zf,B.maxDepth);if(!(zB>0))continue;
+                const effB=B.shape==='v90'?Math.min(B.width,2*zB):B.width;
+                for(let cB=Math.max(0,ra-effB/2);cB<=Math.min(L,rb+effB/2)+1e-9;cB+=step){
+                  let err=0,m=0;
+                  for(let t=t0;t<=t1;t++){const u=(t+.5)*k;let pr=Math.max(base[t],ra0[t-t0]);const dx=Math.abs(u-cB);if(dx<effB/2){const v=scanCandReliefAt(B,zB,dx);if(v>pr)pr=v;}err+=(pr-d[t])**2;m++;}
+                  const rms=Math.sqrt(err/m),sc=rms/Math.max(zmax,.5)+.02+(A.cand.lib?0:.008)+(B.lib?0:.008);
+                  if(!bp||sc<bp.sc)bp={A,B,zB,effB,cB,sc,rms};
+                }
+              }
+            }
+          }
+          if(bp&&(!best||bp.sc<best.score-.04)){
+            bp.A.cs.forEach(c=>made.push({cutter:bp.A.cand.value,width:fmt(bp.A.eff),depth:fmt(bp.A.z),center:fmt(c)}));
+            made.push({cutter:bp.B.value,width:fmt(bp.effB),depth:fmt(bp.zB),center:fmt(bp.cB)});
+            notes.push(`участок ${fmt(ra)}…${fmt(rb)} мм: пара фрез — ${bp.A.cand.name} Ø${fmt(bp.A.eff)} (глубина ${fmt(bp.A.z)}) + ${bp.B.name} Ø${fmt(bp.effB)} (глубина ${fmt(bp.zB)}, ось ${fmt(bp.cB)} мм)`);
+            return;
           }
         }
         // S-образный участок одной фрезой не получается: делим в самой глубокой точке и подбираем каждую половину отдельно
